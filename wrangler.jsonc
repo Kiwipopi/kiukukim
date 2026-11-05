@@ -1,0 +1,12 @@
+{
+  // kiukukim.com — 스튜디오 김기욱 포트폴리오 (정적 사이트)
+  // main 브랜치에 올리면 Cloudflare Workers Builds가 자동으로 배포한다.
+  "name": "bitter-feather-e4b0",
+  "compatibility_date": "2026-11-01",
+  "assets": { "directory": "./public" },
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "kiukukim.com", "custom_domain": true },
+    { "pattern": "www.kiukukim.com", "custom_domain": true }
+  ]
+}

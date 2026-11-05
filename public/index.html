@@ -1,0 +1,1535 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>스튜디오 김기욱</title>
+<meta name="description" content="물·구름·고래 시뮬레이션으로 미디어 파사드와 대형 LED를 위한 영상을 만드는 미디어아트 스튜디오">
+<link rel="canonical" href="https://kiukukim.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="스튜디오 김기욱">
+<meta property="og:title" content="스튜디오 김기욱 — 미디어아트 스튜디오">
+<meta property="og:description" content="물·구름·고래 시뮬레이션으로 미디어 파사드와 대형 LED를 위한 영상을 만듭니다.">
+<meta property="og:url" content="https://kiukukim.com/">
+<meta property="og:image" content="https://kiukukim.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: Nintendo Systems식 — 흰 바탕을 코발트 1px 선이 칸으로 나눈다.
+   탭(HOME · WORKS · EXHIBITION · ABOUT · CONTACT)마다 한 페이지씩 보이고, 처음 들어오면 문이 열리는 시작 장면이 나온다. */
+:root{
+  --bg:#FFFFFF; --panel:#F3F3F3; --ink:#111318; --muted:#6E6E6E; --num:#9C9C9C; --ghost:#BDBDBD; --hl:#F1F1F1;
+  --accent:#1F3CF0; --on-accent:#FFFFFF; --faint:rgba(255,255,255,.55);
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,"IBM Plex Sans KR",monospace;
+  --line:1px solid var(--accent);
+  --hh:72px; --pad:clamp(20px,3.6vw,56px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth;scrollbar-gutter:stable}
+html.splashing{overflow:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.75 var(--sans);-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+body:has(dialog[open]){overflow:hidden}
+a{color:inherit}
+:where(a,button):focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main:focus{outline:none}
+.skip{all:unset;position:absolute;left:-9999px;top:0}
+.skip:focus{left:24px;top:24px;z-index:50;background:var(--accent);color:var(--on-accent);padding:10px 14px;font:600 14px/1 var(--sans)}
+
+/* header — 로고 박스 + { // } 탭 */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;display:flex;align-items:center;justify-content:space-between;height:var(--hh);padding-left:20px;background:var(--bg);border-bottom:var(--line)}
+.logo{display:inline-flex;align-items:stretch;text-decoration:none;color:var(--accent)}
+.logo-mark{display:grid;place-items:center;background:var(--accent);color:var(--on-accent);font-family:var(--sans);font-weight:700;line-height:1}
+.logo-word{display:flex;flex-direction:column;justify-content:center;border:var(--line);border-left:0;line-height:1.2;background:var(--bg)}
+.logo-word b{font-family:var(--sans);font-weight:700;letter-spacing:.02em}
+.logo-word small{font-family:var(--mono);font-weight:500;letter-spacing:.16em;white-space:nowrap}
+.hdr .logo{height:42px}
+.hdr .logo-mark{width:42px;font-size:19px}
+.hdr .logo-word{padding:0 12px}
+.hdr .logo-word b{font-size:13.5px}
+.hdr .logo-word small{font-size:8.5px}
+.biglogo{height:clamp(84px,9vw,136px)}
+.biglogo .logo-mark{width:clamp(84px,9vw,136px);font-size:clamp(36px,4.2vw,62px)}
+.biglogo .logo-word{padding:0 clamp(18px,2.6vw,40px);border:3px solid var(--accent);border-left:0}
+.biglogo .logo-word b{font-size:clamp(22px,2.7vw,42px)}
+.biglogo .logo-word small{font-size:clamp(9px,.95vw,14px);margin-top:4px;min-height:1.2em}
+.braces{display:flex;align-items:center;gap:9px;padding:0 24px;font:500 12px/1 var(--mono);letter-spacing:.06em;color:var(--muted);white-space:nowrap}
+.braces a{text-decoration:none;padding:8px 1px}
+.braces a:hover,.braces a[aria-current]{color:var(--accent)}
+.braces a[aria-current]{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.braces i{font-style:normal;opacity:.6}
+.menu-btn{all:unset;display:none;cursor:pointer;align-self:stretch;align-items:center;padding:0 20px;font:500 12px/1 var(--mono);letter-spacing:.08em;color:var(--muted)}
+.menu{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:var(--line);display:flex;flex-direction:column}
+.menu a{display:flex;align-items:center;gap:16px;height:58px;padding:0 20px;border-top:var(--line);text-decoration:none;color:var(--accent);font:600 20px/1 var(--display);font-stretch:112%;text-transform:uppercase}
+.menu a span{width:26px;font:500 11px/1 var(--mono);color:var(--muted)}
+.menu a[aria-current]{background:var(--accent);color:var(--on-accent)}
+.menu a[aria-current] span{color:var(--on-accent)}
+
+main{display:flex;flex-direction:column;gap:1px;background:var(--accent);min-width:0}
+.page{display:flex;flex-direction:column;gap:1px;background:var(--accent);min-width:0}
+@media (prefers-reduced-motion:no-preference){.page.enter{animation:pageIn .45s cubic-bezier(.2,.7,.2,1)}}
+@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* shared */
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--accent)}
+.split > *{background:var(--bg);min-width:0}
+.split.rev > .stxt{order:2}
+.cellbox{padding:var(--pad)}
+.lbl{font:500 11.5px/1.5 var(--mono);letter-spacing:.08em;color:var(--ink);margin:0 0 22px}
+.fine{font:500 11.5px/1.6 var(--mono);letter-spacing:.05em;color:var(--muted);margin:0}
+.tri,.sq{position:relative;display:inline-block;background:var(--accent);flex:0 0 auto}
+.tri::after,.sq::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-35%,-50%);border-left:7px solid var(--on-accent);border-top:4.5px solid transparent;border-bottom:4.5px solid transparent}
+.more{display:inline-flex;align-items:center;gap:14px;height:42px;padding:0 20px 0 0;border:var(--line);background:var(--bg);color:var(--accent);font:700 13px/1 var(--display);font-stretch:108%;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.more .tri{width:40px;height:40px}
+.more:hover{background:var(--accent);color:var(--on-accent)}
+.more:hover .tri{background:var(--on-accent)}
+.more:hover .tri::after{border-left-color:var(--accent)}
+
+/* HOME stage — 0/1 수면 위의 로고 */
+.stage{position:relative;height:calc(100vh - var(--hh));height:calc(100svh - var(--hh) - env(safe-area-inset-top,0px));min-height:460px;max-height:1000px;display:grid;place-items:center;overflow:hidden;background:var(--bg);cursor:crosshair;touch-action:pan-y;-webkit-user-select:none;user-select:none}
+.stage canvas{position:absolute;inset:0;z-index:0;width:100%;height:100%;display:block}
+.stage::before{content:"";position:absolute;z-index:1;left:50%;top:0;bottom:0;width:1px;background:var(--accent)}
+.stage .logo{position:relative;z-index:2;margin:0}
+.stage-tri{position:absolute;z-index:2;left:50%;bottom:12px;width:0;height:0;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-top:9px solid var(--accent)}
+.drop-hint{all:unset;position:absolute;z-index:2;left:20px;bottom:14px;cursor:pointer;padding:6px 0;font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--muted);background:var(--bg)}
+.drop-hint:hover{color:var(--accent)}
+.drop-hint:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.no-motion .drop-hint{display:none}
+@media (prefers-reduced-motion:no-preference){
+  .stage.intro .stage-tri{animation:triIn .4s ease .2s both,triBob 2.4s ease-in-out 1.6s infinite}
+  .stage.intro .drop-hint{animation:fadeIn .6s ease .9s both}
+  .stage .logo.bob{animation:bob 1s cubic-bezier(.3,.7,.3,1)}
+}
+@keyframes lineDraw{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes triIn{from{opacity:0;transform:translate(-50%,-6px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes triBob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,5px)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes bob{0%{transform:translateY(0)}28%{transform:translateY(7px)}58%{transform:translateY(-2px)}100%{transform:translateY(0)}}
+
+/* 시작 장면 — 가운데 선, 부팅 로그, 0/1이 가운데서 퍼지고, 문이 열린다 */
+.splash{position:fixed;inset:0;z-index:100;cursor:pointer;animation:spFail 0s linear 9s forwards}
+@keyframes spFail{to{visibility:hidden;pointer-events:none}}
+@media (prefers-reduced-motion:reduce){.splash{display:none}}
+.sp-cv{position:absolute;top:0;width:50%;height:100%;display:block;background:var(--bg);transition:transform 1s cubic-bezier(.76,0,.24,1)}
+.sp-l{left:0}
+.sp-r{left:50%}
+.splash.open{pointer-events:none}
+.splash.open .sp-l{transform:translateX(-100%)}
+.splash.open .sp-r{transform:translateX(100%)}
+.sp-line{position:absolute;z-index:2;left:50%;top:0;bottom:0;width:1px;background:var(--accent);transform-origin:50% 0;animation:lineDraw .7s cubic-bezier(.7,0,.2,1) .05s both}
+.sp-logo{position:absolute;z-index:3;width:max-content;left:50%;top:var(--sy,calc(var(--hh) + (100svh - var(--hh)) / 2));transform:translate(-50%,-50%)}
+.sp-logo .logo-mark{animation:wipe .55s cubic-bezier(.7,0,.2,1) .5s both}
+.sp-logo .logo-word{animation:wipe .6s cubic-bezier(.7,0,.2,1) .78s both}
+.sp-log{position:absolute;z-index:3;left:24px;top:22px;margin:0;font:400 12px/1.9 var(--mono);color:var(--ink);white-space:pre;pointer-events:none}
+.sp-log > div{width:max-content;padding-right:8px;background:var(--bg)}
+.sp-log .t-c{color:var(--muted)}
+.sp-log .ok{color:var(--accent)}
+.sp-cnt{position:absolute;z-index:3;left:24px;bottom:20px;padding:3px 6px 3px 0;background:var(--bg);font:500 12px/1 var(--mono);letter-spacing:.08em;color:var(--accent);font-variant-numeric:tabular-nums}
+.sp-skip{position:absolute;z-index:3;right:24px;bottom:20px;padding:3px 0 3px 6px;background:var(--bg);font:500 11px/1 var(--mono);letter-spacing:.08em;color:var(--muted)}
+.splash.open .sp-line,.splash.open .sp-log,.splash.open .sp-cnt,.splash.open .sp-skip{opacity:0;transition:opacity .25s}
+.splash.open .sp-logo{opacity:0;transition:opacity .35s ease .12s}
+
+/* 0/1 facade band */
+.facade{display:flex;flex-direction:column;gap:1px;background:var(--accent)}
+.band{position:relative;aspect-ratio:3/1;max-width:100%;background:var(--bg);overflow:hidden}
+.band canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.band video{position:absolute;left:0;top:0;width:2px;height:2px;opacity:0;pointer-events:none}
+.band.fallback video{inset:0;width:100%;height:100%;opacity:1;object-fit:cover}
+.band.fallback canvas{display:none}
+.band-hit{all:unset;position:absolute;inset:0;cursor:zoom-in}
+.band-hit:focus-visible{outline:2px solid var(--accent);outline-offset:-6px}
+.bar{display:flex;flex-wrap:wrap;gap:1px;background:var(--accent)}
+.bar > span{display:flex;align-items:center;gap:9px;min-height:40px;padding:0 16px;background:var(--bg);font:500 11px/1.3 var(--mono);letter-spacing:.05em;white-space:nowrap}
+.bar .grow{flex:1 1 0;min-width:0;overflow:hidden;text-overflow:ellipsis;display:block;line-height:40px}
+.dot{width:7px;height:7px;background:var(--accent);animation:blink 1.4s steps(1) infinite}
+.bar .srcs{padding:0;gap:0}
+.srcs button{all:unset;cursor:pointer;width:46px;height:40px;display:grid;place-items:center;border-left:var(--line);font:500 11px/1 var(--mono)}
+.srcs button:first-child{border-left:0}
+.srcs button:hover{background:var(--hl)}
+.srcs button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.srcs button:focus-visible{outline:2px solid var(--accent);outline-offset:-4px}
+
+/* WORKS 하위 탭 */
+.subtabs{position:sticky;top:calc(var(--hh) + env(safe-area-inset-top,0px));z-index:20;display:flex;gap:1px;background:var(--accent);overflow-x:auto;scrollbar-width:none;box-shadow:0 1px 0 var(--accent)}
+.subtabs::-webkit-scrollbar{display:none}
+.subtabs a{flex:1 0 auto;display:flex;align-items:center;justify-content:center;gap:10px;height:50px;padding:0 20px;background:var(--bg);color:var(--ink);text-decoration:none;font:500 12px/1 var(--mono);letter-spacing:.06em;white-space:nowrap}
+.subtabs a i{font-style:normal;color:var(--muted)}
+.subtabs a:hover{background:var(--hl)}
+.subtabs a[aria-current]{background:var(--accent);color:var(--on-accent)}
+.subtabs a[aria-current] i{color:var(--on-accent)}
+.subtabs a:focus-visible{outline:2px solid var(--accent);outline-offset:-4px}
+
+/* text cell */
+.stxt{container-type:inline-size;display:flex;flex-direction:column;align-items:flex-start}
+.giant{margin:0;font:600 clamp(44px,7vw,128px)/.86 var(--display);font-stretch:112%;text-transform:uppercase;letter-spacing:-.012em;color:var(--accent)}
+@supports (width:1cqi){.giant{font-size:min(128px,calc(100cqi / var(--em,4.3)))}}
+.sub{font:700 clamp(21px,2.2vw,32px)/1.4 var(--sans);margin:28px 0 12px;color:var(--ink);text-wrap:balance}
+.desc{margin:0 0 22px;max-width:34em}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0 0 30px;padding:0}
+.chips li{font:500 11px/1 var(--mono);letter-spacing:.06em;border:var(--line);color:var(--accent);padding:7px 9px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;width:100%;background:var(--accent);border:var(--line);margin:4px 0 30px}
+.facts div{background:var(--bg);padding:12px 14px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.facts b{font:600 clamp(20px,1.9vw,28px)/1.1 var(--display);font-stretch:110%;color:var(--accent);font-variant-numeric:tabular-nums}
+.facts span{font:500 12px/1.4 var(--sans);color:var(--ink)}
+
+/* code window — 줄 번호가 사이트 전체에서 이어지고, 보이면 타이핑된다 */
+.code{background:var(--bg);padding:22px 0 30px;overflow-x:auto;font:400 12.5px/1.95 var(--mono)}
+.code pre{margin:0;font:inherit;color:var(--ink)}
+.cl{display:flex;min-width:max-content;padding-right:28px}
+.cl .n{flex:0 0 58px;text-align:right;padding-right:18px;color:var(--num);user-select:none;font-variant-numeric:tabular-nums}
+.cl .c{white-space:pre}
+.cl.cur{background:var(--hl)}
+.t-c{color:var(--muted)} .t-s{color:var(--accent)} .t-k{font-weight:600} .t-g{color:var(--ghost)}
+.caret{display:inline-block;width:.55em;height:1.15em;margin-right:-.55em;background:var(--accent);vertical-align:-.22em}
+.caret.end{margin-left:2px;animation:blink 1.05s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* HOME index grid — 6칸 + 뉴스 */
+.index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--accent)}
+.idx{position:relative;aspect-ratio:1;max-width:100%;background:var(--bg);color:var(--accent);text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:48px 20px;text-align:center;transition:background .18s,color .18s}
+.idx .k{position:absolute;left:16px;top:14px;font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--ink)}
+.idx .c{position:absolute;left:16px;bottom:14px;font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--muted)}
+.idx-t{font:600 clamp(24px,2.6vw,42px)/.95 var(--display);font-stretch:112%;text-transform:uppercase;letter-spacing:-.005em;text-wrap:balance}
+.idx .ko{font:500 13px/1.4 var(--sans);color:var(--ink)}
+.idx .sq{position:absolute;right:0;bottom:0;width:34px;height:34px}
+.idx:hover,.idx:focus-visible{background:var(--accent);color:var(--on-accent);outline:0}
+.idx:hover .k,.idx:hover .c,.idx:hover .ko,.idx:focus-visible .k,.idx:focus-visible .c,.idx:focus-visible .ko{color:var(--on-accent)}
+.idx:hover .sq,.idx:focus-visible .sq{background:var(--on-accent)}
+.idx:hover .sq::after,.idx:focus-visible .sq::after{border-left-color:var(--accent)}
+.news{grid-column:4;grid-row:1/span 2;background:var(--accent);color:var(--on-accent);padding:22px 24px;min-height:0;overflow:auto}
+.news-h{font:600 12px/1 var(--mono);letter-spacing:.14em;margin:0 0 4px}
+.news ul{list-style:none;margin:0;padding:0}
+.news li{display:flex;flex-direction:column;gap:7px;padding:18px 0;border-bottom:1px solid var(--faint)}
+.news time{font:500 11.5px/1 var(--mono);letter-spacing:.06em}
+.news li span{font:500 14px/1.65 var(--sans)}
+
+/* ABOUT — 만드는 것 4칸 */
+.make{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--accent)}
+.mk{background:var(--bg);padding:26px 24px 30px;display:flex;flex-direction:column;gap:12px;min-width:0;min-height:220px}
+.mk .k{font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--ink)}
+.mk b{font:600 clamp(22px,2.2vw,32px)/1 var(--display);font-stretch:112%;text-transform:uppercase;color:var(--accent);margin-top:auto}
+.mk p{margin:0;font-size:14px;line-height:1.75}
+
+/* series */
+.series{display:flex;flex-direction:column;gap:1px;background:var(--accent)}
+.gallery{display:flex;flex-direction:column;gap:1px;background:var(--accent)}
+.grow{display:flex;gap:1px;background:var(--accent)}
+.tile{margin:0;min-width:0;background:var(--bg);display:flex;flex-direction:column;container-type:inline-size}
+.media{all:unset;position:relative;display:block;width:100%;aspect-ratio:var(--ar,16/9);max-width:100%;background:var(--panel);overflow:hidden;cursor:zoom-in}
+.media:focus-visible{outline:2px solid var(--accent);outline-offset:-5px}
+.media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.badge{position:absolute;left:0;top:0;z-index:1;background:var(--accent);color:var(--on-accent);font:600 10px/1 var(--mono);letter-spacing:.08em;padding:7px 9px}
+.cap{position:relative;display:flex;align-items:center;gap:14px;height:36px;padding:0 50px 0 16px;border-top:var(--line);font:500 11px/1 var(--mono);letter-spacing:.05em;white-space:nowrap;transition:background .15s,color .15s}
+.cap b{flex:0 1 auto;max-width:72%;font-weight:600;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis}
+.cap .spec{flex:1 1 0;min-width:0;text-align:right;color:var(--muted);overflow:hidden;text-overflow:ellipsis}
+.cap .sq{position:absolute;right:0;top:0;width:36px;height:35px}
+.tile:hover .cap{background:var(--accent);color:var(--on-accent)}
+.tile:hover .cap .spec{color:var(--on-accent)}
+.tile:hover .cap .sq{background:var(--on-accent)}
+.tile:hover .cap .sq::after{border-left-color:var(--accent)}
+@container (max-width:250px){.cap .spec{display:none}.cap{padding-right:40px}.cap .sq{width:30px}}
+/* 세로 작품 — 가로 작품 더미 옆에 크게(bento), 또는 화면 높이에 맞춰 크게 + 설명 칸(prow) */
+.gallery{container-type:inline-size;--ph:clamp(320px, calc(100vh - var(--hh) - 114px), 860px)}
+@supports (height:1svh){.gallery{--ph:clamp(320px, calc(100svh - var(--hh) - 114px), 860px)}}
+.bento .stack{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:1px;background:var(--accent)}
+.tile.fill .media{aspect-ratio:auto;flex:1 1 auto}
+.prow.solo > .tile{flex:0 0 min(calc(50% - .5px), calc(var(--ph) * var(--r)))}
+.pnote{flex:100000 1 260px;min-width:0;container-type:inline-size;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:clamp(18px,2.2vw,32px);background:var(--bg)}
+.prow.solo > .pnote{flex:1 1 0}
+.pnote .k{font:500 11px/1.4 var(--mono);letter-spacing:.08em;color:var(--ink)}
+.pnote .r{margin-top:auto;font:600 64px/.9 var(--display);font-stretch:112%;letter-spacing:-.01em;color:var(--accent)}
+@supports (width:1cqi){.pnote .r{font-size:min(112px, 30cqi)}}
+.pnote .t{font:700 clamp(16px,1.4vw,20px)/1.4 var(--sans);color:var(--ink)}
+.pnote p{margin:0;max-width:26em;font-size:13.5px;line-height:1.75}
+@container (max-width:1100px){.prow:not(.solo) > .pnote{display:none}}
+.fvid{margin:0;display:flex;flex-direction:column;container-type:inline-size}
+.fvid .media{flex:1 1 auto;aspect-ratio:16/9}
+
+/* WORKS 끝 — 이전 · 다음 */
+.wend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--accent)}
+.wnav{display:flex;align-items:center;gap:22px;min-height:150px;padding:28px var(--pad);background:var(--bg);color:var(--accent);text-decoration:none;min-width:0;transition:background .18s,color .18s}
+.wnav > span:not(.sq){min-width:0}
+.wnav small{display:block;margin-bottom:10px;font:500 11.5px/1 var(--mono);letter-spacing:.08em;color:var(--ink)}
+.wnav b{display:block;font:600 clamp(24px,3vw,46px)/.95 var(--display);font-stretch:112%;text-transform:uppercase;letter-spacing:-.005em}
+.wnav .sq{width:48px;height:48px}
+.wnav.prev .sq::after{transform:translate(-65%,-50%) rotate(180deg)}
+.wnav.up .sq::after{transform:translate(-50%,-62%) rotate(-90deg)}
+.wnav.next{justify-content:flex-end;text-align:right}
+.wnav:hover{background:var(--accent);color:var(--on-accent)}
+.wnav:hover small{color:var(--on-accent)}
+.wnav:hover .sq{background:var(--on-accent)}
+.wnav:hover .sq::after{border-left-color:var(--accent)}
+.wnav:focus-visible{outline:2px solid var(--accent);outline-offset:-6px}
+
+/* EXHIBITION — 현장 영상 + 전시 정보 칸 */
+.exlist{display:flex;flex-direction:column;gap:1px;background:var(--accent)}
+.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.crow{justify-content:center;background:var(--panel)}
+.crow > .tile{flex:0 1 calc(var(--ph) * var(--r))}
+.exinfo{flex:100000 1 300px;min-width:0;container-type:inline-size;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:clamp(20px,2.4vw,36px);background:var(--bg)}
+.exinfo.full{flex:1 1 100%}
+.exinfo .k{font:500 11px/1.4 var(--mono);letter-spacing:.08em;color:var(--ink)}
+.exinfo .cd{margin:8px 0 0;font:500 12.5px/1.5 var(--mono);letter-spacing:.04em}
+.exinfo h3{margin:0;font:700 clamp(21px,2vw,28px)/1.35 var(--sans)}
+.exinfo .xs{margin:0;font:500 14px/1.6 var(--sans)}
+.exinfo .xp{margin:0;font-size:13.5px;line-height:1.75}
+.exinfo .xw{margin:4px 0 0;font:500 11.5px/1.6 var(--mono);letter-spacing:.06em;color:var(--accent)}
+.exinfo .xw button{all:unset;cursor:pointer;text-transform:uppercase;text-decoration:underline;text-underline-offset:3px}
+.exinfo .xw button:focus-visible,.exinfo .xl:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.exinfo .xl{font:500 13px/1 var(--mono);color:var(--accent);text-decoration:none}
+.exinfo .xl:hover{text-decoration:underline;text-underline-offset:4px}
+.exinfo .big{margin-top:auto;padding-top:18px;font:600 56px/.9 var(--display);font-stretch:112%;text-transform:uppercase;letter-spacing:-.01em;color:var(--accent)}
+@supports (width:1cqi){.exinfo .big{font-size:min(112px, calc(100cqi / var(--em,5)))}}
+
+/* EXHIBITION cards — // 날짜, 제목, => */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--accent)}
+.card{background:var(--bg);padding:clamp(24px,2.8vw,40px);display:flex;flex-direction:column;gap:12px;min-width:0;transition:background .18s}
+.card:hover{background:var(--panel)}
+.cd{font:500 12px/1.4 var(--mono);letter-spacing:.04em;margin:0}
+.card h3{font:700 clamp(20px,1.9vw,26px)/1.4 var(--sans);margin:0}
+.card p{margin:0;font-size:14px;line-height:1.75}
+.cw{font:500 11.5px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.card .go{all:unset;cursor:pointer;margin-top:auto;padding-top:14px;font:500 13px/1 var(--mono);letter-spacing:.04em;color:var(--accent)}
+.card .go:hover{text-decoration:underline;text-underline-offset:4px}
+.card .go:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.card .nogo{margin-top:auto;padding-top:14px;font:500 13px/1 var(--mono);color:var(--num)}
+
+/* CONTACT band — 아웃라인 마키 + 이메일 · 인스타그램 */
+.contact{background:var(--accent);color:var(--on-accent);padding-block:34px 72px;overflow:hidden;min-height:calc(100vh - var(--hh));min-height:calc(100svh - var(--hh) - env(safe-area-inset-top,0px));display:flex;flex-direction:column;justify-content:center}
+.mq{overflow:hidden;white-space:nowrap;margin-bottom:30px}
+.mq-track{display:inline-flex;animation:mq 48s linear infinite;will-change:transform}
+.mq-track span{padding-right:.32em;font:600 clamp(76px,12.5vw,210px)/1.02 var(--display);font-stretch:118%;letter-spacing:-.01em;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px var(--on-accent)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.contact-in{padding-inline:var(--pad);display:flex;flex-direction:column;align-items:center;text-align:center;gap:26px}
+.contact .lbl{color:var(--on-accent);margin:0}
+.c-title{font:700 clamp(22px,2.4vw,34px)/1.45 var(--sans);margin:0;max-width:22em;text-wrap:balance}
+.reach{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;width:min(100%,1040px);background:var(--faint);border:1px solid var(--faint)}
+.reach-card{background:var(--accent);padding:22px 24px 24px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;text-align:left;min-width:0}
+.reach-card .m{font:500 10.5px/1 var(--mono);letter-spacing:.1em}
+.addr{font:600 clamp(21px,2.3vw,32px)/1.25 var(--display);font-stretch:104%;letter-spacing:.005em;user-select:all;overflow-wrap:anywhere;max-width:100%}
+.reach-act{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.cta{display:inline-flex;align-items:center;gap:16px;height:56px;padding:0 24px 0 0;border:1px solid var(--on-accent);background:var(--on-accent);color:var(--accent);text-decoration:none;font:700 15px/1 var(--sans);cursor:pointer}
+.cta .tri{width:54px;height:54px}
+.cta:hover{background:var(--ink);border-color:var(--ink);color:var(--on-accent)}
+.cta:focus-visible{outline:2px solid var(--on-accent);outline-offset:3px}
+.cta.ghost{background:transparent;color:var(--on-accent);padding:0 20px}
+.cta.ghost:hover{background:var(--on-accent);color:var(--accent);border-color:var(--on-accent)}
+.no-motion .mq-track,.no-motion .dot{animation-play-state:paused}
+.no-motion .caret.end{animation:none}
+
+/* footer — 코드 | 로고 */
+.foot{border-top:var(--line)}
+.foot .split > *{background:var(--bg)}
+.foot-r{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;text-align:center}
+.foot-r .logo-mark{width:88px;height:88px;font-size:38px}
+.foot-r .logo-word{padding:0 24px;border-width:2px}
+.foot-r .logo-word b{font-size:21px}
+.foot-r .logo-word small{font-size:11px}
+.foot-r .fine a{text-decoration:none}
+.foot-r .fine a:hover{color:var(--accent)}
+
+/* viewer */
+#viewer{border:0;margin:0;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);width:100vw;height:100%;max-width:none;max-height:none;background:var(--bg);color:var(--ink)}
+#viewer::backdrop{background:var(--bg)}
+.vw{display:grid;grid-template-rows:var(--hh) minmax(0,1fr) auto;gap:1px;height:100%;background:var(--accent)}
+.vw > *{background:var(--bg);min-width:0;min-height:0}
+.vw-top{display:flex;align-items:stretch}
+.vw-t{flex:1;min-width:0;display:flex;align-items:center;padding:0 22px;font:500 12px/1.3 var(--mono);letter-spacing:.05em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vw-close{all:unset;cursor:pointer;width:var(--hh);display:grid;place-items:center;border-left:var(--line);font:400 20px/1 var(--mono);color:var(--accent)}
+.vw-close:hover{background:var(--accent);color:var(--on-accent)}
+.vw-close:focus-visible{outline:2px solid var(--accent);outline-offset:-5px}
+.vw-media{position:relative;padding:20px}
+.vw-media img{position:absolute;inset:20px;margin:auto;max-width:calc(100% - 40px);max-height:calc(100% - 40px);display:block;object-fit:contain}
+.vw-media video{position:absolute;inset:20px;margin:auto;width:auto;height:auto;max-width:calc(100% - 40px);max-height:calc(100% - 40px);display:block;background:var(--panel)}
+.vw-bot{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr) minmax(0,220px);gap:1px;background:var(--accent)}
+.vw-bot > *{background:var(--bg)}
+.vw-nav{all:unset;cursor:pointer;display:flex;align-items:center;gap:14px;padding:18px 20px;background:var(--bg);font:600 12px/1.2 var(--mono);letter-spacing:.08em;color:var(--accent);min-width:0}
+.vw-nav small{display:block;margin-top:5px;font:500 11px/1.3 var(--mono);letter-spacing:.03em;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vw-nav span:not(.sq){min-width:0}
+.vw-nav .sq{width:34px;height:34px}
+.vw-nav.prev .sq::after{transform:translate(-65%,-50%) rotate(180deg)}
+.vw-nav.next{justify-content:flex-end;text-align:right}
+.vw-nav:hover{background:var(--hl)}
+.vw-nav:focus-visible{outline:2px solid var(--accent);outline-offset:-5px}
+.vw-info{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:8px 32px;padding:18px 24px 20px}
+.vw-info h3{margin:0 0 6px;font:600 clamp(22px,2.4vw,34px)/1 var(--display);font-stretch:112%;text-transform:uppercase;color:var(--accent)}
+.vw-info .spec{margin:0;font:500 11.5px/1.6 var(--mono);letter-spacing:.04em}
+.vw-info p{margin:0;font-size:14px}
+.vw-info .ex{margin-top:6px;font:500 11.5px/1.6 var(--mono);color:var(--accent)}
+
+/* responsive */
+@media (max-width:1080px){
+  .braces{display:none}
+  .menu-btn{display:flex}
+}
+@media (max-width:900px){
+  .split{grid-template-columns:minmax(0,1fr)}
+  .split.rev > .stxt{order:0}
+  .index{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:dense}
+  .news{grid-column:1/-1;grid-row:auto}
+  .make{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .band{aspect-ratio:2/1}
+  .cards{grid-template-columns:minmax(0,1fr)}
+  .reach{grid-template-columns:minmax(0,1fr)}
+  .fvid .media{flex:none}
+  .subtabs a{flex:0 0 auto}
+  .vw-bot{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vw-info{grid-column:1/-1;order:-1;grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  :root{--hh:60px}
+  .hdr{padding-left:14px}
+  .hdr .logo{height:36px}
+  .hdr .logo-mark{width:36px;font-size:16px}
+  .hdr .logo-word small{display:none}
+  .stage{min-height:420px}
+  .bar .hide-s{display:none}
+  .bar .grow{flex-basis:100%;order:5}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .make{grid-template-columns:minmax(0,1fr)}
+  .mk{min-height:0}
+  .idx{padding:40px 12px}
+  .idx-t{font-size:22px}
+  .idx .ko{font-size:12px}
+  .wend{grid-template-columns:minmax(0,1fr)}
+  .wnav{min-height:104px;padding:20px 16px;gap:14px}
+  .bar > span:first-child{flex-grow:1}
+  .wnav .sq{width:36px;height:36px}
+  .sp-log{font-size:10.5px;left:16px;top:16px}
+  .sp-cnt{left:16px}
+  .sp-skip{right:16px}
+  .vw-media{padding:12px}
+  .vw-media video{inset:12px;max-width:calc(100% - 24px);max-height:calc(100% - 24px)}
+  .vw-nav{padding:14px}
+}
+@media (prefers-reduced-motion:reduce){.idx,.cap,.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="splash" id="splash" aria-hidden="true">
+  <canvas class="sp-cv sp-l" id="spL"></canvas>
+  <canvas class="sp-cv sp-r" id="spR"></canvas>
+  <span class="sp-line"></span>
+  <div class="logo biglogo sp-logo"><span class="logo-mark">김</span><span class="logo-word"><b>스튜디오 김기욱</b><small id="spSmall"></small></span></div>
+  <pre class="sp-log" id="spLog"></pre>
+  <span class="sp-cnt" id="spCnt">000</span>
+  <span class="sp-skip">CLICK TO SKIP ▸</span>
+</div>
+
+<button class="skip" id="skipBtn" type="button">본문으로 건너뛰기</button>
+<header class="hdr">
+  <a class="logo" href="#home" aria-label="스튜디오 김기욱 홈">
+    <span class="logo-mark" aria-hidden="true">김</span>
+    <span class="logo-word"><b>스튜디오 김기욱</b><small>STUDIO KIM KIWOOK</small></span>
+  </a>
+  <nav class="braces" aria-label="탭">
+    <span aria-hidden="true">{</span>
+    <a href="#home" data-nav="home">HOME</a><i aria-hidden="true">//</i>
+    <a href="#works" data-nav="works">WORKS</a><i aria-hidden="true">//</i>
+    <a href="#exhibition" data-nav="exhibition">EXHIBITION</a><i aria-hidden="true">//</i>
+    <a href="#about" data-nav="about">ABOUT</a><i aria-hidden="true">//</i>
+    <a href="#contact" data-nav="contact">CONTACT</a>
+    <span aria-hidden="true">}</span>
+  </nav>
+  <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">{ MENU }</button>
+  <nav class="menu" id="menu" aria-label="탭 메뉴" hidden>
+    <a href="#home" data-nav="home"><span>01</span>Home</a>
+    <a href="#works" data-nav="works"><span>02</span>Works</a>
+    <a href="#exhibition" data-nav="exhibition"><span>03</span>Exhibition</a>
+    <a href="#about" data-nav="about"><span>04</span>About</a>
+    <a href="#contact" data-nav="contact"><span>05</span>Contact</a>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- 01 HOME -->
+  <section class="page" data-page="home" aria-label="홈">
+    <div class="stage" id="stage">
+      <canvas id="pond" aria-hidden="true"></canvas>
+      <h1 class="logo biglogo" aria-label="스튜디오 김기욱"><span class="logo-mark" aria-hidden="true">김</span><span class="logo-word" aria-hidden="true"><b>스튜디오 김기욱</b><small>STUDIO KIM KIWOOK</small></span></h1>
+      <button class="drop-hint" id="dropHint" type="button">{ CLICK · DRAG // 물결 일으키기 }</button>
+      <span class="stage-tri" aria-hidden="true"></span>
+    </div>
+    <div class="index" aria-label="바로가기">
+      <a class="idx" href="#works-blast"><span class="k">SERIES 01</span><b class="idx-t">Water<br>Blast</b><span class="ko">유리 수조 속의 물</span><span class="c">05 WORKS</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#works-water"><span class="k">SERIES 02</span><b class="idx-t">Water</b><span class="ko">쏟아지고, 솟구치는 물</span><span class="c">06 WORKS</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#works-whale"><span class="k">SERIES 03</span><b class="idx-t">Whale</b><span class="ko">구름 위를 헤엄치는 고래</span><span class="c">05 WORKS</span><span class="sq" aria-hidden="true"></span></a>
+      <div class="news" aria-label="소식">
+        <p class="news-h">NEWS</p>
+        <ul>
+          <li><time datetime="2026-11-02">2026.11.02</time><span>포트폴리오 사이트를 새로 단장했습니다.</span></li>
+          <li><time datetime="2026-08-06">2026.08.06</time><span>도쿄 Hearts Expo 2026 — 820㎡ 몰입형 공간 전시 참여</span></li>
+          <li><time datetime="2026-08-01">2026.08.01</time><span>마곡 MICE 르웨스트 미디어파사드 「여름의 결」 — Lasting Particles 송출</span></li>
+          <li><time datetime="2026-07-01">2026.07.01</time><span>광화문 해치마당 미디어월 「여름, 잠시 다른 세계」 — Yuryeo 상영</span></li>
+          <li><time datetime="2026-07-01">2026.07.01</time><span>마곡 MICE 르웨스트 미디어파사드 「감각의 표류」 — Ocean Whale, Cliff Waterfall 송출</span></li>
+          <li><time datetime="2026-06-01">2026.06.01</time><span>강동 더리버몰 미디어아트 전시 — Cliff Waterfall 참여</span></li>
+        </ul>
+      </div>
+      <a class="idx" href="#works-yuryeo"><span class="k">FEATURE</span><b class="idx-t">Yuryeo</b><span class="ko">유려 流麗</span><span class="c">3840 × 2160</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#exhibition"><span class="k">2026</span><b class="idx-t">Exhibition</b><span class="ko">전시 이력</span><span class="c">05 SHOWS</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#contact"><span class="k">CONTACT</span><b class="idx-t">Contact</b><span class="ko">제작 의뢰 · 문의</span><span class="c">EMAIL · INSTAGRAM</span><span class="sq" aria-hidden="true"></span></a>
+    </div>
+  </section>
+
+  <!-- 04 ABOUT (코드가 1번 줄에서 시작하도록 앞에 둔다) -->
+  <section class="page" data-page="about" aria-labelledby="h-about" hidden>
+    <div class="split">
+      <div class="cellbox stxt">
+        <p class="lbl">ABOUT · MEDIA ART STUDIO · KIUKUKIM</p>
+        <h2 class="giant" id="h-about" style="--em:4.2">About</h2>
+        <p class="sub">물·구름·고래를 시뮬레이션하는 미디어아트 스튜디오</p>
+        <p class="desc">스튜디오 김기욱은 미디어 파사드와 대형 LED, 세로형 디스플레이를 위한 영상을 만듭니다. 송출 환경의 해상도와 비율에 맞춰 렌더링합니다.</p>
+        <div class="facts">
+          <div><b>17</b><span>작품</span></div>
+          <div><b>5</b><span>2026 전시</span></div>
+          <div><b>3840</b><span>최대 가로 픽셀</span></div>
+          <div><b>24/30</b><span>FPS</span></div>
+        </div>
+        <a class="more" href="#works"><span class="tri" aria-hidden="true"></span>Works</a>
+      </div>
+      <div class="code"><pre>/**
+ * studio-kimkiwook.ts
+ * 스튜디오 김기욱 — media art for facades &amp; LED screens
+ */
+class StudioKimKiwook extends MediaArtStudio {
+  readonly artist = "kiukukim";
+  readonly materials = [Water, Cloud, Whale, Particle];
+  readonly screens = ["media facade", "anamorphic LED", "vertical"];
+
+  constructor() {
+    super("스튜디오 김기욱");
+  }</pre></div>
+    </div>
+    <div class="make" aria-label="만드는 것">
+      <div class="mk"><span class="k">01</span><b>Facade</b><p>미디어 파사드·대형 LED용 미디어아트</p></div>
+      <div class="mk"><span class="k">02</span><b>Anamorphic</b><p>아나모픽(3D 착시) 사이니지 영상</p></div>
+      <div class="mk"><span class="k">03</span><b>Simulation</b><p>물·구름·파티클 시뮬레이션 루프 영상</p></div>
+      <div class="mk"><span class="k">04</span><b>Format</b><p>송출 해상도·비율 맞춤 렌더링 — 가로형, 세로형, 초광폭</p></div>
+    </div>
+  </section>
+
+  <!-- 02 WORKS -->
+  <section class="page" data-page="works" aria-labelledby="h-works" hidden>
+    <nav class="subtabs" id="subtabs" aria-label="시리즈">
+      <a href="#works" data-filter="all">ALL <i>17</i></a>
+      <a href="#works-blast" data-filter="blast">01 WATER BLAST <i>05</i></a>
+      <a href="#works-water" data-filter="water">02 WATER <i>06</i></a>
+      <a href="#works-whale" data-filter="whale">03 WHALE <i>05</i></a>
+      <a href="#works-yuryeo" data-filter="yuryeo">04 YURYEO <i>01</i></a>
+    </nav>
+    <div class="split">
+      <div class="cellbox stxt">
+        <p class="lbl">WORKS · 17 WORKS · 4 SERIES</p>
+        <h2 class="giant" id="h-works" style="--em:4.5">Works</h2>
+        <p class="sub">유리 수조의 물, 쏟아지는 물, 구름 위의 고래</p>
+        <p class="desc">세 개의 연작과 한 편의 대표작입니다. 작품을 누르면 크게 볼 수 있고, 위의 탭으로 시리즈별로 나눠 볼 수 있습니다.</p>
+      </div>
+      <div class="code"><pre>  // WORKS — 17 works · 4 series
+  readonly works = [
+    ...this.waterBlast,  // 05
+    ...this.water,       // 06
+    ...this.whale,       // 05
+    this.yuryeo,         // 01
+  ];</pre></div>
+    </div>
+    <div class="facade" id="facade" aria-label="0/1 파사드">
+      <div class="band" id="band">
+        <canvas id="field" aria-hidden="true"></canvas>
+        <video id="fieldVideo" muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
+        <button class="band-hit" id="bandHit" type="button" aria-label="이 영상 크게 보기"></button>
+      </div>
+      <div class="bar">
+        <span><i class="dot" aria-hidden="true"></i>0/1 RENDER · LIVE</span>
+        <span class="grow" id="srcLabel">SRC whale_spring_winter.mp4 · 2000×550</span>
+        <span class="hide-s" id="gridLabel">0/1 GRID</span>
+        <span class="srcs" role="group" aria-label="소스 영상 고르기"><button type="button" data-src="0" aria-pressed="true">01</button><button type="button" data-src="1" aria-pressed="false">02</button><button type="button" data-src="2" aria-pressed="false">03</button></span>
+      </div>
+    </div>
+    <div class="series" data-series="blast" aria-labelledby="h-blast">
+      <div class="split rev">
+        <div class="cellbox stxt">
+          <p class="lbl">SERIES 01 · 05 WORKS</p>
+          <h3 class="giant" id="h-blast" style="--em:4.3">Water<br>Blast</h3>
+          <p class="sub">유리 수조 속의 물</p>
+          <p class="desc">대학이라는 울타리를 나와 사회에 발을 디딘 뒤, 자아와 현실이 부딪히는 순간들을 담은 연작입니다. 작품 속 두 공은 현실과 자아를 뜻하고, blast는 그 충돌과 폭발, 그리고 그 속에서 변해가는 나에 관한 이야기입니다.</p>
+          <ul class="chips"><li>3:1</li><li>1:3</li><li>30 FPS</li><li>17–90 SEC</li></ul>
+          <button class="more" type="button" data-play="blast_02"><span class="tri" aria-hidden="true"></span>Play</button>
+        </div>
+        <div class="code"><pre>  // SERIES 01 WATER BLAST — 유리 수조 속의 물
+  readonly waterBlast = new Series({
+    works:   ["blast_01", "blast_02", "blast_03", "blast_04", "blast_05"],
+    canvas:  [[720, 2160], [3840, 1280], [2560, 852], [3840, 1280], [2560, 853]],
+    runtime: [90, 90, 50, 41.7, 17.5],  // sec
+    fps: 30,
+  });</pre></div>
+      </div>
+      <div class="gallery" data-gallery="blast"></div>
+    </div>
+
+    <div class="series" data-series="water" aria-labelledby="h-water">
+      <div class="split">
+        <div class="cellbox stxt">
+          <p class="lbl">SERIES 02 · 06 WORKS</p>
+          <h3 class="giant" id="h-water" style="--em:4.3">Water</h3>
+          <p class="sub">쏟아지고, 솟구치는 물</p>
+          <p class="desc">모서리를 접은 아나모픽 수조, 절벽을 타고 내리는 폭포, 중력을 거슬러 오르는 파도. 송출 매체의 형태를 그대로 작품의 구조로 삼았습니다.</p>
+          <ul class="chips"><li>16:9</li><li>9:16</li><li>24 FPS</li><li>18–150 SEC</li></ul>
+          <button class="more" type="button" data-play="coex_wave"><span class="tri" aria-hidden="true"></span>Play</button>
+        </div>
+        <div class="code"><pre>  // SERIES 02 WATER — 쏟아지고, 솟구치는 물
+  readonly water = new Series({
+    works: {
+      coex_wave:          [1920, 1080],  // 18.6s
+      cliff_waterfall:    [1080, 1920],  // 22.6s
+      up_gravity:         [1450, 2560],  // 37.5s
+      wave_from_district: [1440, 2560],  // 30s
+      pts_wave:           [1920, 1080],  // 150s
+      water_wave:         [1920, 1080],  // 150s
+    },
+    fps: 24,
+  });</pre></div>
+      </div>
+      <div class="gallery" data-gallery="water"></div>
+    </div>
+
+    <div class="series" data-series="whale" aria-labelledby="h-whale">
+      <div class="split rev">
+        <div class="cellbox stxt">
+          <p class="lbl">SERIES 03 · 05 WORKS</p>
+          <h3 class="giant" id="h-whale" style="--em:4.3">Whale</h3>
+          <p class="sub">구름 위를 헤엄치는 고래</p>
+          <p class="desc">혹등고래와 범고래가 하늘을 바다 삼아 유영합니다. 봄의 꽃산에서 겨울의 설원까지 계절을 가로지르는 와이드 화면 연작입니다.</p>
+          <ul class="chips"><li>40:11</li><li>3:1</li><li>16:9</li><li>14–90 SEC</li></ul>
+          <button class="more" type="button" data-play="whale_spring_winter"><span class="tri" aria-hidden="true"></span>Play</button>
+        </div>
+        <div class="code"><pre>  // SERIES 03 WHALE — 구름 위를 헤엄치는 고래
+  readonly whale = new Series({
+    works: {
+      whale_spring_winter:   [2000, 550],   // 90s
+      cloud_whale_landscape: [3240, 1080],  // 30s
+      humpback_from_clouds:  [1920, 1080],  // 14s
+      cloud_whales:          [1920, 1080],  // 37.5s
+      whale_study:           [1920, 1080],  // 14.6s
+    },
+  });
+
+  // FEATURE 流麗 — 3840 × 2160, 60s
+  readonly yuryeo = new Work([3840, 2160], { fps: 30 });</pre></div>
+      </div>
+      <div class="gallery" data-gallery="whale"></div>
+    </div>
+
+    <div class="series" data-series="yuryeo" aria-labelledby="h-feature">
+      <div class="split">
+        <div class="cellbox stxt">
+          <p class="lbl">FEATURE · 3840 × 2160 · 60 SEC</p>
+          <h3 class="giant" id="h-feature" style="--em:5">Yuryeo</h3>
+          <p class="sub">유려 流麗 — 물 흐르듯 매끄럽고 아름답게</p>
+          <p class="desc">절벽에서 떨어지는 폭포의 움직임으로 자유와 가능성의 감각을 표현한 작품입니다. 2026년 7~8월 광화문 해치마당 미디어월에서 상영되었습니다.</p>
+          <ul class="chips"><li>16:9</li><li>3840 × 2160</li><li>30 FPS</li><li>60 SEC</li></ul>
+          <button class="more" type="button" data-play="yuryeo"><span class="tri" aria-hidden="true"></span>Play</button>
+        </div>
+        <figure class="fvid">
+          <button class="media" type="button" data-open="yuryeo" aria-label="유려 크게 보기"><video muted loop playsinline preload="none" poster="media/yuryeo.jpg" data-id="yuryeo"></video></button>
+          <figcaption class="cap"><b>Yuryeo 流麗</b><span class="spec">3840×2160 · 16:9 · 60s · 30fps</span><span class="sq" aria-hidden="true"></span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <nav class="wend" id="worksEnd" aria-label="이전·다음">
+      <a class="wnav prev" id="wPrev" href="#works"><span class="sq" aria-hidden="true"></span><span><small></small><b></b></span></a>
+      <a class="wnav next" id="wNext" href="#exhibition"><span><small></small><b></b></span><span class="sq" aria-hidden="true"></span></a>
+    </nav>
+  </section>
+
+  <!-- 03 EXHIBITION -->
+  <section class="page" data-page="exhibition" aria-labelledby="h-exh" hidden>
+    <div class="split rev">
+      <div class="cellbox stxt">
+        <p class="lbl">EXHIBITION · 2026 · 05 SHOWS</p>
+        <h2 class="giant" id="h-exh" style="--em:6.9">Exhibition</h2>
+        <p class="sub">전시</p>
+        <p class="desc">2026년 6~8월, 서울 광화문·마곡·강동과 도쿄에서 다섯 번의 전시에 참여했습니다. 현장에서 찍은 영상과 함께 정리했습니다.</p>
+        <p class="fine">마곡 · 강동 전시 경력 증명서 보유</p>
+      </div>
+      <div class="code"><pre>  async exhibit() {
+    // 2026 · 05 shows
+    await screen("2026.06", "강동 더리버몰", ["Cliff Waterfall"]);
+    await screen("2026.07", "마곡 MICE 르웨스트 C·D동",
+                 ["Ocean Whale", "Cliff Waterfall"]);
+    await screen("2026.07", "광화문 해치마당 미디어월", ["Yuryeo"]);
+    await screen("2026.08", "마곡 MICE 르웨스트 C·D동",
+                 ["Lasting Particles"]);
+    await screen("2026.08", "Tokyo · Hearts Expo 2026");
+  }
+}</pre></div>
+    </div>
+    <div class="exlist" id="exlist">
+      <div class="gallery exblock" data-gallery="ex_hearts" aria-label="Hearts Expo 2026"></div>
+      <div class="gallery exblock" data-gallery="ex_haechi" aria-label="해치마당 미디어월"></div>
+      <div class="gallery exblock" data-gallery="ex_magok" aria-label="마곡 MICE 르웨스트"></div>
+      <div class="gallery exblock" data-gallery="ex_gangdong" aria-label="강동 더리버몰"></div>
+    </div>
+  </section>
+
+  <!-- 05 CONTACT -->
+  <section class="page" data-page="contact" aria-labelledby="h-contact" hidden>
+    <div class="contact">
+      <div class="mq" aria-hidden="true"><div class="mq-track"><span>Commission</span><span>Commission</span><span>Commission</span><span>Commission</span><span>Commission</span><span>Commission</span></div></div>
+      <div class="contact-in">
+        <p class="lbl">CONTACT</p>
+        <h2 class="c-title" id="h-contact">건물 외벽, 매장 LED, 전시 공간에 맞는 영상을 제작합니다.</h2>
+        <div class="reach">
+          <div class="reach-card">
+            <span class="m">EMAIL</span>
+            <b class="addr" id="mailAddr">hikiwook@gmail.com</b>
+            <div class="reach-act">
+              <button class="cta" type="button" id="copyMail"><span class="tri" aria-hidden="true"></span><span id="copyLbl">주소 복사</span></button>
+              <a class="cta ghost" href="mailto:hikiwook@gmail.com">메일 쓰기 ↗</a>
+            </div>
+          </div>
+          <div class="reach-card">
+            <span class="m">INSTAGRAM</span>
+            <b class="addr">@kiukukim</b>
+            <div class="reach-act">
+              <a class="cta" href="https://www.instagram.com/kiukukim/" target="_blank" rel="noopener"><span class="tri" aria-hidden="true"></span>인스타그램 열기 ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="split">
+    <div class="code"><pre data-caret>const studio = new StudioKimKiwook();
+studio.render({ fit: ["facade", "anamorphic", "vertical"] });
+studio.contact({ email: "hikiwook@gmail.com", instagram: "@kiukukim" });</pre></div>
+    <div class="cellbox foot-r">
+      <a class="logo" href="#home" aria-label="스튜디오 김기욱 홈"><span class="logo-mark" aria-hidden="true">김</span><span class="logo-word"><b>스튜디오 김기욱</b><small>STUDIO KIM KIWOOK</small></span></a>
+      <p class="fine">{ © 2026 스튜디오 김기욱 // hikiwook@gmail.com // <a href="https://www.instagram.com/kiukukim/" target="_blank" rel="noopener">@kiukukim</a> }</p>
+    </div>
+  </div>
+</footer>
+
+<dialog id="viewer" aria-label="작품 보기">
+  <div class="vw">
+    <div class="vw-top">
+      <span class="vw-t" id="vwCur">//</span>
+      <button class="vw-close" id="vwClose" type="button" aria-label="닫기">✕</button>
+    </div>
+    <div class="vw-media"><video id="vwVideo" muted loop playsinline controls></video><img id="vwImg" alt="" hidden></div>
+    <div class="vw-bot">
+      <button class="vw-nav prev" id="vwPrev" type="button"><span class="sq" aria-hidden="true"></span><span>PREV<small id="vwPrevT"></small></span></button>
+      <div class="vw-info">
+        <div><h3 id="vwTitle"></h3><p class="spec" id="vwSpec"></p></div>
+        <div><p id="vwDesc"></p><p class="ex" id="vwEx"></p></div>
+      </div>
+      <button class="vw-nav next" id="vwNext" type="button"><span>NEXT<small id="vwNextT"></small></span><span class="sq" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(() => {
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const root = document.documentElement;
+const motion = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (!motion) root.classList.add("no-motion");
+let splashing = motion && !!document.getElementById("splash");
+try { history.scrollRestoration = "manual"; } catch (e) {}
+const BG = [255, 255, 255], ACC = [31, 60, 240];
+const mix = t => `rgb(${BG.map((p, i) => Math.round(p + (ACC[i] - p) * t)).join(",")})`;
+
+/* ---------- 작품 데이터 (원본 사양 + 미리보기 크기) ---------- */
+const W = {
+  blast_01: { t: "Blast 01", s: "blast", w: 720, h: 2160, d: 90, f: 30, pw: 640, ph: 1920, desc: "작품 속 두 공은 현실과 자아를 뜻한다. 서로 맞물리듯 움직이며 끊임없이 영향을 주고받는다. 사회와 내 자아가 방황하는 과정을 담은 작품." },
+  blast_02: { t: "Blast 02", s: "blast", w: 3840, h: 1280, d: 90, f: 30, pw: 1920, ph: 640, desc: "당시 내게 현실은 벽이었다. 나는 현실을 꿰뚫고 나아가려 한다고 생각했다. 하지만 두 공은 모두 비슷하게 움직인다. 어쩌면 내 자아 또한 현실의 흐름을 따라 흘러가고 있었는지도 모른다." },
+  blast_03: { t: "Blast 03 · Coexistence", s: "blast", w: 2560, h: 852, d: 50, f: 30, pw: 1920, ph: 640, desc: "현실과 자아는 같은 공간에 머문다. 서로 다른 방향으로 움직이면서도, 하나의 움직임이 남긴 파동은 다른 하나에게 닿는다. 그 사이에서 현실과 함께 존재할 수 있는 거리를 배워간다." },
+  blast_04: { t: "Blast 04 · Calmness", s: "blast", w: 3840, h: 1280, d: 41.7, f: 30, pw: 1920, ph: 640, desc: "현실과 자아의 움직임은 같은 물을 흔들고, 그 파동은 서로에게 되돌아간다. 끊임없이 밀려드는 현실 속에서 차분함을 지키려 애쓰는 나의 모습을 담았다." },
+  blast_05: { t: "Blast 05 · Reverberation", s: "blast", w: 2560, h: 853, d: 17.5, f: 30, pw: 1920, ph: 640, full: 1, desc: "현실과 부딪힌 순간보다 그 순간이 내 안에 남긴 울림이 더 클 때가 있다. 물결이 공간을 가득 채우고 나면 어디서 흔들림이 시작됐는지조차 알아보기 어렵다. — 음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
+  coex_wave: { t: "COEX Wave", s: "water", w: 1920, h: 1080, d: 18.6, f: 24, pw: 1552, ph: 756, desc: "코너형 LED를 위한 아나모픽 수조. 화면 모서리를 경계 삼아 파도가 부딪힙니다." },
+  cliff_waterfall: { t: "Cliff Waterfall", s: "water", w: 1080, h: 1920, d: 22.6, f: 24, pw: 1080, ph: 1920, ex: "2026.06 강동 더리버몰 · 2026.07 마곡 MICE 르웨스트 미디어파사드", desc: "이끼 낀 절벽을 타고 쏟아지는 에메랄드빛 폭포." },
+  up_gravity: { t: "Up Gravity", s: "water", w: 1450, h: 2560, d: 37.5, f: 24, pw: 1088, ph: 1920, desc: "아래에서 위로, 중력을 거슬러 솟구치는 물의 벽." },
+  wave_district: { t: "Wave from District", s: "water", w: 1440, h: 2560, d: 30, f: 24, pw: 1080, ph: 1920, desc: "세로형 화면을 가득 채우며 밀려오는 흰 파도." },
+  pts_wave: { t: "PTS Wave", s: "water", w: 1920, h: 1080, d: 150, f: 24, pw: 1920, ph: 264, desc: "초광폭 띠 화면 위로 구체가 지나가며 색을 머금은 물결을 일으킵니다." },
+  water_wave: { t: "Water Wave", s: "water", w: 1920, h: 1080, d: 150, f: 24, pw: 1920, ph: 264, desc: "PTS Wave의 흑백 버전. 크롬 구체와 물보라의 질감에 집중했습니다." },
+  whale_spring_winter: { t: "Whale’s Dream 고래의 꿈", s: "whale", w: 2000, h: 550, d: 90, f: 30, pw: 1920, ph: 528, desc: "내게 고래는 고독한 존재다. 작품 속 고래는 사계절의 풍경을 유영하고 하늘을 날며, 그 시간을 대신 여행한다. 느리게 보여도 고래는 자신만의 속도로 계속 나아가고 있다." },
+  cloud_whale_landscape: { t: "Cloud Whale Landscape", s: "whale", w: 3240, h: 1080, d: 30, f: 24, pw: 1920, ph: 640, desc: "끝없이 펼쳐진 구름바다 위를 유영하는 고래들." },
+  humpback_clouds: { t: "Humpback from Clouds", s: "whale", w: 1920, h: 1080, d: 14, f: 29.97, pw: 1920, ph: 724, desc: "역광 속 구름을 뚫고 나오는 혹등고래." },
+  cloud_whales: { t: "Cloud Whales", s: "whale", w: 1920, h: 1080, d: 37.5, f: 30, pw: 1920, ph: 640, desc: "푸른 하늘과 뭉게구름 사이를 나란히 헤엄치는 세 마리의 고래." },
+  whale_comp: { t: "Whale Study", s: "whale", w: 1920, h: 1080, d: 14.6, f: 24, pw: 1920, ph: 500, desc: "구름 위 고래의 움직임 스터디." },
+  yuryeo: { t: "Yuryeo 流麗", s: "feature", w: 3840, h: 2160, d: 60, f: 30, pw: 1920, ph: 1080, ex: "2026.07–08 광화문 해치마당 미디어월", desc: "절벽에서 떨어지는 폭포의 움직임으로 자유와 가능성의 감각을 표현한 작품." }
+};
+// 갤러리 줄 — ["a","b"]: 같은 높이로 폭을 채운다
+//   { stack:[가로…], tall:"세로" }: 가로 작품을 쌓고, 그 높이만큼 세로 작품을 옆에 크게
+//   { tall:[세로…], note }: 세로 작품을 화면 높이에 맞춰 크게, 남는 폭에 설명
+const LAYOUT = {
+  blast: {
+    wide: [{ stack: ["blast_02", "blast_03", "blast_04"], tall: "blast_01" }, ["blast_05"]],
+    narrow: [["blast_02"], ["blast_03"], ["blast_04"], ["blast_05"], { tall: ["blast_01"], note: "blast" }]
+  },
+  water: {
+    wide: [["coex_wave"], { tall: ["cliff_waterfall", "up_gravity", "wave_district"], note: "water" }, ["pts_wave"], ["water_wave"]],
+    narrow: [["coex_wave"], ["cliff_waterfall", "up_gravity"], { tall: ["wave_district"], note: "water" }, ["pts_wave"], ["water_wave"]]
+  },
+  whale: {
+    wide: [["whale_spring_winter"], ["cloud_whale_landscape", "humpback_clouds"], ["cloud_whales", "whale_comp"]],
+    narrow: [["whale_spring_winter"], ["cloud_whale_landscape"], ["humpback_clouds"], ["cloud_whales"], ["whale_comp"]]
+  }
+};
+const NOTES = {
+  blast: { k: "VERTICAL · PILLAR", r: "1:3", t: "기둥형 화면", d: "세로 1:3 기둥형 LED를 위한 버전입니다. 위아래 두 수조가 시차를 두고 터집니다." },
+  water: { k: "VERTICAL · 03 WORKS", r: "9:16", t: "세로형 화면", d: "세로로 긴 LED와 사이니지에 맞춰 9:16으로 렌더링했습니다. Cliff Waterfall은 2026년 강동 더리버몰과 마곡 MICE 르웨스트에서 송출됐습니다." }
+};
+const GROUP = { blast: "SERIES 01 · WATER BLAST", water: "SERIES 02 · WATER", whale: "SERIES 03 · WHALE", feature: "FEATURE · YURYEO", exhibit: "EXHIBITION" };
+// 전시 — 현장 영상 (media/ex)
+const EXH = {
+  hearts: { k: "01 · TOKYO, JAPAN", big: "Tokyo", em: 3.7, when: "2026.08.06 – 08.07", title: "Hearts Expo 2026",
+    sub: "영상 투사 면적 820㎡ 몰입형 공간 — ㄷ자형 3면 스크린 + 바닥", where: "도쿄 오타구 산업플라자 PiO (大田区産業プラザPiO)", host: "주최 株式会社ハーツ",
+    link: "https://hearts-inc.com/expo2026/" },
+  haechi: { k: "02 · SEOUL, 광화문", big: "Gwanghwamun", em: 8.8, when: "2026.07.01 – 08.31", title: "해치마당 미디어월",
+    sub: "2026 두 번째 전시 「여름, 잠시 다른 세계」", where: "광화문역 9번 출구 진입로 해치마당 미디어월", host: "주최 서울특별시 디자인정책관 도시경관담당관",
+    works: [["yuryeo", "Yuryeo 流麗"]], link: "https://news.seoul.go.kr/culture/archives/533444" },
+  magok: { k: "03 · SEOUL, 마곡", big: "Magok", em: 3.8, when: "2026.07 「감각의 표류」 · 2026.08 「여름의 결」", title: "마곡 MICE 르웨스트 미디어파사드",
+    sub: "7월 Ocean Whale · Cliff Waterfall / 8월 Lasting Particles", where: "마곡 MICE 르웨스트 C동·D동 · 일몰 후–22시, 매시 정각 20분 송출", host: "주관 VIDO · 전시 경력 증명서",
+    works: [["cliff_waterfall", "Cliff Waterfall"]] },
+  gangdong: { k: "04 · SEOUL, 강동", big: "Gangdong", em: 5.8, when: "2026.06.01 – 06.30", title: "강동리버몰 미디어아트 전시",
+    sub: "", where: "강동 더리버몰", host: "주관 VIDO · 전시 경력 증명서",
+    works: [["cliff_waterfall", "Cliff Waterfall"]] }
+};
+const EXV = { // id: [전시, 파일, 설명, w, h, 이미지?]
+  ex_hearts: ["hearts", "설치 전경", 720, 1280], ex_gw1: ["haechi", "설치 전경 01", 1280, 720], ex_gw2: ["haechi", "설치 전경 02", 1280, 720],
+  ex_gw3: ["haechi", "설치 전경 03", 720, 1280], ex_gwposter: ["haechi", "공식 전시 포스터", 900, 1652, 1],
+  ex_magok2: ["magok", "설치 전경 01", 720, 1280], ex_magok3: ["magok", "설치 전경 02", 720, 1280],
+  ex_ikea1: ["gangdong", "설치 전경 01", 720, 1280], ex_ikea2: ["gangdong", "설치 전경 02", 720, 1280], ex_ikea3: ["gangdong", "설치 전경 03 — 더리버몰 외벽", 1280, 720]
+};
+Object.entries(EXV).forEach(([id, [g, cap, pw, ph, img]]) => {
+  const x = EXH[g];
+  W[id] = { t: x.title, s: "exhibit", g, cap, pw, ph, kind: img ? "image" : "video", src: `media/ex/${id}.${img ? "jpg" : "mp4"}`,
+    when: x.when, where: x.where, desc: `${cap} — ${x.title}${x.sub ? " · " + x.sub : ""}` };
+});
+const EX_ORDER = Object.keys(EXV);
+Object.assign(LAYOUT, {
+  ex_hearts: { wide: [{ tall: ["ex_hearts"], info: "hearts" }], narrow: [{ info: "hearts" }, { center: "ex_hearts" }] },
+  ex_haechi: { wide: [{ tall: ["ex_gw3", "ex_gwposter"], info: "haechi" }, ["ex_gw1", "ex_gw2"]], narrow: [{ info: "haechi" }, ["ex_gw1"], ["ex_gw2"], ["ex_gw3", "ex_gwposter"]] },
+  ex_magok: { wide: [{ tall: ["ex_magok2", "ex_magok3"], info: "magok" }], narrow: [{ info: "magok" }, ["ex_magok2", "ex_magok3"]] },
+  ex_gangdong: { wide: [{ tall: ["ex_ikea1", "ex_ikea2"], info: "gangdong" }, ["ex_ikea3"]], narrow: [{ info: "gangdong" }, ["ex_ikea3"], ["ex_ikea1", "ex_ikea2"]] }
+});
+const ORDER = ["blast_02", "blast_03", "blast_04", "blast_01", "blast_05", "coex_wave", "cliff_waterfall", "up_gravity", "wave_district", "pts_wave", "water_wave", "whale_spring_winter", "cloud_whale_landscape", "humpback_clouds", "cloud_whales", "whale_comp", "yuryeo"];
+const ratio = (w, h) => {
+  const r = w / h;
+  for (const [v, l] of [[3, "3:1"], [16 / 9, "16:9"], [9 / 16, "9:16"], [1 / 3, "1:3"], [40 / 11, "40:11"]]) if (Math.abs(r - v) / v < 0.03) return l;
+  return r >= 1 ? r.toFixed(2) + ":1" : "1:" + (1 / r).toFixed(2);
+};
+const secs = d => (Number.isInteger(d) ? d : d.toFixed(1)) + "s";
+const spec = w => `${w.w}×${w.h} · ${ratio(w.w, w.h)} · ${secs(w.d)} · ${w.f}fps`;
+
+/* ---------- 영상 재생: 화면에 보일 때만 ---------- */
+let viewerOpen = false;
+const visible = new Set();
+const vio = new IntersectionObserver(es => {
+  es.forEach(e => {
+    const v = e.target;
+    if (e.isIntersecting) { visible.add(v); if (motion && !viewerOpen) v.play().catch(() => {}); }
+    else { visible.delete(v); v.pause(); }
+  });
+}, { rootMargin: "120px 0px", threshold: 0.15 });
+const watch = v => vio.observe(v);
+$$(".fvid video").forEach(watch);
+
+/* ---------- 갤러리 — 세로 작품은 자르지 않고 크게 ---------- */
+const mqN = matchMedia("(max-width: 700px)");
+// 목록에서 도는 8초 루프 — 휴대폰은 가벼운 버전(media/m), 크게 보기는 media/hq
+const loopSrc = id => `media/${mqN.matches ? "m/" : ""}${id}.mp4`;
+const setFeature = () => $$(".fvid video[data-id]").forEach(v => { const s = loopSrc(v.dataset.id); if (v.getAttribute("src") !== s) v.setAttribute("src", s); });
+setFeature();
+mqN.addEventListener("change", setFeature);
+const arOf = id => W[id].pw / W[id].ph;
+const div = (cls, html) => { const d = document.createElement("div"); d.className = cls; if (html) d.innerHTML = html; return d; };
+function tile(id) {
+  const w = W[id];
+  const fig = document.createElement("figure");
+  fig.className = "tile";
+  fig.style.setProperty("--ar", `${w.pw} / ${w.ph}`);
+  const ex = w.s === "exhibit";
+  const m = w.kind === "image" ? `<img src="${w.src}" alt="${esc(w.cap)}" loading="lazy">`
+    : `<video muted loop playsinline preload="none" poster="${ex ? w.src.replace(/\.mp4$/, ".jpg") : `media/${id}.jpg`}" src="${ex ? w.src : loopSrc(id)}"></video>`;
+  fig.innerHTML = `<button class="media" type="button" data-open="${id}" aria-label="${esc(ex ? w.cap : w.t)} 크게 보기">${w.ex ? '<span class="badge">EXHIBITED 2026</span>' : ""}${m}</button><figcaption class="cap"><b>${esc(ex ? w.cap : w.t)}</b><span class="spec">${ex ? (w.kind === "image" ? "IMAGE" : "VIDEO · 현장") : spec(w)}</span><span class="sq" aria-hidden="true"></span></figcaption>`;
+  return fig;
+}
+function infoCell(key, full) {
+  const x = EXH[key];
+  const works = (x.works || []).map(([id, t]) => `<button type="button" data-open="${id}">${esc(t)}</button>`).join(" · ");
+  return div("exinfo" + (full ? " full" : ""), `<span class="k">${esc(x.k)}</span><p class="cd">// ${esc(x.when)}</p><h3>${esc(x.title)}</h3>${x.sub ? `<p class="xs">${esc(x.sub)}</p>` : ""}<p class="xp">${esc(x.where)}<br>${esc(x.host)}</p>${works ? `<p class="xw">WORK — ${works}</p>` : ""}${x.link ? `<a class="xl" href="${x.link}" target="_blank" rel="noopener">전시 소개 ↗</a>` : ""}<b class="big" style="--em:${x.em}">${esc(x.big)}</b>`);
+}
+function buildGalleries() {
+  const mode = mqN.matches ? "narrow" : "wide";
+  $$("[data-gallery]").forEach(g => {
+    $$("video", g).forEach(v => { vio.unobserve(v); visible.delete(v); });
+    g.textContent = "";
+    LAYOUT[g.dataset.gallery][mode].forEach(r => {
+      let row;
+      if (Array.isArray(r)) {
+        row = div("grow");
+        r.forEach(id => { const f = tile(id); f.style.flex = `${(arOf(id) * 100).toFixed(2)} 1 0`; row.appendChild(f); });
+      } else if (r.stack) {
+        // 세로 작품의 폭을, 옆에 쌓은 가로 작품들의 높이(캡션 36px · 선 1px 포함)에 꼭 맞춘다
+        const t = arOf(r.tall), k = t * r.stack.reduce((s, id) => s + 1 / arOf(id), 0), n = r.stack.length;
+        const pct = (k / (1 + k)) * 100, px = (t * (n - 1) * 37 - k) / (1 + k);
+        row = div("grow bento");
+        const st = div("stack");
+        r.stack.forEach(id => st.appendChild(tile(id)));
+        const f = tile(r.tall);
+        f.classList.add("fill");
+        f.style.flex = `0 0 calc(${pct.toFixed(3)}% + ${px.toFixed(2)}px)`;
+        row.append(st, f);
+      } else if (r.info && !r.tall) {
+        row = div("grow");
+        row.appendChild(infoCell(r.info, true));
+      } else if (r.center) {
+        row = div("grow crow");
+        const f = tile(r.center);
+        f.style.setProperty("--r", arOf(r.center).toFixed(4));
+        row.appendChild(f);
+      } else {
+        row = div("grow prow" + (r.tall.length === 1 && !r.info ? " solo" : ""));
+        r.tall.forEach(id => {
+          const f = tile(id), a = arOf(id);
+          f.style.setProperty("--r", a.toFixed(4));
+          if (r.tall.length > 1 || r.info) f.style.flex = `${(a * 100).toFixed(2)} 1 calc(var(--ph) * ${a.toFixed(4)})`;
+          row.appendChild(f);
+        });
+        if (r.info) row.prepend(infoCell(r.info));
+        const N = NOTES[r.note];
+        if (N) row.appendChild(div("pnote", `<span class="k">${N.k}</span><b class="r">${N.r}</b><b class="t">${N.t}</b><p>${N.d}</p>`));
+      }
+      g.appendChild(row);
+    });
+    $$("video", g).forEach(watch);
+  });
+}
+buildGalleries();
+mqN.addEventListener("change", buildGalleries);
+
+/* ---------- 뷰어 ---------- */
+const dlg = $("#viewer"), vv = $("#vwVideo"), vi = $("#vwImg");
+let cur = null;
+const listOf = id => (W[id].s === "exhibit" ? EX_ORDER : ORDER);
+function show(id) {
+  cur = id;
+  const w = W[id], L = listOf(id), i = L.indexOf(id), n = L.length, ex = w.s === "exhibit";
+  const P = W[L[(i - 1 + n) % n]], N = W[L[(i + 1) % n]];
+  const img = w.kind === "image";
+  vv.hidden = img; vi.hidden = !img;
+  if (img) { vv.pause(); vv.removeAttribute("src"); vi.src = w.src; vi.alt = w.cap; }
+  else {
+    vi.removeAttribute("src");
+    vv.poster = ex ? w.src.replace(/\.mp4$/, ".jpg") : `media/${id}.jpg`;
+    vv.src = ex ? w.src : `media/hq/${id}.mp4`;
+    if (motion) vv.play().catch(() => {});
+  }
+  $("#vwCur").textContent = `// ${GROUP[w.s]} — ${w.t.toUpperCase()}`;
+  $("#vwPrevT").textContent = P.s === "exhibit" ? P.cap : P.t;
+  $("#vwNextT").textContent = N.s === "exhibit" ? N.cap : N.t;
+  $("#vwTitle").textContent = w.t;
+  $("#vwSpec").textContent = ex ? `${w.when} · ${w.where}` : `원본 ${spec(w)} · ${w.full || w.d <= 16 ? "전체 영상" : "16초 발췌"}`;
+  $("#vwDesc").textContent = w.desc;
+  $("#vwEx").textContent = w.ex ? `전시 — ${w.ex}` : "";
+}
+function openViewer(id) {
+  if (!W[id]) return;
+  viewerOpen = true;
+  visible.forEach(v => v.pause());
+  field.pause();
+  if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+  show(id);
+}
+const stepView = d => { const L = listOf(cur), i = L.indexOf(cur), n = L.length; show(L[(i + d + n) % n]); };
+dlg.addEventListener("close", () => {
+  viewerOpen = false;
+  vv.pause(); vv.removeAttribute("src"); vv.load(); vi.removeAttribute("src");
+  if (motion) visible.forEach(v => v.play().catch(() => {}));
+  field.resume();
+});
+$("#vwClose").addEventListener("click", () => dlg.close());
+$("#vwPrev").addEventListener("click", () => stepView(-1));
+$("#vwNext").addEventListener("click", () => stepView(1));
+dlg.addEventListener("keydown", e => {
+  if (e.target === vv) return;
+  if (e.key === "ArrowRight") { e.preventDefault(); stepView(1); }
+  if (e.key === "ArrowLeft") { e.preventDefault(); stepView(-1); }
+});
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-open],[data-play]");
+  if (b) openViewer(b.dataset.open || b.dataset.play);
+});
+
+/* ---------- 코드 창: 줄 번호가 이어지고, 보이면 타이핑된다 ---------- */
+const TOK = /(\/\/.*$|^\s*\/\*\*.*$|^\s*\*.*$)|("(?:[^"\\]|\\.)*"?)|\b(class|extends|readonly|new|const|async|await|constructor|super|this|return)\b|(\b\d+(?:\.\d+)?\b)/g;
+function tok(s) {
+  let out = "", last = 0, m;
+  TOK.lastIndex = 0;
+  while ((m = TOK.exec(s))) {
+    if (!m[0]) { TOK.lastIndex++; continue; }
+    out += esc(s.slice(last, m.index));
+    const c = m[1] ? "t-c" : m[2] ? "t-s" : m[3] ? "t-k" : "t-n";
+    out += `<span class="${c}">${esc(m[0])}</span>`;
+    last = TOK.lastIndex;
+  }
+  return out + esc(s.slice(last));
+}
+const typing = new Set();
+let traf = 0, lineNo = 1;
+const wins = $$(".code pre").map(pre => {
+  const lines = pre.textContent.replace(/\s+$/, "").split("\n");
+  pre.textContent = "";
+  const rows = lines.map(() => {
+    const r = document.createElement("div");
+    r.className = "cl";
+    r.innerHTML = `<span class="n">${lineNo++}.</span><span class="c"></span>`;
+    pre.appendChild(r);
+    return r;
+  });
+  return { pre, lines, rows, li: 0, ci: 0, state: 0, caret: pre.hasAttribute("data-caret") };
+});
+function finish(w) {
+  typing.delete(w);
+  w.state = 2;
+  w.rows.forEach((r, i) => { r.classList.remove("cur"); r.lastChild.innerHTML = tok(w.lines[i]); });
+  if (w.caret) w.rows[w.rows.length - 1].lastChild.insertAdjacentHTML("beforeend", '<span class="caret end"></span>');
+}
+wins.forEach(w => {
+  if (motion) w.rows.forEach((r, i) => { r.lastChild.innerHTML = `<span class="t-g">${esc(w.lines[i])}</span>`; });
+  else finish(w);
+});
+function advance(w) {
+  let line = w.lines[w.li];
+  while (line !== undefined && !line.trim()) { w.rows[w.li].lastChild.innerHTML = ""; line = w.lines[++w.li]; }
+  if (line === undefined) { finish(w); return true; }
+  if (w.ci === 0) w.ci = line.match(/^\s*/)[0].length;
+  w.ci++;
+  const r = w.rows[w.li];
+  r.classList.add("cur");
+  if (w.ci >= line.length) {
+    r.classList.remove("cur");
+    r.lastChild.innerHTML = tok(line);
+    w.li++; w.ci = 0;
+    if (w.li >= w.lines.length) { finish(w); return true; }
+  } else {
+    r.lastChild.innerHTML = tok(line.slice(0, w.ci)) + '<span class="caret"></span><span class="t-g">' + esc(line.slice(w.ci)) + "</span>";
+  }
+  return false;
+}
+function typeTick() {
+  traf = 0;
+  typing.forEach(w => { for (let k = 0; k < 3; k++) if (advance(w)) break; });
+  if (typing.size) traf = requestAnimationFrame(typeTick);
+}
+const tio = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting || splashing) return;
+  const w = wins.find(x => x.pre === e.target);
+  if (!w || w.state) return;
+  w.state = 1; typing.add(w);
+  if (!traf) traf = requestAnimationFrame(typeTick);
+  tio.unobserve(e.target);
+}), { threshold: 0.3 });
+const watchCode = () => wins.forEach(w => { if (!w.state) { tio.unobserve(w.pre); tio.observe(w.pre); } });
+watchCode();
+
+/* ---------- WORKS: 0/1 파사드 — 영상 프레임을 이진 문자로 ---------- */
+const field = (() => {
+  const band = $("#band"), cvs = $("#field"), vid = $("#fieldVideo"), ctx = cvs.getContext("2d");
+  const sc = document.createElement("canvas"), sx = sc.getContext("2d", { willReadFrequently: true });
+  const SRC = [{ id: "whale_spring_winter", mode: "whale" }, { id: "blast_02", mode: "water" }, { id: "blast_03", mode: "water" }];
+  const COL = ["#D6D6D6", mix(0.3), mix(0.52), mix(0.78), mix(1)];
+  let si = 0, picked = false, cols = 0, rows = 0, n = 0, m, lv, bits, atlas, aw = 0, ah = 0, fx = 0, fy = 0;
+  let poster = null, vReady = false, inView = false, paused = false, raf = 0, last = 0, broken = false;
+  function buildAtlas() {
+    fx = cvs.width / cols; fy = cvs.height / rows; aw = Math.ceil(fx); ah = Math.ceil(fy);
+    atlas = document.createElement("canvas"); atlas.width = aw * 2; atlas.height = ah * 5;
+    const a = atlas.getContext("2d");
+    a.font = `500 ${Math.round(fy * 0.82)}px "IBM Plex Mono", ui-monospace, monospace`;
+    a.textAlign = "center"; a.textBaseline = "middle";
+    for (let k = 0; k < 5; k++) { a.fillStyle = COL[k]; a.fillText("0", aw * 0.5, ah * (k + 0.5)); a.fillText("1", aw * 1.5, ah * (k + 0.5)); }
+  }
+  function size() {
+    const r = band.getBoundingClientRect();
+    if (!r.width || !r.height) return;
+    const dpr = Math.min(2, window.devicePixelRatio || 1), narrow = r.width < 700;
+    const cw = narrow ? 5.4 : 6.4, ch = narrow ? 9 : 10.5;
+    cols = Math.max(12, Math.floor(r.width / cw)); rows = Math.max(6, Math.floor(r.height / ch)); n = cols * rows;
+    cvs.width = Math.round(r.width * dpr); cvs.height = Math.round(r.height * dpr);
+    sc.width = cols; sc.height = rows;
+    m = new Float32Array(n); lv = new Uint8Array(n); bits = new Uint8Array(n);
+    for (let i = 0; i < n; i++) bits[i] = Math.random() < 0.5 ? 1 : 0;
+    buildAtlas();
+    $("#gridLabel").textContent = `${cols} × ${rows} CELLS`;
+    frame();
+  }
+  function sample() {
+    const src = vReady ? vid : poster && poster.complete && poster.naturalWidth ? poster : null;
+    if (!src || !n) return false;
+    const sw = src.videoWidth || src.naturalWidth, sh = src.videoHeight || src.naturalHeight, ta = cvs.width / cvs.height;
+    let cw = sw, ch = sw / ta;
+    if (ch > sh) { ch = sh; cw = sh * ta; }
+    sx.drawImage(src, (sw - cw) / 2, (sh - ch) / 2, cw, ch, 0, 0, cols, rows);
+    let d;
+    try { d = sx.getImageData(0, 0, cols, rows).data; } catch (e) { fail(); return false; }
+    const whale = SRC[si].mode === "whale";
+    for (let i = 0, j = 0; i < n; i++, j += 4) {
+      const r = d[j] / 255, g = d[j + 1] / 255, b = d[j + 2] / 255;
+      const mx = Math.max(r, g, b), mn = Math.min(r, g, b), L = 0.2126 * r + 0.7152 * g + 0.0722 * b, S = mx > 0 ? (mx - mn) / mx : 0;
+      m[i] = whale ? (1 - L) * (1 - L) * (1 - S) * (1 - S) * (1 - S) : S * L;
+    }
+    const s = Float32Array.from(m).sort();
+    if (s[n - 1] - s[0] < 1e-4) { lv.fill(0); return true; }
+    const q = p => s[Math.min(n - 1, Math.floor(p * n))];
+    const a = q(0.58), b = q(0.74), c = q(0.86), e = q(0.94);
+    for (let i = 0; i < n; i++) { const v = m[i]; lv[i] = v > e ? 4 : v > c ? 3 : v > b ? 2 : v > a ? 1 : 0; }
+    return true;
+  }
+  function draw() {
+    ctx.fillStyle = "#FFFFFF"; ctx.fillRect(0, 0, cvs.width, cvs.height);
+    for (let y = 0, i = 0; y < rows; y++) {
+      const dy = Math.round(y * fy);
+      for (let x = 0; x < cols; x++, i++) ctx.drawImage(atlas, bits[i] * aw, lv[i] * ah, aw, ah, Math.round(x * fx), dy, aw, ah);
+    }
+  }
+  function frame() { if (!broken && sample()) draw(); }
+  function loop(t) {
+    raf = 0;
+    if (!motion || !inView || paused || broken || document.hidden) return;
+    if (t - last > 80) { last = t; const f = (n * 0.025) | 0; for (let k = 0; k < f; k++) bits[(Math.random() * n) | 0] ^= 1; frame(); }
+    raf = requestAnimationFrame(loop);
+  }
+  const kick = () => { if (!raf && motion && inView && !paused && !broken) raf = requestAnimationFrame(loop); };
+  const playV = () => { if (motion && inView && !paused && !document.hidden) vid.play().catch(() => {}); else vid.pause(); };
+  function fail() { broken = true; band.classList.add("fallback"); playV(); }
+  function setSrc(i, user) {
+    si = i; if (user) picked = true;
+    const s = SRC[i], w = W[s.id];
+    vReady = false;
+    poster = new Image(); poster.onload = () => { if (!vReady) frame(); }; poster.src = `media/${s.id}.jpg`;
+    vid.poster = `media/${s.id}.jpg`; vid.src = `media/m/${s.id}.mp4`;
+    playV();
+    $("#srcLabel").textContent = `SRC ${s.id}.mp4 · ${w.w}×${w.h} · ${w.t}`;
+    $$(".srcs button").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.src === i)));
+    $("#bandHit").setAttribute("aria-label", `${w.t} 크게 보기`);
+  }
+  vid.addEventListener("loadeddata", () => { vReady = true; frame(); kick(); });
+  $$(".srcs button").forEach(b => b.addEventListener("click", () => setSrc(+b.dataset.src, true)));
+  $("#bandHit").addEventListener("click", () => openViewer(SRC[si].id));
+  new ResizeObserver(size).observe(band);
+  new IntersectionObserver(es => { inView = es[0].isIntersecting; playV(); kick(); }).observe(band);
+  document.addEventListener("visibilitychange", () => { playV(); kick(); });
+  setInterval(() => { if (motion && inView && !paused && !picked && !document.hidden) setSrc((si + 1) % SRC.length); }, 16000);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if (n) { buildAtlas(); frame(); } });
+  setSrc(0);
+  return { pause() { paused = true; playV(); }, resume() { paused = false; playV(); kick(); } };
+})();
+
+/* ---------- HOME: 0/1 수면 — 클릭하면 물방울, 드래그하면 물결 ---------- */
+const pond = (() => {
+  const stage = $("#stage"), cvs = $("#pond"), ctx = cvs.getContext("2d"), logo = $(".stage .logo"), hint = $("#dropHint");
+  const CELL = 14;
+  // 0: 잔잔한 수면  1-4: 마루(1, 코발트)  5-6: 골(0, 회색)
+  const COL = ["#E6E6E6", mix(0.32), mix(0.55), mix(0.8), mix(1), "#CFCFCF", "#A9A9A9"];
+  let cols = 0, rows = 0, n = 0, A, B, D, bits, atlas, base, bctx, aw = 0, ah = 0, sx = 1, raf = 0, energy = 0;
+  let reveal = motion ? 0 : -1, rcx = 0, rcy = 0, inView = false, lastX = -1, lastY = -1, lastUser = 0, introDone = !motion;
+  if (matchMedia("(pointer: coarse)").matches) hint.textContent = "{ TAP · SWIPE // 물결 일으키기 }";
+  logo.addEventListener("animationend", e => { if (e.target === logo) logo.classList.remove("bob"); });
+
+  function buildAtlas() {
+    aw = Math.ceil(CELL * sx); ah = aw;
+    atlas = document.createElement("canvas"); atlas.width = aw * 2; atlas.height = ah * COL.length;
+    const a = atlas.getContext("2d");
+    a.font = `500 ${Math.round(CELL * sx * 0.74)}px "IBM Plex Mono", ui-monospace, monospace`;
+    a.textAlign = "center"; a.textBaseline = "middle";
+    COL.forEach((c, k) => { a.fillStyle = c; a.fillText("0", aw * 0.5, ah * (k + 0.52)); a.fillText("1", aw * 1.5, ah * (k + 0.52)); });
+  }
+  const px = i => Math.round(i * CELL * sx);
+  function paintBaseCell(k) {
+    const i = k % cols, j = (k / cols) | 0;
+    bctx.fillRect(px(i), px(j), aw, ah);
+    bctx.drawImage(atlas, bits[k] * aw, 0, aw, ah, px(i), px(j), aw, ah);
+  }
+  function buildBase() {
+    base = document.createElement("canvas"); base.width = cvs.width; base.height = cvs.height;
+    bctx = base.getContext("2d"); bctx.fillStyle = "#FFFFFF"; bctx.fillRect(0, 0, base.width, base.height);
+    for (let k = 0; k < n; k++) paintBaseCell(k);
+  }
+  function build() {
+    const r = stage.getBoundingClientRect();
+    if (!r.width || !r.height) return;
+    sx = Math.min(2, window.devicePixelRatio || 1);
+    const nc = Math.ceil(r.width / CELL), nr = Math.ceil(r.height / CELL);
+    if (nc !== cols || nr !== rows) {
+      const nA = new Float32Array(nc * nr), nB = new Float32Array(nc * nr), nb = new Uint8Array(nc * nr);
+      for (let i = 0; i < nb.length; i++) nb[i] = Math.random() < 0.5 ? 1 : 0;
+      if (A) {
+        const oc = Math.min(cols, nc), or = Math.min(rows, nr);
+        for (let j = 0; j < or; j++) for (let i = 0; i < oc; i++) { nA[j * nc + i] = A[j * cols + i]; nB[j * nc + i] = B[j * cols + i]; }
+      }
+      A = nA; B = nB; bits = nb; cols = nc; rows = nr; n = nc * nr;
+      // 가장자리는 물결을 흡수한다 (반사 없이 화면 밖으로 흘러간다)
+      D = new Float32Array(n);
+      for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) {
+        const e = Math.min(i, j, cols - 1 - i, rows - 1 - j);
+        D[j * cols + i] = e >= 6 ? 0.982 : 0.982 * (0.8 + e * 0.033);
+      }
+    }
+    cvs.width = Math.round(r.width * sx); cvs.height = Math.round(r.height * sx);
+    rcx = cols / 2; rcy = rows / 2;
+    buildAtlas(); buildBase(); draw();
+  }
+  function draw() {
+    if (!base) return;
+    ctx.globalCompositeOperation = "source-over";
+    ctx.drawImage(base, 0, 0);
+    ctx.fillStyle = "#FFFFFF";
+    for (let j = 0, k = 0; j < rows; j++) {
+      const y = px(j);
+      for (let i = 0; i < cols; i++, k++) {
+        const h = A[k];
+        let row, bit;
+        if (h > 22) { row = h > 190 ? 4 : h > 110 ? 3 : h > 55 ? 2 : 1; bit = 1; }
+        else if (h < -22) { row = h < -90 ? 6 : 5; bit = 0; }
+        else continue;
+        const x = px(i);
+        ctx.fillRect(x, y, aw, ah);
+        ctx.drawImage(atlas, bit * aw, row * ah, aw, ah, x, y, aw, ah);
+      }
+    }
+    if (reveal >= 0) {
+      ctx.save();
+      ctx.globalCompositeOperation = "destination-in";
+      ctx.beginPath(); ctx.arc(rcx * CELL * sx, rcy * CELL * sx, Math.max(0.01, reveal * CELL * sx), 0, Math.PI * 2); ctx.fill();
+      ctx.restore();
+    }
+  }
+  function step() {
+    let e = 0;
+    for (let j = 1; j < rows - 1; j++) {
+      const o = j * cols;
+      for (let i = 1; i < cols - 1; i++) {
+        const k = o + i;
+        const v = ((A[k - 1] + A[k + 1] + A[k - cols] + A[k + cols]) * 0.5 - B[k]) * D[k];
+        B[k] = v; e += v < 0 ? -v : v;
+      }
+    }
+    const t = A; A = B; B = t;
+    energy = e;
+  }
+  function loop() {
+    raf = 0;
+    if (!inView || document.hidden) return;
+    step();
+    if (reveal >= 0 && introDone) { reveal += 1.1; if (reveal > Math.hypot(cols, rows)) reveal = -1; }
+    draw();
+    if (energy > n * 0.08 || (reveal >= 0 && introDone)) raf = requestAnimationFrame(loop);
+    else { A.fill(0); B.fill(0); draw(); }
+  }
+  const kick = () => { if (!raf && motion && n && inView) raf = requestAnimationFrame(loop); };
+  function disturb(x, y, amp, rad) {
+    if (!n) return;
+    const ci = x / CELL, cj = y / CELL;
+    for (let j = Math.max(1, Math.floor(cj - rad)); j <= Math.min(rows - 2, Math.ceil(cj + rad)); j++) {
+      for (let i = Math.max(1, Math.floor(ci - rad)); i <= Math.min(cols - 2, Math.ceil(ci + rad)); i++) {
+        const d = Math.hypot(i - ci, j - cj);
+        if (d <= rad) A[j * cols + i] += amp * (1 - d / (rad + 0.6));
+      }
+    }
+    kick();
+  }
+  const local = e => { const r = stage.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+  const scale = () => Math.max(0.55, Math.min(1, cols / 100));
+  const userDrop = (x, y) => { lastUser = performance.now(); disturb(x, y, 900 * scale(), 1.9); };
+
+  stage.addEventListener("pointerdown", e => {
+    if (!motion || !introDone || e.target.closest("button")) return;
+    const [x, y] = local(e); userDrop(x, y);
+  });
+  stage.addEventListener("pointermove", e => {
+    if (!motion || !introDone) return;
+    const [x, y] = local(e);
+    if (lastX >= 0) {
+      const d = Math.hypot(x - lastX, y - lastY);
+      if (d > 3) { lastUser = performance.now(); disturb(x, y, Math.min(220, 34 + d * 2.8), 1.1); }
+    }
+    lastX = x; lastY = y;
+  });
+  stage.addEventListener("pointerleave", () => { lastX = -1; });
+  hint.addEventListener("click", () => {
+    const r = stage.getBoundingClientRect();
+    userDrop(r.width * (0.15 + Math.random() * 0.7), r.height * (0.2 + Math.random() * 0.6));
+  });
+
+  new ResizeObserver(build).observe(stage);
+  new IntersectionObserver(es => { inView = es[0].isIntersecting; if (inView) kick(); }).observe(stage);
+  document.addEventListener("visibilitychange", kick);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if (n) { buildAtlas(); buildBase(); draw(); } });
+
+  // 잔잔한 수면도 조금씩 반짝이고, 손대지 않으면 가끔 빗방울이 떨어진다
+  setInterval(() => {
+    if (!motion || !inView || document.hidden || !base || !introDone) return;
+    bctx.fillStyle = "#FFFFFF";
+    for (let c = 0, f = Math.max(2, (n * 0.006) | 0); c < f; c++) { const k = (Math.random() * n) | 0; bits[k] ^= 1; paintBaseCell(k); }
+    if (!raf) draw();
+  }, 420);
+  setInterval(() => {
+    if (!motion || !inView || document.hidden || !introDone || performance.now() - lastUser < 6000) return;
+    const r = stage.getBoundingClientRect(), left = Math.random() < 0.5;
+    disturb(r.width * (left ? 0.08 + Math.random() * 0.22 : 0.7 + Math.random() * 0.22), r.height * (0.18 + Math.random() * 0.64), 500 * scale(), 1.6);
+  }, 3600);
+
+  // 첫 물방울: 로고가 물에 떨어지듯 흔들리고, 물결이 가운데서 퍼지며 수면을 드러낸다
+  function intro() {
+    if (!motion || introDone) return;
+    build();
+    introDone = true;
+    reveal = 0;
+    stage.classList.add("intro");
+    const r = stage.getBoundingClientRect();
+    rcx = cols / 2; rcy = rows / 2;
+    disturb(r.width / 2, r.height / 2, 1100 * scale(), 2.4);
+    logo.classList.add("bob");
+  }
+  return { intro };
+})();
+
+/* ---------- 이메일 주소 복사 ---------- */
+(() => {
+  const btn = $("#copyMail"), lbl = $("#copyLbl"), addr = $("#mailAddr");
+  let t = 0;
+  const say = msg => { lbl.textContent = msg; clearTimeout(t); t = setTimeout(() => { lbl.textContent = "주소 복사"; }, 2600); };
+  const selectAddr = () => {
+    const r = document.createRange(); r.selectNodeContents(addr);
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    say("선택했어요 · Ctrl+C");
+  };
+  btn.addEventListener("click", () => {
+    try { navigator.clipboard.writeText(addr.textContent.trim()).then(() => say("복사했어요"), selectAddr); }
+    catch (e) { selectAddr(); }
+  });
+})();
+
+/* ---------- 탭: #home #works #works-blast … #exhibition #about #contact ---------- */
+let curPage = "", curFilter = "all", fromSub = false;
+const pages = $$(".page"), navs = $$("[data-nav]"), subtabs = $("#subtabs");
+const menuBtn = $("#menuBtn"), menu = $("#menu");
+const TITLES = { home: "스튜디오 김기욱", works: "Works — 스튜디오 김기욱", exhibition: "Exhibition — 스튜디오 김기욱", about: "About — 스튜디오 김기욱", contact: "Contact — 스튜디오 김기욱" };
+function closeMenu() { menu.hidden = true; menuBtn.setAttribute("aria-expanded", "false"); menuBtn.textContent = "{ MENU }"; }
+function parseHash() {
+  const h = location.hash.slice(1).toLowerCase();
+  if (h === "works") return { page: "works", filter: "all" };
+  const m = h.match(/^works-(blast|water|whale|yuryeo)$/);
+  if (m) return { page: "works", filter: m[1] };
+  if (h === "exhibition" || h === "about" || h === "contact") return { page: h, filter: "all" };
+  return { page: "home", filter: "all" };
+}
+function jumpTo(y) {
+  const prev = root.style.scrollBehavior;
+  root.style.scrollBehavior = "auto";
+  window.scrollTo(0, Math.max(0, y));
+  root.style.scrollBehavior = prev;
+}
+// 시리즈 탭을 고르면 하위 탭이 머리 아래 붙은 채로 그 시리즈 첫머리를 보여 준다
+const seriesTop = () => $("#facade").getBoundingClientRect().bottom + window.scrollY - $(".hdr").offsetHeight - subtabs.offsetHeight;
+const wantsSeries = sub => curPage === "works" && (curFilter !== "all" || sub);
+const seriesLink = a => !!a.closest(".subtabs") || (!!a.closest(".wend") && !a.classList.contains("up"));
+// WORKS 끝의 이전 · 다음
+const SEQ = [
+  { f: "all", name: "All Works", k: "ALL · 17" },
+  { f: "blast", name: "Water Blast", k: "SERIES 01" },
+  { f: "water", name: "Water", k: "SERIES 02" },
+  { f: "whale", name: "Whale", k: "SERIES 03" },
+  { f: "yuryeo", name: "Yuryeo", k: "FEATURE" }
+];
+const wend = $("#worksEnd"), wPrev = $("#wPrev"), wNext = $("#wNext");
+function setEnd(filter) {
+  const i = SEQ.findIndex(s => s.f === filter);
+  const set = (a, href, small, big) => { a.setAttribute("href", href); $("small", a).textContent = small; $("b", a).textContent = big; };
+  const href = s => (s.f === "all" ? "#works" : "#works-" + s.f);
+  wPrev.classList.toggle("up", i <= 0);
+  if (i <= 0) set(wPrev, "#works", "BACK TO TOP", "Works");
+  else set(wPrev, href(SEQ[i - 1]), "PREV · " + SEQ[i - 1].k, SEQ[i - 1].name);
+  if (i > 0 && i < SEQ.length - 1) set(wNext, href(SEQ[i + 1]), "NEXT · " + SEQ[i + 1].k, SEQ[i + 1].name);
+  else set(wNext, "#exhibition", "NEXT PAGE", "Exhibition");
+}
+// 짧은 시리즈도 하위 탭 바로 아래에서 시작하도록 마지막 칸을 늘린다
+function fitEnd() {
+  wend.style.minHeight = "";
+  if (curPage !== "works") return;
+  const need = seriesTop() + window.innerHeight - document.documentElement.scrollHeight;
+  if (need > 0) wend.style.minHeight = Math.ceil(wend.offsetHeight + need) + "px";
+}
+window.addEventListener("resize", fitEnd);
+function route(first) {
+  const r = parseHash();
+  const changed = r.page !== curPage;
+  if (changed) {
+    pages.forEach(p => { p.hidden = p.dataset.page !== r.page; });
+    navs.forEach(a => { if (a.dataset.nav === r.page) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+    document.title = TITLES[r.page];
+    curPage = r.page;
+  }
+  curFilter = r.filter;
+  if (r.page === "works") {
+    $$("[data-series]").forEach(s => { s.hidden = r.filter !== "all" && s.dataset.series !== r.filter; });
+    $$("a", subtabs).forEach(a => {
+      if (a.dataset.filter !== r.filter) { a.removeAttribute("aria-current"); return; }
+      a.setAttribute("aria-current", "true");
+      subtabs.scrollLeft = a.offsetLeft - (subtabs.clientWidth - a.offsetWidth) / 2;
+    });
+    setEnd(r.filter);
+  }
+  fitEnd();
+  if (wantsSeries(fromSub)) jumpTo(seriesTop());
+  else if (!first) jumpTo(0);
+  fromSub = false;
+  if (changed && !first) {
+    const pg = $(`.page[data-page="${r.page}"]`);
+    pg.classList.remove("enter"); void pg.offsetWidth; pg.classList.add("enter");
+    $("#main").focus({ preventScroll: true });
+  }
+  if (changed) watchCode();
+  if (r.page === "home" && !splashing) pond.intro();
+  closeMenu();
+}
+// 지금 보고 있는 탭을 다시 누르면 맨 위로 (하위 탭이면 시리즈 첫머리로)
+document.addEventListener("click", e => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  fromSub = seriesLink(a);
+  if (a.getAttribute("href").toLowerCase() !== "#" + (location.hash.slice(1).toLowerCase() || "home")) return;
+  e.preventDefault();
+  window.scrollTo({ top: wantsSeries(fromSub) ? seriesTop() : 0, behavior: motion ? "smooth" : "auto" });
+  fromSub = false;
+  closeMenu();
+});
+window.addEventListener("hashchange", () => route(false));
+route(true);
+
+/* ---------- 시작 장면 ---------- */
+(() => {
+  const el = $("#splash");
+  if (!el) return;
+  if (!motion) { el.remove(); return; }
+  root.classList.add("splashing");
+  // 시작 장면의 로고를 홈 로고 자리에 맞춘다
+  if (curPage === "home") {
+    const r = $(".stage .logo").getBoundingClientRect();
+    el.style.setProperty("--sy", `${r.top + r.height / 2}px`);
+  }
+  const L = $("#spL"), R = $("#spR"), cl = L.getContext("2d"), cr = R.getContext("2d");
+  const CELL = 14, dpr = Math.min(2, window.devicePixelRatio || 1);
+  const half = window.innerWidth / 2, H = window.innerHeight;
+  L.width = R.width = Math.round(half * dpr); L.height = R.height = Math.round(H * dpr);
+  const cols = Math.ceil(half / CELL), rows = Math.ceil(H / CELL), aw = Math.ceil(CELL * dpr);
+  const bl = new Uint8Array(cols * rows).map(() => (Math.random() < 0.5 ? 1 : 0));
+  const br = new Uint8Array(cols * rows).map(() => (Math.random() < 0.5 ? 1 : 0));
+  const atlas = document.createElement("canvas"); atlas.width = aw * 2; atlas.height = aw * 3;
+  const a = atlas.getContext("2d");
+  a.font = `500 ${Math.round(CELL * dpr * 0.74)}px "IBM Plex Mono", ui-monospace, monospace`;
+  a.textAlign = "center"; a.textBaseline = "middle";
+  ["#E6E6E6", mix(0.5), mix(1)].forEach((c, k) => { a.fillStyle = c; a.fillText("0", aw * 0.5, aw * (k + 0.52)); a.fillText("1", aw * 1.5, aw * (k + 0.52)); });
+  const column = (ctx, bits, c, lvl, isLeft) => {
+    const x = isLeft ? Math.round((half - (c + 1) * CELL) * dpr) : Math.round(c * CELL * dpr);
+    ctx.fillStyle = "#FFFFFF"; ctx.fillRect(x, 0, aw, L.height);
+    for (let j = 0; j < rows; j++) ctx.drawImage(atlas, bits[j * cols + c] * aw, lvl * aw, aw, aw, x, Math.round(j * CELL * dpr), aw, aw);
+  };
+  const paint = (c, lvl) => { if (c < 0 || c >= cols) return; column(cl, bl, c, lvl, true); column(cr, br, c, lvl, false); };
+
+  // 부팅 로그
+  const log = $("#spLog");
+  const LINES = [["studio-kimkiwook.ts", "t-c", 120], ["> new StudioKimKiwook()", "", 380], ["> load works ........... 16", "", 700], ["> load series .......... 04", "", 980], ["> render 0/1 surface .... ok", "", 1260], ["> ready", "ok", 1680]];
+  const lineEls = LINES.map(([, cls]) => { const s = document.createElement("div"); if (cls) s.className = cls; log.appendChild(s); return s; });
+  const timers = [];
+  LINES.forEach(([text], i) => {
+    timers.push(setTimeout(function typeLine(k = 1) { lineEls[i].textContent = text.slice(0, k); if (k < text.length) timers.push(setTimeout(() => typeLine(k + 1), 11)); }, LINES[i][2]));
+  });
+  // 로고 아래 영문 이름
+  const small = $("#spSmall"), SMALL = "STUDIO KIM KIWOOK";
+  timers.push(setTimeout(function typeSmall(k = 1) { small.textContent = SMALL.slice(0, k); if (k < SMALL.length) timers.push(setTimeout(() => typeSmall(k + 1), 38)); }, 1150));
+
+  const cnt = $("#spCnt"), t0 = performance.now();
+  const REVEAL_AT = 380, REVEAL_MS = 1250, DONE_MS = 1950;
+  let front = -1, opened = false, raf = 0;
+  const ease = p => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
+  function tick() {
+    raf = 0;
+    const t = performance.now() - t0;
+    const p = Math.min(1, Math.max(0, (t - REVEAL_AT) / REVEAL_MS));
+    const f = Math.floor(ease(p) * cols);
+    if (f > front) {
+      for (let c = Math.max(0, front - 2); c <= f; c++) paint(c, c >= f ? 2 : c >= f - 2 ? 1 : 0);
+      front = f;
+    }
+    if (p >= 1) for (let c = cols - 3; c < cols; c++) paint(c, 0);
+    cnt.textContent = String(Math.round(100 * Math.min(1, t / DONE_MS))).padStart(3, "0");
+    if (t >= DONE_MS + 120) { open(); return; }
+    raf = requestAnimationFrame(tick);
+  }
+  function finishAll() {
+    timers.forEach(clearTimeout);
+    LINES.forEach(([text], i) => { lineEls[i].textContent = text; });
+    small.textContent = SMALL;
+    for (let c = 0; c < cols; c++) paint(c, 0);
+    cnt.textContent = "100";
+  }
+  function open() {
+    if (opened) return;
+    opened = true;
+    cancelAnimationFrame(raf);
+    window.removeEventListener("keydown", skip);
+    // 글꼴이 다 들어온 뒤의 높이로 시리즈 위치를 다시 맞춘다
+    fitEnd();
+    if (wantsSeries(false)) jumpTo(seriesTop());
+    el.classList.add("open");
+    setTimeout(() => {
+      splashing = false;
+      watchCode();
+      if (curPage === "home") pond.intro();
+    }, 240);
+    setTimeout(() => { el.remove(); root.classList.remove("splashing"); }, 1100);
+  }
+  function skip() { if (opened) return; finishAll(); open(); }
+  if (matchMedia("(pointer: coarse)").matches) $(".sp-skip", el).textContent = "TAP TO SKIP ▸";
+  el.addEventListener("pointerdown", skip);
+  window.addEventListener("keydown", skip);
+  raf = requestAnimationFrame(tick);
+})();
+
+/* ---------- 메뉴 · 건너뛰기 ---------- */
+menuBtn.addEventListener("click", () => {
+  if (menu.hidden) { menu.hidden = false; menuBtn.setAttribute("aria-expanded", "true"); menuBtn.textContent = "{ CLOSE }"; }
+  else closeMenu();
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !menu.hidden) closeMenu(); });
+$("#skipBtn").addEventListener("click", () => $("#main").focus());
+})();
+</script>
+
+</body>
+</html>
