@@ -350,6 +350,8 @@ main{display:flex;flex-direction:column;gap:1px;background:var(--accent);min-wid
 .vw{display:grid;grid-template-rows:var(--hh) minmax(0,1fr) auto;gap:1px;height:100%;background:var(--accent)}
 .vw > *{background:var(--bg);min-width:0;min-height:0}
 .vw-top{display:flex;align-items:stretch}
+.vw-hd{display:flex;align-items:center;padding:0 18px;font:500 11px/1 var(--mono);letter-spacing:.08em;color:var(--accent);white-space:nowrap}
+.vw-hd:empty{display:none}
 .vw-t{flex:1;min-width:0;display:flex;align-items:center;padding:0 22px;font:500 12px/1.3 var(--mono);letter-spacing:.05em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .vw-close{all:unset;cursor:pointer;width:var(--hh);display:grid;place-items:center;border-left:var(--line);font:400 20px/1 var(--mono);color:var(--accent)}
 .vw-close:hover{background:var(--accent);color:var(--on-accent)}
@@ -733,7 +735,7 @@ studio.contact({ email: "hikiwook@gmail.com", instagram: "@kiukukim" });</pre></
 <dialog id="viewer" aria-label="작품 보기">
   <div class="vw">
     <div class="vw-top">
-      <span class="vw-t" id="vwCur">//</span>
+      <span class="vw-t" id="vwCur">//</span><span class="vw-hd" id="vwHD" aria-live="polite"></span>
       <button class="vw-close" id="vwClose" type="button" aria-label="닫기">✕</button>
     </div>
     <div class="vw-media"><video id="vwVideo" muted loop playsinline controls></video><img id="vwImg" alt="" hidden></div>
@@ -937,7 +939,35 @@ mqN.addEventListener("change", buildGalleries);
 const dlg = $("#viewer"), vv = $("#vwVideo"), vi = $("#vwImg");
 let cur = null;
 const listOf = id => (W[id].s === "exhibit" ? EX_ORDER : ORDER);
+let hdCtl = null, hdUrl = null;
+const setHD = t => { $("#vwHD").textContent = t; };
+function dropHD() { if (hdCtl) hdCtl.abort(); hdCtl = null; if (hdUrl) URL.revokeObjectURL(hdUrl); hdUrl = null; setHD(""); }
+function loadHD(id, url) {
+  dropHD();
+  const ctl = hdCtl = new AbortController();
+  setHD("HD 0%");
+  fetch(url, { signal: ctl.signal }).then(async r => {
+    if (!r.ok || !r.body) throw new Error("hd");
+    const total = +r.headers.get("content-length") || 0, rd = r.body.getReader(), parts = [];
+    let got = 0;
+    for (;;) {
+      const { done, value } = await rd.read();
+      if (done) break;
+      parts.push(value); got += value.length;
+      if (total) setHD(`HD ${Math.min(99, Math.round(got / total * 100))}%`);
+    }
+    if (ctl.signal.aborted || cur !== id) return;
+    hdUrl = URL.createObjectURL(new Blob(parts, { type: "video/mp4" }));
+    vv.dataset.hd = url;
+    vv.src = hdUrl;
+    if (motion) vv.play().catch(() => {});
+    setHD("HD");
+  }).catch(() => { if (!ctl.signal.aborted) setHD(""); });
+}
+// blob 재생이 막힌 환경이면 고화질 주소로 직접
+vv.addEventListener("error", () => { if (vv.src.startsWith("blob:") && vv.dataset.hd) { vv.src = vv.dataset.hd; if (motion) vv.play().catch(() => {}); } });
 function show(id) {
+  dropHD();
   cur = id;
   const w = W[id], L = listOf(id), i = L.indexOf(id), n = L.length, ex = w.s === "exhibit";
   const P = W[L[(i - 1 + n) % n]], N = W[L[(i + 1) % n]];
@@ -947,7 +977,9 @@ function show(id) {
   else {
     vi.removeAttribute("src");
     vv.poster = ex ? w.src.replace(/\.mp4$/, ".jpg") : `media/${id}.jpg`;
-    vv.src = ex ? w.src : `media/hq/${id}.mp4`;
+    // 가벼운 루프(목록에서 이미 받은 것)로 바로 틀고, 고화질은 뒤에서 받아 다 받으면 바꾼다
+    vv.src = ex ? w.src : `media/m/${id}.mp4`;
+    if (!ex) loadHD(id, `media/hq/${id}.mp4`);
     if (motion) vv.play().catch(() => {});
   }
   $("#vwCur").textContent = `// ${GROUP[w.s]} — ${w.t.toUpperCase()}`;
@@ -968,6 +1000,7 @@ function openViewer(id) {
 }
 const stepView = d => { const L = listOf(cur), i = L.indexOf(cur), n = L.length; show(L[(i + d + n) % n]); };
 dlg.addEventListener("close", () => {
+  dropHD();
   viewerOpen = false;
   vv.pause(); vv.removeAttribute("src"); vv.load(); vi.removeAttribute("src");
   if (motion) visible.forEach(v => v.play().catch(() => {}));
