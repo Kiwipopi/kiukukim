@@ -854,14 +854,15 @@ const vio = new IntersectionObserver(es => {
     if (e.isIntersecting) { visible.add(v); if (motion && !viewerOpen) v.play().catch(() => {}); }
     else { visible.delete(v); v.pause(); }
   });
-}, { rootMargin: "120px 0px", threshold: 0.15 });
+}, { rootMargin: "0px", threshold: 0.35 });
 const watch = v => vio.observe(v);
 $$(".fvid video").forEach(watch);
 
 /* ---------- 갤러리 — 세로 작품은 자르지 않고 크게 ---------- */
 const mqN = matchMedia("(max-width: 700px)");
 // 목록에서 도는 8초 루프 — 휴대폰은 가벼운 버전(media/m), 크게 보기는 media/hq
-const loopSrc = id => `media/${mqN.matches ? "m/" : ""}${id}.mp4`;
+// 목록 루프는 가벼운 버전(1080px · 약 1.6MB)만 쓴다 — 크게 보기는 media/hq
+const loopSrc = id => `media/m/${id}.mp4`;
 const setFeature = () => $$(".fvid video[data-id]").forEach(v => { const s = loopSrc(v.dataset.id); if (v.getAttribute("src") !== s) v.setAttribute("src", s); });
 setFeature();
 mqN.addEventListener("change", setFeature);
