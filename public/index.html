@@ -470,7 +470,7 @@ main{display:flex;flex-direction:column;gap:1px;background:var(--accent);min-wid
       <span class="stage-tri" aria-hidden="true"></span>
     </div>
     <div class="index" aria-label="바로가기">
-      <a class="idx" href="#works-blast"><span class="k">SERIES 01</span><b class="idx-t">Water<br>Blast</b><span class="ko">유리 수조 속의 물</span><span class="c">05 WORKS</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#works-blast"><span class="k">SERIES 01</span><b class="idx-t">Water<br>Blast</b><span class="ko">유리 수조 속의 물</span><span class="c">06 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#works-water"><span class="k">SERIES 02</span><b class="idx-t">Water</b><span class="ko">쏟아지고, 솟구치는 물</span><span class="c">06 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#works-whale"><span class="k">SERIES 03</span><b class="idx-t">Whale</b><span class="ko">구름 위를 헤엄치는 고래</span><span class="c">05 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <div class="news" aria-label="소식">
@@ -530,22 +530,22 @@ class StudioKimKiwook extends MediaArtStudio {
   <!-- 02 WORKS -->
   <section class="page" data-page="works" aria-labelledby="h-works" hidden>
     <nav class="subtabs" id="subtabs" aria-label="시리즈">
-      <a href="#works" data-filter="all">ALL <i>17</i></a>
-      <a href="#works-blast" data-filter="blast">01 WATER BLAST <i>05</i></a>
+      <a href="#works" data-filter="all">ALL <i>18</i></a>
+      <a href="#works-blast" data-filter="blast">01 WATER BLAST <i>06</i></a>
       <a href="#works-water" data-filter="water">02 WATER <i>06</i></a>
       <a href="#works-whale" data-filter="whale">03 WHALE <i>05</i></a>
       <a href="#works-yuryeo" data-filter="yuryeo">04 YURYEO <i>01</i></a>
     </nav>
     <div class="split">
       <div class="cellbox stxt">
-        <p class="lbl">WORKS · 17 WORKS · 4 SERIES</p>
+        <p class="lbl">WORKS · 18 WORKS · 4 SERIES</p>
         <h2 class="giant" id="h-works" style="--em:4.5">Works</h2>
         <p class="sub">유리 수조의 물, 쏟아지는 물, 구름 위의 고래</p>
         <p class="desc">세 개의 연작과 한 편의 대표작입니다. 작품을 누르면 크게 볼 수 있고, 위의 탭으로 시리즈별로 나눠 볼 수 있습니다.</p>
       </div>
-      <div class="code"><pre>  // WORKS — 17 works · 4 series
+      <div class="code"><pre>  // WORKS — 18 works · 4 series
   readonly works = [
-    ...this.waterBlast,  // 05
+    ...this.waterBlast,  // 06
     ...this.water,       // 06
     ...this.whale,       // 05
     this.yuryeo,         // 01
@@ -567,7 +567,7 @@ class StudioKimKiwook extends MediaArtStudio {
     <div class="series" data-series="blast" aria-labelledby="h-blast">
       <div class="split rev">
         <div class="cellbox stxt">
-          <p class="lbl">SERIES 01 · 05 WORKS</p>
+          <p class="lbl">SERIES 01 · 06 WORKS</p>
           <h3 class="giant" id="h-blast" style="--em:4.3">Water<br>Blast</h3>
           <p class="sub">유리 수조 속의 물</p>
           <p class="desc">대학이라는 울타리를 나와 사회에 발을 디딘 뒤, 자아와 현실이 부딪히는 순간들을 담은 연작입니다. 작품 속 두 공은 현실과 자아를 뜻하고, blast는 그 충돌과 폭발, 그리고 그 속에서 변해가는 나에 관한 이야기입니다.</p>
@@ -576,7 +576,7 @@ class StudioKimKiwook extends MediaArtStudio {
         </div>
         <div class="code"><pre>  // SERIES 01 WATER BLAST — 유리 수조 속의 물
   readonly waterBlast = new Series({
-    works:   ["blast_01", "blast_02", "blast_03", "blast_04", "blast_05"],
+    works:   ["blast_01", "blast_02", "blast_03", "blast_04", "blast_05", "blast_06"],
     canvas:  [[720, 2160], [3840, 1280], [2560, 852], [3840, 1280], [2560, 853]],
     runtime: [90, 90, 50, 41.7, 17.5],  // sec
     fps: 30,
@@ -770,6 +770,7 @@ const W = {
   blast_03: { t: "Blast 03 · Coexistence", s: "blast", w: 2560, h: 852, d: 50, f: 30, pw: 1920, ph: 640, desc: "현실과 자아는 같은 공간에 머문다. 서로 다른 방향으로 움직이면서도, 하나의 움직임이 남긴 파동은 다른 하나에게 닿는다. 그 사이에서 현실과 함께 존재할 수 있는 거리를 배워간다." },
   blast_04: { t: "Blast 04 · Calmness", s: "blast", w: 3840, h: 1280, d: 41.7, f: 30, pw: 1920, ph: 640, desc: "현실과 자아의 움직임은 같은 물을 흔들고, 그 파동은 서로에게 되돌아간다. 끊임없이 밀려드는 현실 속에서 차분함을 지키려 애쓰는 나의 모습을 담았다." },
   blast_05: { t: "Blast 05 · Reverberation", s: "blast", w: 2560, h: 853, d: 17.5, f: 30, pw: 1920, ph: 640, full: 1, desc: "현실과 부딪힌 순간보다 그 순간이 내 안에 남긴 울림이 더 클 때가 있다. 물결이 공간을 가득 채우고 나면 어디서 흔들림이 시작됐는지조차 알아보기 어렵다. — 음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
+  blast_06: { t: "Blast 06", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, desc: "계단처럼 쌓아 올린 격자 구조물 아래로 물이 차 있고, 두 공이 그 사이를 오가며 물을 흔든다. — 음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
   coex_wave: { t: "COEX Wave", s: "water", w: 1920, h: 1080, d: 18.6, f: 24, pw: 1552, ph: 756, desc: "코너형 LED를 위한 아나모픽 수조. 화면 모서리를 경계 삼아 파도가 부딪힙니다." },
   cliff_waterfall: { t: "Cliff Waterfall", s: "water", w: 1080, h: 1920, d: 22.6, f: 24, pw: 1080, ph: 1920, ex: "2026.06 강동 더리버몰 · 2026.07 마곡 MICE 르웨스트 미디어파사드", desc: "이끼 낀 절벽을 타고 쏟아지는 에메랄드빛 폭포." },
   up_gravity: { t: "Up Gravity", s: "water", w: 1450, h: 2560, d: 37.5, f: 24, pw: 1088, ph: 1920, desc: "아래에서 위로, 중력을 거슬러 솟구치는 물의 벽." },
@@ -788,8 +789,8 @@ const W = {
 //   { tall:[세로…], note }: 세로 작품을 화면 높이에 맞춰 크게, 남는 폭에 설명
 const LAYOUT = {
   blast: {
-    wide: [{ stack: ["blast_02", "blast_03", "blast_04"], tall: "blast_01" }, ["blast_05"]],
-    narrow: [["blast_02"], ["blast_03"], ["blast_04"], ["blast_05"], { tall: ["blast_01"], note: "blast" }]
+    wide: [{ stack: ["blast_02", "blast_03", "blast_04"], tall: "blast_01" }, ["blast_05"], ["blast_06"]],
+    narrow: [["blast_02"], ["blast_03"], ["blast_04"], ["blast_05"], ["blast_06"], { tall: ["blast_01"], note: "blast" }]
   },
   water: {
     wide: [["coex_wave"], { tall: ["cliff_waterfall", "up_gravity", "wave_district"], note: "water" }, ["pts_wave"], ["water_wave"]],
@@ -838,7 +839,7 @@ Object.assign(LAYOUT, {
   ex_magok: { wide: [{ tall: ["ex_magok2", "ex_magok3"], info: "magok" }], narrow: [{ info: "magok" }, ["ex_magok2", "ex_magok3"]] },
   ex_gangdong: { wide: [{ tall: ["ex_ikea1", "ex_ikea2"], info: "gangdong" }, ["ex_ikea3"]], narrow: [{ info: "gangdong" }, ["ex_ikea3"], ["ex_ikea1", "ex_ikea2"]] }
 });
-const ORDER = ["blast_02", "blast_03", "blast_04", "blast_01", "blast_05", "coex_wave", "cliff_waterfall", "up_gravity", "wave_district", "pts_wave", "water_wave", "whale_spring_winter", "cloud_whale_landscape", "humpback_clouds", "cloud_whales", "whale_comp", "yuryeo"];
+const ORDER = ["blast_02", "blast_03", "blast_04", "blast_01", "blast_05", "blast_06", "coex_wave", "cliff_waterfall", "up_gravity", "wave_district", "pts_wave", "water_wave", "whale_spring_winter", "cloud_whale_landscape", "humpback_clouds", "cloud_whales", "whale_comp", "yuryeo"];
 const ratio = (w, h) => {
   const r = w / h;
   for (const [v, l] of [[3, "3:1"], [16 / 9, "16:9"], [9 / 16, "9:16"], [1 / 3, "1:3"], [40 / 11, "40:11"]]) if (Math.abs(r - v) / v < 0.03) return l;
