@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kiukukim.com/</loc><lastmod>2026-11-06</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://kiukukim.com/</loc><lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kiukukim.com/"/><xhtml:link rel="alternate" hreflang="en" href="https://kiukukim.com/en/"/><xhtml:link rel="alternate" hreflang="ja" href="https://kiukukim.com/ja/"/></url>
+  <url><loc>https://kiukukim.com/en/</loc><lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kiukukim.com/"/><xhtml:link rel="alternate" hreflang="en" href="https://kiukukim.com/en/"/><xhtml:link rel="alternate" hreflang="ja" href="https://kiukukim.com/ja/"/></url>
+  <url><loc>https://kiukukim.com/ja/</loc><lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kiukukim.com/"/><xhtml:link rel="alternate" hreflang="en" href="https://kiukukim.com/en/"/><xhtml:link rel="alternate" hreflang="ja" href="https://kiukukim.com/ja/"/></url>
 </urlset>

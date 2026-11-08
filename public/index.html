@@ -7,6 +7,10 @@
 <title>스튜디오 김기욱</title>
 <meta name="description" content="물·구름·고래 시뮬레이션으로 미디어 파사드와 대형 LED를 위한 영상을 만드는 미디어아트 스튜디오">
 <link rel="canonical" href="https://kiukukim.com/">
+<link rel="alternate" hreflang="ko" href="https://kiukukim.com/">
+<link rel="alternate" hreflang="en" href="https://kiukukim.com/en/">
+<link rel="alternate" hreflang="ja" href="https://kiukukim.com/ja/">
+<link rel="alternate" hreflang="x-default" href="https://kiukukim.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="스튜디오 김기욱">
 <meta property="og:title" content="스튜디오 김기욱 — 미디어아트 스튜디오">
@@ -390,9 +394,23 @@ main{display:flex;flex-direction:column;gap:1px;background:var(--accent);min-wid
 .sdesc p{margin:0 0 .85em}
 .sdesc .txt-more{margin-top:0}
 
+.hdr > .logo{margin-right:auto}
+.langs{display:flex;align-self:stretch;border-left:var(--line)}
+.langs a,.menu-langs a{display:grid;place-items:center;padding:0 13px;font:500 12px/1 var(--mono);letter-spacing:.06em;color:var(--muted);text-decoration:none}
+.langs a:first-child{padding-left:20px}.langs a:last-child{padding-right:20px}
+.langs a:hover,.menu-langs a:hover,.langs a[aria-current],.menu-langs a[aria-current]{color:var(--accent)}
+.langs a[aria-current],.menu-langs a[aria-current]{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.langs a:focus-visible,.menu-langs a:focus-visible{outline:2px solid var(--accent);outline-offset:-4px}
+.menu-langs{display:flex;height:58px;padding:0 7px;border-top:var(--line)}
+.menu .menu-langs a{height:auto;gap:0;padding:0 13px;border:0;background:none;color:var(--muted);font:500 12px/1 var(--mono);font-stretch:normal;text-transform:none}
+.menu .menu-langs a[aria-current],.menu .menu-langs a:hover{background:none;color:var(--accent)}
+html[lang="ja"]{--sans:"IBM Plex Sans JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,"IBM Plex Sans JP",monospace}
+html[lang="ja"] body{word-break:normal;line-break:strict}
+
 /* responsive */
 @media (max-width:1080px){
   .braces{display:none}
+  .hdr > .langs{display:none}
   .menu-btn{display:flex}
 }
 @media (max-width:900px){
@@ -464,6 +482,7 @@ main{display:flex;flex-direction:column;gap:1px;background:var(--accent);min-wid
     <a href="#contact" data-nav="contact">CONTACT</a>
     <span aria-hidden="true">}</span>
   </nav>
+  <nav class="langs" aria-label="Language"><a href="/" hreflang="ko" lang="ko" aria-current="page">KO</a><a href="/en/" hreflang="en" lang="en">EN</a><a href="/ja/" hreflang="ja" lang="ja">JA</a></nav>
   <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">{ MENU }</button>
   <nav class="menu" id="menu" aria-label="탭 메뉴" hidden>
     <a href="#home" data-nav="home"><span>01</span>Home</a>
@@ -471,6 +490,7 @@ main{display:flex;flex-direction:column;gap:1px;background:var(--accent);min-wid
     <a href="#exhibition" data-nav="exhibition"><span>03</span>Exhibition</a>
     <a href="#about" data-nav="about"><span>04</span>About</a>
     <a href="#contact" data-nav="contact"><span>05</span>Contact</a>
+    <div class="menu-langs" aria-label="Language"><a href="/" hreflang="ko" lang="ko" aria-current="page">KO</a><a href="/en/" hreflang="en" lang="en">EN</a><a href="/ja/" hreflang="ja" lang="ja">JA</a></div>
   </nav>
 </header>
 
@@ -514,7 +534,7 @@ main{display:flex;flex-direction:column;gap:1px;background:var(--accent);min-wid
         <p class="sub">물·구름·고래를 시뮬레이션하는 미디어아트 스튜디오</p>
         <p class="desc">스튜디오 김기욱은 미디어 파사드와 대형 LED, 세로형 디스플레이를 위한 영상을 만듭니다. 송출 환경의 해상도와 비율에 맞춰 렌더링합니다.</p>
         <div class="facts">
-          <div><b>17</b><span>작품</span></div>
+          <div><b>18</b><span>작품</span></div>
           <div><b>5</b><span>2026 전시</span></div>
           <div><b>3840</b><span>최대 가로 픽셀</span></div>
           <div><b>24/30</b><span>FPS</span></div>
@@ -771,6 +791,7 @@ studio.contact({ email: "hikiwook@gmail.com", instagram: "@kiukukim" });</pre></
 
 <script>
 (() => {
+const LANG = "ko"; // 빌드(tools/i18n)가 en · ja 로 바꾼다
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -807,29 +828,36 @@ const W = {
 const STMT = {
   blast_01: {
     ko: ["이 작품은 사회와 내 자아가 방황하는 과정을 자아낸 작품이다."],
+    en: ["This work traces the process of society and my self wandering."],
+    ja: ["この作品は、社会と私の自我がさまよう過程を紡ぎ出した作品だ。"],
   },
   blast_02: {
     ko: ["작업을 하던 때였다. 나는 하고 싶은 것이 분명했다. 머릿속에는 선명한 장면이 있었지만, 그것을 어떻게 구현해야 할지 알지 못했다. 표현하고 싶은 것과 표현할 수 있는 것 사이에는 거리가 있었다. 내 기술은 아직 무르익지 못했다.", "당시 내게 현실은 벽이었다. 그 앞에 머무는 동안에도 시간은 소용돌이처럼 빠르게 흘러갔다. 마음은 앞서 있었지만 작업은 좀처럼 따라오지 못했다. 나는 그 벽을 뚫고 싶어 계속해서 시도했다.", "나는 현실을 꿰뚫고 나아가려 한다고 생각했다. 두 가지 공 모두 비슷하다. 어쩌면 내 자아 또한 현실의 흐름을 따라 흘러가고 있었는지도 모른다."],
     en: ["I was working on a piece. I knew exactly what I wanted to do. I had a vivid image in my mind, but I did not know how to bring it to life. There was a distance between what I wanted to express and what I was able to express. My technical skills had yet to mature.", "At the time, reality was a wall. As I lingered before it, time swept past like a whirlpool. My mind raced ahead, but the work struggled to keep up. I kept trying, determined to break through that wall.", "I thought I was pushing my way through reality. Yet the two spheres move in much the same way. Perhaps my sense of self, too, had been drifting with the current of reality."],
+    ja: ["制作をしていた頃のことだ。私にはやりたいことがはっきりとあった。頭の中には鮮明な場面があったが、それをどう実現すればいいのかわからなかった。表現したいものと表現できるものの間には距離があった。私の技術はまだ熟していなかった。", "当時の私にとって、現実は壁だった。その前に立ち止まっている間にも、時間は渦のように速く流れていった。気持ちは先を行っていたが、制作はなかなか追いつかなかった。私はその壁を突き破りたくて、何度も試み続けた。", "私は現実を突き抜けて進もうとしているのだと思っていた。けれど二つの球はどちらも似たように動く。もしかすると私の自我もまた、現実の流れに沿って流されていたのかもしれない。"],
   },
   blast_03: {
     ko: ["현실과 자아는 같은 공간에 머문다. 서로 다른 방향으로 움직이면서도, 하나의 움직임이 남긴 파동은 다른 하나에게 닿는다.", "사회에 발을 디딘 이후, 나는 현실과 부딪히며 조금씩 변해왔다. 나를 지키고 싶었고, 현실에 적응하고도 싶었다. 두 마음은 내 안에서 끊임없이 움직인다. 그 사이에서 나는 현실과 내가 함께 존재할 수 있는 거리를 배워간다.", "내가 생각하는 공존에는 흔들림이 있다. 서로에게 영향을 받으며 자신의 자리를 찾아가는 움직임이 있다. 앞으로도 내 마음에는 수많은 파동이 일어날 것이다. 나는 그 안에서 내 중심을 잡으며, 현실과 함께 살아가는 법을 익히고 싶다."],
     en: ["Reality and the self inhabit the same space. Even as they move in different directions, the ripples left by one reach the other. The two spheres in this work trace their own paths, stirring the same surface of water.", "Since stepping into society, I have gradually changed through my encounters and collisions with reality. I have wanted to hold on to who I am, and I have wanted to adapt. Both desires are constantly in motion within me. Between them, I am learning to find a distance at which reality and the self can coexist.", "To me, coexistence carries a sense of uncertainty and motion. It means finding one’s place while being shaped by the presence of another. Countless ripples will continue to move through me. Within them, I hope to find my balance and learn how to live alongside reality."],
+    ja: ["現実と自我は同じ空間にとどまる。互いに違う方向へ動きながらも、一方の動きが残した波はもう一方に届く。", "社会に足を踏み入れてから、私は現実とぶつかりながら少しずつ変わってきた。自分を守りたかったし、現実に適応したくもあった。二つの気持ちは私の中で絶えず動いている。その間で私は、現実と自分が共に存在できる距離を学んでいる。", "私の考える共存には揺らぎがある。互いに影響を受けながら、自分の居場所を見つけていく動きがある。これからも私の心には数多くの波が立つだろう。私はその中で自分の軸を保ちながら、現実と共に生きていく方法を身につけたい。"],
   },
   blast_04: {
     ko: ["현실과 부딪히는 일에 조금은 익숙해졌다고 생각했다. 예전보다 차분하게 받아들일 수 있을 것 같았다. 하지만 마음이 가라앉기도 전에 또 다른 순간이 밀려온다. 애써 정리한 감정 위로 새로운 감정이 겹쳐지고, 나는 다시 흔들린다.", "현실과 자아의 움직임은 같은 물을 흔들고, 그 파동은 서로에게 되돌아간다. 현실이 나를 흔들기도 하고, 그에 반응하는 내가 더 큰 파동을 만들기도 한다. 차분해지고 싶은 마음과 달리, 내 안에 쌓인 감정은 수면을 뚫고 터져 나온다.", "나는 그 안에서도 내 중심을 잡고 싶다. 하지만 차분함을 유지하겠다는 다짐만으로 마음이 고요해지지는 않는다. 괜찮아졌다고 생각하다가도 작은 순간에 다시 일렁이는 나를 발견한다. 이 작품에는 그렇게 끊임없이 밀려드는 현실 속에서, 차분함을 지키려 애쓰는 나의 모습을 담았다."],
     en: ["I thought I had grown somewhat used to confronting reality. I felt I could take things more calmly than before. But before my mind has time to settle, another moment comes rushing in. New emotions wash over those I have barely managed to sort through, and I find myself shaken again.", "Reality and the self stir the same water, sending ripples back toward each other. Sometimes reality shakes me; sometimes my response creates an even greater wave. Despite my wish to remain calm, the emotions building within me burst through the surface.", "I want to stay grounded through it all. But simply resolving to remain calm is not enough to quiet my mind. Just when I think I am okay, I find that even a small moment can stir me again. This work reflects my struggle to hold on to that calm as reality keeps washing over me."],
+    ja: ["現実とぶつかることに、少しは慣れたと思っていた。以前より落ち着いて受け止められる気がしていた。けれど心が静まる前に、また別の瞬間が押し寄せてくる。やっと整理した感情の上に新しい感情が重なり、私はまた揺れる。", "現実と自我の動きは同じ水を揺らし、その波は互いへと返っていく。現実が私を揺らすこともあれば、それに反応する私がより大きな波を生むこともある。落ち着きたいという気持ちとは裏腹に、私の中に積もった感情は水面を突き破ってあふれ出す。", "私はその中でも自分の軸を保ちたい。けれど、落ち着きを保とうという決意だけで心が静かになるわけではない。もう大丈夫だと思っていても、小さな瞬間にまた揺らぐ自分に気づく。この作品には、そうして絶えず押し寄せる現実の中で、落ち着きを守ろうともがく私の姿を込めた。"],
   },
   blast_05: {
     ko: ["현실과 부딪힌 순간보다 그 순간이 내 안에 남긴 울림이 더 클 때가 있다. 일은 이미 지나갔는데, 그때의 감정은 몇 번이고 되돌아온다. 한 번의 충돌이 어디까지 번질지, 그 순간의 나는 알 수 없다.", "작품 속 두 공은 현실과 자아를 뜻한다. 한순간 물이 폭발하듯 터져 올라 두 공의 윤곽마저 삼킨다. 물결이 공간을 가득 채우고 나면 어디서 흔들림이 시작됐는지조차 알아보기 어렵다. 나도 그럴 때가 있다. 처음에 무엇이 나를 흔들었는지보다, 그 뒤에 밀려온 감정을 더 선명하게 기억한다."],
     en: ["Sometimes the echo of a collision with reality feels more powerful than the collision itself. The moment has passed, but the feeling it stirred in me returns again and again. When it happens, I have no way of knowing how far the ripples will spread.", "The two spheres in this work represent reality and the self. In an instant, the water erupts and swallows even the outlines of the spheres. As the waves fill the space, it becomes hard to tell where the disturbance began. I know that feeling. Sometimes I remember the emotions that rushed in afterward more clearly than whatever first unsettled me."],
+    ja: ["現実とぶつかった瞬間よりも、その瞬間が私の中に残した響きのほうが大きいときがある。出来事はもう過ぎ去ったのに、そのときの感情は何度も戻ってくる。一度の衝突がどこまで広がるのか、その瞬間の私にはわからない。", "作品の中の二つの球は、現実と自我を意味する。一瞬、水が爆発するように噴き上がり、二つの球の輪郭さえも飲み込む。波が空間を満たしてしまうと、どこから揺れが始まったのかさえ見分けがつかない。私にもそんなときがある。最初に何が私を揺らしたのかよりも、その後に押し寄せた感情のほうを鮮明に覚えている。"],
   },
   blast_06: {
     ko: ["솔 르윗의 전시에서 같은 형태가 반복되어 하나의 구조를 이루는 모습이 인상에 남았다. 그 인상을 바탕으로 정사각형 틀을 계단처럼 쌓고, 그 안을 구체가 헤집고 다니게 했다. 구체가 틀 사이를 지날 때마다 물이 튀고, 매번 다른 물결이 번진다.", "나는 그 움직임에도 전시에서 느꼈던 단일성을 담고 싶었다. 물결은 매번 다른 모양으로 부서지지만, 구체가 틀 사이를 오가는 움직임은 되풀이된다. 정사각형의 반복이 하나의 구조를 이루듯, 구체의 반복은 그 안에 하나의 리듬을 만든다. 그로인해 청자로 하여금 그저 구체의 움직임과 물결에만 집중하게끔 의도하였다."],
     en: ["At an exhibition of Sol LeWitt’s work, I was struck by how a single form, repeated, could come together as one structure. Drawing on that impression, I stacked square frames in steps and set a sphere in motion through them. Each time it passes between the frames, water splashes and a different pattern of ripples spreads.", "I wanted that movement to carry the same sense of unity I felt at the exhibition. The waves break differently each time, while the sphere keeps moving back and forth through the frames. Just as the repeating squares form a single structure, the sphere’s repeated motion gives that structure a rhythm. I wanted that rhythm to draw the viewer’s attention entirely to the movement of the sphere and the water."],
+    ja: ["ソル・ルウィットの展示で、同じ形が繰り返されて一つの構造をなす姿が印象に残った。その印象をもとに正方形の枠を階段のように積み上げ、その中を球体が縫うように動き回るようにした。球体が枠の間を通るたびに水が跳ね、毎回違う波紋が広がる。", "私はその動きにも、展示で感じた単一性を込めたかった。波は毎回違う形で砕けるが、球体が枠の間を行き来する動きは繰り返される。正方形の反復が一つの構造をなすように、球体の反復はその中に一つのリズムを生む。そうして、見る人がただ球体の動きと波だけに集中するよう意図した。"],
   },
 };
-for (const k in STMT) W[k].desc = STMT[k].ko[0];
+for (const k in STMT) W[k].desc = STMT[k][LANG][0];
 // 갤러리 줄 — ["a","b"]: 같은 높이로 폭을 채운다
 //   { stack:[가로…], tall:"세로" }: 가로 작품을 쌓고, 그 높이만큼 세로 작품을 옆에 크게
 //   { tall:[세로…], note }: 세로 작품을 화면 높이에 맞춰 크게, 남는 폭에 설명
@@ -986,9 +1014,11 @@ mqN.addEventListener("change", buildGalleries);
 const dlg = $("#viewer"), vv = $("#vwVideo"), vi = $("#vwImg");
 // 작가 노트 전문 — 영상 자리에 국문·영문을 나란히 펼친다
 const vt = $("#vwText"), vm = $("#vwMore");
+const COLS = { ko: ["ko", "en"], en: ["en", "ko"], ja: ["ja", "en"] }[LANG];
 const stCol = (ps, lang) => `<div class="vt-col" lang="${lang}">${ps.map(p => `<p>${esc(p)}</p>`).join("")}</div>`;
 function setText(open) { vt.hidden = !open; vm.setAttribute("aria-expanded", String(open)); vm.textContent = open ? "영상 보기" : "전문 읽기"; }
 vm.addEventListener("click", () => { setText(vt.hidden); if (!vt.hidden) { vt.scrollTop = 0; vt.focus({ preventScroll: true }); } });
+$$(".langs a, .menu-langs a").forEach(a => a.addEventListener("click", () => { a.href = a.getAttribute("href").split("#")[0] + location.hash; }));
 dlg.addEventListener("cancel", e => { if (!vt.hidden) { e.preventDefault(); setText(false); vm.focus(); } });
 let cur = null;
 const listOf = id => (W[id].s === "exhibit" ? EX_ORDER : ORDER);
@@ -1042,9 +1072,9 @@ function show(id) {
   $("#vwSpec").textContent = ex ? `${w.when} · ${w.where}` : `원본 ${spec(w)} · ${w.full || w.d <= 16 ? "전체 영상" : "16초 발췌"}`;
   $("#vwDesc").textContent = w.desc;
   $("#vwEx").textContent = [w.ex && `전시 — ${w.ex}`, w.note].filter(Boolean).join(" / ");
-  const T = STMT[id], full = !!T && (T.ko.length > 1 || !!T.en);
+  const T = STMT[id], full = !!T && T[LANG].length > 1;
   vm.hidden = !full;
-  if (full) { vt.innerHTML = `<div class="vt-in">${stCol(T.ko, "ko")}${T.en ? stCol(T.en, "en") : ""}</div>`; vt.scrollTop = 0; }
+  if (full) { vt.innerHTML = `<div class="vt-in">${COLS.filter(l => T[l]).map(l => stCol(T[l], l)).join("")}</div>`; vt.scrollTop = 0; }
   else setText(false);
 }
 function openViewer(id) {
@@ -1454,7 +1484,7 @@ const wantsSeries = sub => curPage === "works" && (curFilter !== "all" || sub);
 const seriesLink = a => !!a.closest(".subtabs") || (!!a.closest(".wend") && !a.classList.contains("up"));
 // WORKS 끝의 이전 · 다음
 const SEQ = [
-  { f: "all", name: "All Works", k: "ALL · 17" },
+  { f: "all", name: "All Works", k: "ALL · 18" },
   { f: "blast", name: "Water Blast", k: "SERIES 01" },
   { f: "water", name: "Water", k: "SERIES 02" },
   { f: "whale", name: "Whale", k: "SERIES 03" },
