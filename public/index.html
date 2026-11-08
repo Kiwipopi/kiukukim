@@ -374,6 +374,21 @@ main{display:flex;flex-direction:column;gap:1px;background:var(--accent);min-wid
 .vw-info .spec{margin:0;font:500 11.5px/1.6 var(--mono);letter-spacing:.04em}
 .vw-info p{margin:0;font-size:14px}
 .vw-info .ex{margin-top:6px;font:500 11.5px/1.6 var(--mono);color:var(--accent)}
+.vw-info .ex:empty{display:none}
+.vw-info p#vwDesc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.txt-more{all:unset;cursor:pointer;display:inline-block;margin-top:12px;padding-bottom:3px;border-bottom:1px solid currentColor;font:500 11.5px/1 var(--mono);letter-spacing:.06em;color:var(--accent)}
+.txt-more[hidden]{display:none}
+.txt-more:hover{opacity:.7}
+.txt-more:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.vw-text{position:absolute;inset:0;z-index:2;overflow:auto;overscroll-behavior:contain;background:var(--accent)}
+.vw-text:focus{outline:0}
+.vt-in{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:1px;min-height:100%}
+.vt-col{background:var(--bg);padding:clamp(26px,3.6vw,64px) clamp(22px,3.6vw,64px) clamp(34px,4.4vw,80px)}
+.vt-col p{margin:0 0 1.15em;max-width:33em;font:500 16px/1.9 var(--sans);color:var(--ink);text-wrap:pretty}
+.vt-col[lang="en"] p{max-width:37em;font-size:15.5px;line-height:1.75}
+.vt-col p:last-child{margin-bottom:0}
+.sdesc p{margin:0 0 .85em}
+.sdesc .txt-more{margin-top:0}
 
 /* responsive */
 @media (max-width:1080px){
@@ -570,15 +585,19 @@ class StudioKimKiwook extends MediaArtStudio {
           <p class="lbl">SERIES 01 · 06 WORKS</p>
           <h3 class="giant" id="h-blast" style="--em:4.3">Water<br>Blast</h3>
           <p class="sub">유리 수조 속의 물</p>
-          <p class="desc">대학이라는 울타리를 나와 사회에 발을 디딘 뒤, 자아와 현실이 부딪히는 순간들을 담은 연작입니다. 작품 속 두 공은 현실과 자아를 뜻하고, blast는 그 충돌과 폭발, 그리고 그 속에서 변해가는 나에 관한 이야기입니다.</p>
+          <div class="desc sdesc">
+            <p>대학이라는 울타리를 나와 사회에 발을 디딘 지 2년이 되었다. 그중 1년은 방황했고, 1년은 정진했다. 그 시간 동안 나는 내 자아와 현실이 부딪히는 순간들을 겪어왔다.</p>
+            <div id="blastStmt" hidden><p>내게 안전한 울타리였던 대학과 달리, 사회라는 현실은 냉혹했다. 내가 어떤 가치를 지니고 있는지 증명해야 했다. 대학에서 가치를 인정받는 방식과 사회에서 가치를 인정받는 방식은, 적어도 내게는 달랐다. 그 차이를 마주하며 나 또한 조금씩 달라지고 있다.</p><p>작품 속 두 공은 현실과 자아를 뜻한다. 두 공은 서로 맞물리듯 움직이며 끊임없이 영향을 주고받는다. 앞으로 이어질 BLAST 시리즈에서도 이 움직임은 계속될 것이다. 그런데 둘의 움직임은 어딘가 닮아 있다. 어쩌면 그것은 내가 조금씩 사회에 동화되고 있다는 뜻일지도 모른다.</p><p>그 과정에서 내 안에 쌓인 감정들은 파도처럼 밀려와 터진다. blast는 그 충돌과 폭발, 그리고 그 속에서 변해가는 나에 관한 이야기다.</p><p>앞으로도 내 마음은 수없이 흔들리고 잘게 쪼개질 것이다. 그 속에서도 나는 내 중심을 잡아가고 싶다. 이 작품에는 그 바람을 담았다.</p></div>
+            <button class="txt-more" type="button" data-more="blastStmt" aria-controls="blastStmt" aria-expanded="false">서문 전체 읽기</button>
+          </div>
           <ul class="chips"><li>3:1</li><li>1:3</li><li>30 FPS</li><li>17–90 SEC</li></ul>
           <button class="more" type="button" data-play="blast_02"><span class="tri" aria-hidden="true"></span>Play</button>
         </div>
         <div class="code"><pre>  // SERIES 01 WATER BLAST — 유리 수조 속의 물
   readonly waterBlast = new Series({
     works:   ["blast_01", "blast_02", "blast_03", "blast_04", "blast_05", "blast_06"],
-    canvas:  [[720, 2160], [3840, 1280], [2560, 852], [3840, 1280], [2560, 853]],
-    runtime: [90, 90, 50, 41.7, 17.5],  // sec
+    canvas:  [[720, 2160], [3840, 1280], [2560, 852], [3840, 1280], [2560, 853], [3840, 1280]],
+    runtime: [90, 90, 50, 41.7, 17.5, 30],  // sec
     fps: 30,
   });</pre></div>
       </div>
@@ -738,12 +757,12 @@ studio.contact({ email: "hikiwook@gmail.com", instagram: "@kiukukim" });</pre></
       <span class="vw-t" id="vwCur">//</span><span class="vw-hd" id="vwHD" aria-live="polite"></span>
       <button class="vw-close" id="vwClose" type="button" aria-label="닫기">✕</button>
     </div>
-    <div class="vw-media"><video id="vwVideo" muted loop playsinline controls></video><img id="vwImg" alt="" hidden></div>
+    <div class="vw-media"><video id="vwVideo" muted loop playsinline controls></video><img id="vwImg" alt="" hidden><div class="vw-text" id="vwText" tabindex="-1" hidden></div></div>
     <div class="vw-bot">
       <button class="vw-nav prev" id="vwPrev" type="button"><span class="sq" aria-hidden="true"></span><span>PREV<small id="vwPrevT"></small></span></button>
       <div class="vw-info">
         <div><h3 id="vwTitle"></h3><p class="spec" id="vwSpec"></p></div>
-        <div><p id="vwDesc"></p><p class="ex" id="vwEx"></p></div>
+        <div><p id="vwDesc"></p><p class="ex" id="vwEx"></p><button class="txt-more" id="vwMore" type="button" aria-controls="vwText" aria-expanded="false" hidden>전문 읽기</button></div>
       </div>
       <button class="vw-nav next" id="vwNext" type="button"><span>NEXT<small id="vwNextT"></small></span><span class="sq" aria-hidden="true"></span></button>
     </div>
@@ -765,12 +784,12 @@ const mix = t => `rgb(${BG.map((p, i) => Math.round(p + (ACC[i] - p) * t)).join(
 
 /* ---------- 작품 데이터 (원본 사양 + 미리보기 크기) ---------- */
 const W = {
-  blast_01: { t: "Blast 01", s: "blast", w: 720, h: 2160, d: 90, f: 30, pw: 640, ph: 1920, desc: "작품 속 두 공은 현실과 자아를 뜻한다. 서로 맞물리듯 움직이며 끊임없이 영향을 주고받는다. 사회와 내 자아가 방황하는 과정을 담은 작품." },
-  blast_02: { t: "Blast 02", s: "blast", w: 3840, h: 1280, d: 90, f: 30, pw: 1920, ph: 640, desc: "당시 내게 현실은 벽이었다. 나는 현실을 꿰뚫고 나아가려 한다고 생각했다. 하지만 두 공은 모두 비슷하게 움직인다. 어쩌면 내 자아 또한 현실의 흐름을 따라 흘러가고 있었는지도 모른다." },
-  blast_03: { t: "Blast 03 · Coexistence", s: "blast", w: 2560, h: 852, d: 50, f: 30, pw: 1920, ph: 640, desc: "현실과 자아는 같은 공간에 머문다. 서로 다른 방향으로 움직이면서도, 하나의 움직임이 남긴 파동은 다른 하나에게 닿는다. 그 사이에서 현실과 함께 존재할 수 있는 거리를 배워간다." },
-  blast_04: { t: "Blast 04 · Calmness", s: "blast", w: 3840, h: 1280, d: 41.7, f: 30, pw: 1920, ph: 640, desc: "현실과 자아의 움직임은 같은 물을 흔들고, 그 파동은 서로에게 되돌아간다. 끊임없이 밀려드는 현실 속에서 차분함을 지키려 애쓰는 나의 모습을 담았다." },
-  blast_05: { t: "Blast 05 · Reverberation", s: "blast", w: 2560, h: 853, d: 17.5, f: 30, pw: 1920, ph: 640, full: 1, desc: "현실과 부딪힌 순간보다 그 순간이 내 안에 남긴 울림이 더 클 때가 있다. 물결이 공간을 가득 채우고 나면 어디서 흔들림이 시작됐는지조차 알아보기 어렵다. — 음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
-  blast_06: { t: "Blast 06", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, desc: "계단처럼 쌓아 올린 격자 구조물 아래로 물이 차 있고, 두 공이 그 사이를 오가며 물을 흔든다. — 음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
+  blast_01: { t: "Blast 01", s: "blast", w: 720, h: 2160, d: 90, f: 30, pw: 640, ph: 1920 },
+  blast_02: { t: "Blast 02", s: "blast", w: 3840, h: 1280, d: 90, f: 30, pw: 1920, ph: 640 },
+  blast_03: { t: "Blast 03 · Coexistence", s: "blast", w: 2560, h: 852, d: 50, f: 30, pw: 1920, ph: 640 },
+  blast_04: { t: "Blast 04 · Calmness", s: "blast", w: 3840, h: 1280, d: 41.7, f: 30, pw: 1920, ph: 640 },
+  blast_05: { t: "Blast 05 · Reverberation", s: "blast", w: 2560, h: 853, d: 17.5, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
+  blast_06: { t: "Blast 06 · Unity", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
   coex_wave: { t: "COEX Wave", s: "water", w: 1920, h: 1080, d: 18.6, f: 24, pw: 1552, ph: 756, desc: "코너형 LED를 위한 아나모픽 수조. 화면 모서리를 경계 삼아 파도가 부딪힙니다." },
   cliff_waterfall: { t: "Cliff Waterfall", s: "water", w: 1080, h: 1920, d: 22.6, f: 24, pw: 1080, ph: 1920, ex: "2026.06 강동 더리버몰 · 2026.07 마곡 MICE 르웨스트 미디어파사드", desc: "이끼 낀 절벽을 타고 쏟아지는 에메랄드빛 폭포." },
   up_gravity: { t: "Up Gravity", s: "water", w: 1450, h: 2560, d: 37.5, f: 24, pw: 1088, ph: 1920, desc: "아래에서 위로, 중력을 거슬러 솟구치는 물의 벽." },
@@ -784,6 +803,33 @@ const W = {
   whale_comp: { t: "Whale Study", s: "whale", w: 1920, h: 1080, d: 14.6, f: 24, pw: 1920, ph: 500, desc: "구름 위 고래의 움직임 스터디." },
   yuryeo: { t: "Yuryeo 流麗", s: "feature", w: 3840, h: 2160, d: 60, f: 30, pw: 1920, ph: 1080, ex: "2026.07–08 광화문 해치마당 미디어월", desc: "절벽에서 떨어지는 폭포의 움직임으로 자유와 가능성의 감각을 표현한 작품." }
 };
+/* ---------- 작가 노트 전문 (국문 · 영문) — 크게 보기에서 '전문 읽기'로 펼친다 ---------- */
+const STMT = {
+  blast_01: {
+    ko: ["이 작품은 사회와 내 자아가 방황하는 과정을 자아낸 작품이다."],
+  },
+  blast_02: {
+    ko: ["작업을 하던 때였다. 나는 하고 싶은 것이 분명했다. 머릿속에는 선명한 장면이 있었지만, 그것을 어떻게 구현해야 할지 알지 못했다. 표현하고 싶은 것과 표현할 수 있는 것 사이에는 거리가 있었다. 내 기술은 아직 무르익지 못했다.", "당시 내게 현실은 벽이었다. 그 앞에 머무는 동안에도 시간은 소용돌이처럼 빠르게 흘러갔다. 마음은 앞서 있었지만 작업은 좀처럼 따라오지 못했다. 나는 그 벽을 뚫고 싶어 계속해서 시도했다.", "나는 현실을 꿰뚫고 나아가려 한다고 생각했다. 두 가지 공 모두 비슷하다. 어쩌면 내 자아 또한 현실의 흐름을 따라 흘러가고 있었는지도 모른다."],
+    en: ["I was working on a piece. I knew exactly what I wanted to do. I had a vivid image in my mind, but I did not know how to bring it to life. There was a distance between what I wanted to express and what I was able to express. My technical skills had yet to mature.", "At the time, reality was a wall. As I lingered before it, time swept past like a whirlpool. My mind raced ahead, but the work struggled to keep up. I kept trying, determined to break through that wall.", "I thought I was pushing my way through reality. Yet the two spheres move in much the same way. Perhaps my sense of self, too, had been drifting with the current of reality."],
+  },
+  blast_03: {
+    ko: ["현실과 자아는 같은 공간에 머문다. 서로 다른 방향으로 움직이면서도, 하나의 움직임이 남긴 파동은 다른 하나에게 닿는다.", "사회에 발을 디딘 이후, 나는 현실과 부딪히며 조금씩 변해왔다. 나를 지키고 싶었고, 현실에 적응하고도 싶었다. 두 마음은 내 안에서 끊임없이 움직인다. 그 사이에서 나는 현실과 내가 함께 존재할 수 있는 거리를 배워간다.", "내가 생각하는 공존에는 흔들림이 있다. 서로에게 영향을 받으며 자신의 자리를 찾아가는 움직임이 있다. 앞으로도 내 마음에는 수많은 파동이 일어날 것이다. 나는 그 안에서 내 중심을 잡으며, 현실과 함께 살아가는 법을 익히고 싶다."],
+    en: ["Reality and the self inhabit the same space. Even as they move in different directions, the ripples left by one reach the other. The two spheres in this work trace their own paths, stirring the same surface of water.", "Since stepping into society, I have gradually changed through my encounters and collisions with reality. I have wanted to hold on to who I am, and I have wanted to adapt. Both desires are constantly in motion within me. Between them, I am learning to find a distance at which reality and the self can coexist.", "To me, coexistence carries a sense of uncertainty and motion. It means finding one’s place while being shaped by the presence of another. Countless ripples will continue to move through me. Within them, I hope to find my balance and learn how to live alongside reality."],
+  },
+  blast_04: {
+    ko: ["현실과 부딪히는 일에 조금은 익숙해졌다고 생각했다. 예전보다 차분하게 받아들일 수 있을 것 같았다. 하지만 마음이 가라앉기도 전에 또 다른 순간이 밀려온다. 애써 정리한 감정 위로 새로운 감정이 겹쳐지고, 나는 다시 흔들린다.", "현실과 자아의 움직임은 같은 물을 흔들고, 그 파동은 서로에게 되돌아간다. 현실이 나를 흔들기도 하고, 그에 반응하는 내가 더 큰 파동을 만들기도 한다. 차분해지고 싶은 마음과 달리, 내 안에 쌓인 감정은 수면을 뚫고 터져 나온다.", "나는 그 안에서도 내 중심을 잡고 싶다. 하지만 차분함을 유지하겠다는 다짐만으로 마음이 고요해지지는 않는다. 괜찮아졌다고 생각하다가도 작은 순간에 다시 일렁이는 나를 발견한다. 이 작품에는 그렇게 끊임없이 밀려드는 현실 속에서, 차분함을 지키려 애쓰는 나의 모습을 담았다."],
+    en: ["I thought I had grown somewhat used to confronting reality. I felt I could take things more calmly than before. But before my mind has time to settle, another moment comes rushing in. New emotions wash over those I have barely managed to sort through, and I find myself shaken again.", "Reality and the self stir the same water, sending ripples back toward each other. Sometimes reality shakes me; sometimes my response creates an even greater wave. Despite my wish to remain calm, the emotions building within me burst through the surface.", "I want to stay grounded through it all. But simply resolving to remain calm is not enough to quiet my mind. Just when I think I am okay, I find that even a small moment can stir me again. This work reflects my struggle to hold on to that calm as reality keeps washing over me."],
+  },
+  blast_05: {
+    ko: ["현실과 부딪힌 순간보다 그 순간이 내 안에 남긴 울림이 더 클 때가 있다. 일은 이미 지나갔는데, 그때의 감정은 몇 번이고 되돌아온다. 한 번의 충돌이 어디까지 번질지, 그 순간의 나는 알 수 없다.", "작품 속 두 공은 현실과 자아를 뜻한다. 한순간 물이 폭발하듯 터져 올라 두 공의 윤곽마저 삼킨다. 물결이 공간을 가득 채우고 나면 어디서 흔들림이 시작됐는지조차 알아보기 어렵다. 나도 그럴 때가 있다. 처음에 무엇이 나를 흔들었는지보다, 그 뒤에 밀려온 감정을 더 선명하게 기억한다."],
+    en: ["Sometimes the echo of a collision with reality feels more powerful than the collision itself. The moment has passed, but the feeling it stirred in me returns again and again. When it happens, I have no way of knowing how far the ripples will spread.", "The two spheres in this work represent reality and the self. In an instant, the water erupts and swallows even the outlines of the spheres. As the waves fill the space, it becomes hard to tell where the disturbance began. I know that feeling. Sometimes I remember the emotions that rushed in afterward more clearly than whatever first unsettled me."],
+  },
+  blast_06: {
+    ko: ["솔 르윗의 전시에서 같은 형태가 반복되어 하나의 구조를 이루는 모습이 인상에 남았다. 그 인상을 바탕으로 정사각형 틀을 계단처럼 쌓고, 그 안을 구체가 헤집고 다니게 했다. 구체가 틀 사이를 지날 때마다 물이 튀고, 매번 다른 물결이 번진다.", "나는 그 움직임에도 전시에서 느꼈던 단일성을 담고 싶었다. 물결은 매번 다른 모양으로 부서지지만, 구체가 틀 사이를 오가는 움직임은 되풀이된다. 정사각형의 반복이 하나의 구조를 이루듯, 구체의 반복은 그 안에 하나의 리듬을 만든다. 그로인해 청자로 하여금 그저 구체의 움직임과 물결에만 집중하게끔 의도하였다."],
+    en: ["At an exhibition of Sol LeWitt’s work, I was struck by how a single form, repeated, could come together as one structure. Drawing on that impression, I stacked square frames in steps and set a sphere in motion through them. Each time it passes between the frames, water splashes and a different pattern of ripples spreads.", "I wanted that movement to carry the same sense of unity I felt at the exhibition. The waves break differently each time, while the sphere keeps moving back and forth through the frames. Just as the repeating squares form a single structure, the sphere’s repeated motion gives that structure a rhythm. I wanted that rhythm to draw the viewer’s attention entirely to the movement of the sphere and the water."],
+  },
+};
+for (const k in STMT) W[k].desc = STMT[k].ko[0];
 // 갤러리 줄 — ["a","b"]: 같은 높이로 폭을 채운다
 //   { stack:[가로…], tall:"세로" }: 가로 작품을 쌓고, 그 높이만큼 세로 작품을 옆에 크게
 //   { tall:[세로…], note }: 세로 작품을 화면 높이에 맞춰 크게, 남는 폭에 설명
@@ -938,6 +984,12 @@ mqN.addEventListener("change", buildGalleries);
 
 /* ---------- 뷰어 ---------- */
 const dlg = $("#viewer"), vv = $("#vwVideo"), vi = $("#vwImg");
+// 작가 노트 전문 — 영상 자리에 국문·영문을 나란히 펼친다
+const vt = $("#vwText"), vm = $("#vwMore");
+const stCol = (ps, lang) => `<div class="vt-col" lang="${lang}">${ps.map(p => `<p>${esc(p)}</p>`).join("")}</div>`;
+function setText(open) { vt.hidden = !open; vm.setAttribute("aria-expanded", String(open)); vm.textContent = open ? "영상 보기" : "전문 읽기"; }
+vm.addEventListener("click", () => { setText(vt.hidden); if (!vt.hidden) { vt.scrollTop = 0; vt.focus({ preventScroll: true }); } });
+dlg.addEventListener("cancel", e => { if (!vt.hidden) { e.preventDefault(); setText(false); vm.focus(); } });
 let cur = null;
 const listOf = id => (W[id].s === "exhibit" ? EX_ORDER : ORDER);
 let hdCtl = null, hdUrl = null;
@@ -989,7 +1041,11 @@ function show(id) {
   $("#vwTitle").textContent = w.t;
   $("#vwSpec").textContent = ex ? `${w.when} · ${w.where}` : `원본 ${spec(w)} · ${w.full || w.d <= 16 ? "전체 영상" : "16초 발췌"}`;
   $("#vwDesc").textContent = w.desc;
-  $("#vwEx").textContent = w.ex ? `전시 — ${w.ex}` : "";
+  $("#vwEx").textContent = [w.ex && `전시 — ${w.ex}`, w.note].filter(Boolean).join(" / ");
+  const T = STMT[id], full = !!T && (T.ko.length > 1 || !!T.en);
+  vm.hidden = !full;
+  if (full) { vt.innerHTML = `<div class="vt-in">${stCol(T.ko, "ko")}${T.en ? stCol(T.en, "en") : ""}</div>`; vt.scrollTop = 0; }
+  else setText(false);
 }
 function openViewer(id) {
   if (!W[id]) return;
@@ -1002,6 +1058,7 @@ function openViewer(id) {
 const stepView = d => { const L = listOf(cur), i = L.indexOf(cur), n = L.length; show(L[(i + d + n) % n]); };
 dlg.addEventListener("close", () => {
   dropHD();
+  setText(false);
   viewerOpen = false;
   vv.pause(); vv.removeAttribute("src"); vv.load(); vi.removeAttribute("src");
   if (motion) visible.forEach(v => v.play().catch(() => {}));
@@ -1018,6 +1075,8 @@ dlg.addEventListener("keydown", e => {
 document.addEventListener("click", e => {
   const b = e.target.closest("[data-open],[data-play]");
   if (b) openViewer(b.dataset.open || b.dataset.play);
+  const m = e.target.closest("[data-more]");
+  if (m) { const t = document.getElementById(m.dataset.more), open = t.hidden; t.hidden = !open; m.setAttribute("aria-expanded", String(open)); m.textContent = open ? "서문 접기" : "서문 전체 읽기"; }
 });
 
 /* ---------- 코드 창: 줄 번호가 이어지고, 보이면 타이핑된다 ---------- */
