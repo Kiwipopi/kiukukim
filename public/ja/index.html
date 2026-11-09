@@ -505,7 +505,7 @@ html[lang="ja"] body{word-break:normal;line-break:strict}
       <span class="stage-tri" aria-hidden="true"></span>
     </div>
     <div class="index" aria-label="ショートカット">
-      <a class="idx" href="#works-blast"><span class="k">SERIES 01</span><b class="idx-t">Water<br>Blast</b><span class="ko">ガラス水槽の中の水</span><span class="c">06 WORKS</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#works-blast"><span class="k">SERIES 01</span><b class="idx-t">Water<br>Blast</b><span class="ko">ガラス水槽の中の水</span><span class="c">07 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#works-water"><span class="k">SERIES 02</span><b class="idx-t">Water</b><span class="ko">流れ落ち、湧き上がる水</span><span class="c">06 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#works-whale"><span class="k">SERIES 03</span><b class="idx-t">Whale</b><span class="ko">雲の上を泳ぐクジラ</span><span class="c">05 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <div class="news" aria-label="お知らせ">
@@ -534,7 +534,7 @@ html[lang="ja"] body{word-break:normal;line-break:strict}
         <p class="sub">水・雲・クジラをシミュレーションするメディアアートスタジオ</p>
         <p class="desc">Studio Kim Kiwookは、メディアファサードや大型LED、縦型ディスプレイのための映像を制作しています。上映環境の解像度と比率に合わせてレンダリングします。</p>
         <div class="facts">
-          <div><b>18</b><span>作品</span></div>
+          <div><b>19</b><span>作品</span></div>
           <div><b>5</b><span>2026年の展示</span></div>
           <div><b>3840</b><span>最大横ピクセル</span></div>
           <div><b>24/30</b><span>FPS</span></div>
@@ -565,22 +565,22 @@ class StudioKimKiwook extends MediaArtStudio {
   <!-- 02 WORKS -->
   <section class="page" data-page="works" aria-labelledby="h-works" hidden>
     <nav class="subtabs" id="subtabs" aria-label="シリーズ">
-      <a href="#works" data-filter="all">ALL <i>18</i></a>
-      <a href="#works-blast" data-filter="blast">01 WATER BLAST <i>06</i></a>
+      <a href="#works" data-filter="all">ALL <i>19</i></a>
+      <a href="#works-blast" data-filter="blast">01 WATER BLAST <i>07</i></a>
       <a href="#works-water" data-filter="water">02 WATER <i>06</i></a>
       <a href="#works-whale" data-filter="whale">03 WHALE <i>05</i></a>
       <a href="#works-yuryeo" data-filter="yuryeo">04 YURYEO <i>01</i></a>
     </nav>
     <div class="split">
       <div class="cellbox stxt">
-        <p class="lbl">WORKS · 18 WORKS · 4 SERIES</p>
+        <p class="lbl">WORKS · 19 WORKS · 4 SERIES</p>
         <h2 class="giant" id="h-works" style="--em:4.5">Works</h2>
         <p class="sub">ガラス水槽の水、流れ落ちる水、雲の上のクジラ</p>
         <p class="desc">3つのシリーズと1つの代表作です。作品を押すと大きく表示され、上のタブでシリーズごとに見ることができます。</p>
       </div>
-      <div class="code"><pre>  // WORKS — 18 works · 4 series
+      <div class="code"><pre>  // WORKS — 19 works · 4 series
   readonly works = [
-    ...this.waterBlast,  // 06
+    ...this.waterBlast,  // 07
     ...this.water,       // 06
     ...this.whale,       // 05
     this.yuryeo,         // 01
@@ -602,7 +602,7 @@ class StudioKimKiwook extends MediaArtStudio {
     <div class="series" data-series="blast" aria-labelledby="h-blast">
       <div class="split rev">
         <div class="cellbox stxt">
-          <p class="lbl">SERIES 01 · 06 WORKS</p>
+          <p class="lbl">SERIES 01 · 07 WORKS</p>
           <h3 class="giant" id="h-blast" style="--em:4.3">Water<br>Blast</h3>
           <p class="sub">ガラス水槽の中の水</p>
           <div class="desc sdesc">
@@ -615,9 +615,9 @@ class StudioKimKiwook extends MediaArtStudio {
         </div>
         <div class="code"><pre>  // SERIES 01 WATER BLAST — ガラス水槽の中の水
   readonly waterBlast = new Series({
-    works:   ["blast_01", "blast_02", "blast_03", "blast_04", "blast_05", "blast_06"],
-    canvas:  [[720, 2160], [3840, 1280], [2560, 852], [3840, 1280], [2560, 853], [3840, 1280]],
-    runtime: [90, 90, 50, 41.7, 17.5, 30],  // sec
+    works:   ["blast_01", "blast_02", "blast_03", "blast_04", "blast_05", "blast_06", "blast_07"],
+    canvas:  [[720, 2160], [3840, 1280], [2560, 852], [3840, 1280], [2560, 853], [3840, 1280], [3840, 1280]],
+    runtime: [90, 90, 50, 41.7, 17.5, 30, 30],  // sec
     fps: 30,
   });</pre></div>
       </div>
@@ -811,6 +811,7 @@ const W = {
   blast_04: { t: "Blast 04 · Calmness", s: "blast", w: 3840, h: 1280, d: 41.7, f: 30, pw: 1920, ph: 640 },
   blast_05: { t: "Blast 05 · Reverberation", s: "blast", w: 2560, h: 853, d: 17.5, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。" },
   blast_06: { t: "Blast 06 · Unity", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。" },
+  blast_07: { t: "Blast 07", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "水槽の中に並ぶガラス板の間を二つの球が通り抜け、ぶつかるたびにガラスが砕けて散る。" },
   coex_wave: { t: "COEX Wave", s: "water", w: 1920, h: 1080, d: 18.6, f: 24, pw: 1552, ph: 756, desc: "コーナー型LEDのためのアナモルフィック水槽。画面の角を境界に波がぶつかります。" },
   cliff_waterfall: { t: "Cliff Waterfall", s: "water", w: 1080, h: 1920, d: 22.6, f: 24, pw: 1080, ph: 1920, ex: "2026.06 カンドン ザ・リバーモール · 2026.07 マゴク MICE LE WEST メディアファサード", desc: "苔むした崖を流れ落ちるエメラルド色の滝。" },
   up_gravity: { t: "Up Gravity", s: "water", w: 1450, h: 2560, d: 37.5, f: 24, pw: 1088, ph: 1920, desc: "下から上へ、重力に逆らって湧き上がる水の壁。" },
@@ -863,8 +864,8 @@ for (const k in STMT) W[k].desc = STMT[k][LANG][0];
 //   { tall:[세로…], note }: 세로 작품을 화면 높이에 맞춰 크게, 남는 폭에 설명
 const LAYOUT = {
   blast: {
-    wide: [{ stack: ["blast_02", "blast_03", "blast_04"], tall: "blast_01" }, ["blast_05"], ["blast_06"]],
-    narrow: [["blast_02"], ["blast_03"], ["blast_04"], ["blast_05"], ["blast_06"], { tall: ["blast_01"], note: "blast" }]
+    wide: [{ stack: ["blast_02", "blast_03", "blast_04"], tall: "blast_01" }, ["blast_05"], ["blast_06"], ["blast_07"]],
+    narrow: [["blast_02"], ["blast_03"], ["blast_04"], ["blast_05"], ["blast_06"], ["blast_07"], { tall: ["blast_01"], note: "blast" }]
   },
   water: {
     wide: [["coex_wave"], { tall: ["cliff_waterfall", "up_gravity", "wave_district"], note: "water" }, ["pts_wave"], ["water_wave"]],
@@ -913,7 +914,7 @@ Object.assign(LAYOUT, {
   ex_magok: { wide: [{ tall: ["ex_magok2", "ex_magok3"], info: "magok" }], narrow: [{ info: "magok" }, ["ex_magok2", "ex_magok3"]] },
   ex_gangdong: { wide: [{ tall: ["ex_ikea1", "ex_ikea2"], info: "gangdong" }, ["ex_ikea3"]], narrow: [{ info: "gangdong" }, ["ex_ikea3"], ["ex_ikea1", "ex_ikea2"]] }
 });
-const ORDER = ["blast_02", "blast_03", "blast_04", "blast_01", "blast_05", "blast_06", "coex_wave", "cliff_waterfall", "up_gravity", "wave_district", "pts_wave", "water_wave", "whale_spring_winter", "cloud_whale_landscape", "humpback_clouds", "cloud_whales", "whale_comp", "yuryeo"];
+const ORDER = ["blast_02", "blast_03", "blast_04", "blast_01", "blast_05", "blast_06", "blast_07", "coex_wave", "cliff_waterfall", "up_gravity", "wave_district", "pts_wave", "water_wave", "whale_spring_winter", "cloud_whale_landscape", "humpback_clouds", "cloud_whales", "whale_comp", "yuryeo"];
 const ratio = (w, h) => {
   const r = w / h;
   for (const [v, l] of [[3, "3:1"], [16 / 9, "16:9"], [9 / 16, "9:16"], [1 / 3, "1:3"], [40 / 11, "40:11"]]) if (Math.abs(r - v) / v < 0.03) return l;
@@ -1484,7 +1485,7 @@ const wantsSeries = sub => curPage === "works" && (curFilter !== "all" || sub);
 const seriesLink = a => !!a.closest(".subtabs") || (!!a.closest(".wend") && !a.classList.contains("up"));
 // WORKS 끝의 이전 · 다음
 const SEQ = [
-  { f: "all", name: "All Works", k: "ALL · 18" },
+  { f: "all", name: "All Works", k: "ALL · 19" },
   { f: "blast", name: "Water Blast", k: "SERIES 01" },
   { f: "water", name: "Water", k: "SERIES 02" },
   { f: "whale", name: "Whale", k: "SERIES 03" },
