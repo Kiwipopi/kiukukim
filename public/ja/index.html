@@ -6,6 +6,8 @@
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Studio Kim Kiwook</title>
 <meta name="description" content="水・雲・クジラのシミュレーションで、メディアファサードや大型LEDのための映像をつくるメディアアートスタジオ">
+<meta name="robots" content="noai, noimageai">
+<meta name="tdm-reservation" content="1">
 <link rel="canonical" href="https://kiukukim.com/ja/">
 <link rel="alternate" hreflang="ko" href="https://kiukukim.com/">
 <link rel="alternate" hreflang="en" href="https://kiukukim.com/en/">
@@ -407,6 +409,21 @@ main{display:flex;flex-direction:column;gap:1px;background:var(--accent);min-wid
 html[lang="ja"]{--sans:"IBM Plex Sans JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,"IBM Plex Sans JP",monospace}
 html[lang="ja"] body{word-break:normal;line-break:strict}
 
+.rights{border-top:var(--line)}
+.rights summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px var(--pad);font:500 12px/1.5 var(--mono);letter-spacing:.06em;color:var(--ink)}
+.rights summary::-webkit-details-marker{display:none}
+.rights summary::after{content:"+";font-size:16px;line-height:1;color:var(--accent)}
+.rights[open] summary::after{content:"\2212"}
+.rights summary:hover{color:var(--accent)}
+.rights summary:focus-visible{outline:2px solid var(--accent);outline-offset:-4px}
+.rt-in{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:1px;background:var(--accent);border-top:var(--line)}
+.rt-col{background:var(--bg);padding:clamp(24px,3vw,48px) var(--pad) clamp(30px,3.6vw,56px)}
+.rt-col h3{margin:0 0 16px;font:600 15px/1.4 var(--sans);color:var(--ink)}
+.rt-col p{margin:0 0 .9em;max-width:40em;font:500 14px/1.85 var(--sans);color:var(--ink);text-wrap:pretty}
+.rt-col p:last-child{margin:0}
+.rt-col a{color:var(--accent)}
+html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang="en"] .rt-col[lang="ja"],html[lang="ja"] .rt-col[lang="ko"]{display:none}
+
 /* responsive */
 @media (max-width:1080px){
   .braces{display:none}
@@ -769,6 +786,10 @@ studio.contact({ email: "hikiwook@gmail.com", instagram: "@kiukukim" });</pre></
       <p class="fine">{ © 2026 Studio Kim Kiwook // hikiwook@gmail.com // <a href="https://www.instagram.com/kiukukim/" target="_blank" rel="noopener">@kiukukim</a> }</p>
     </div>
   </div>
+  <details class="rights" id="rights">
+    <summary>{ © 2026 Kim Kiwook // 著作権・AI学習への利用について }</summary>
+    <div class="rt-in"><div class="rt-col" lang="ko"><h3>저작권 및 AI 학습 이용 안내</h3><p>이 사이트에 게시된 영상, 이미지, 작품 설명 등 김기욱의 창작물에 대한 저작권은 김기욱에게 있습니다. 협업 작업이나 별도 출처가 표기된 자료의 권리는 해당 권리자에게 있습니다.</p><p>관련 법령에서 허용하는 경우를 제외하고, 권리자의 사전 서면 허락 없이 작품의 전체 또는 일부를 복제, 편집, 가공, 재게시, 배포하거나 전시·상영에 사용할 수 없습니다. 영상의 일부를 잘라 쓰거나 정지 화면을 추출해 다른 콘텐츠에 사용하는 경우도 포함됩니다.</p><p>인공지능(AI) 모델의 학습 또는 미세조정을 목적으로 작품을 수집·저장하거나 데이터셋에 포함해 사용하는 것을 허용하지 않습니다. 웹 스크래핑이나 크롤링을 통한 자동 수집에도 같은 기준이 적용됩니다.</p><p>작품 이용 및 라이선스 문의는 <a href="mailto:hikiwook@gmail.com">hikiwook@gmail.com</a> 또는 <a href="#contact">문의 페이지</a>로 연락해 주세요.</p></div><div class="rt-col" lang="ja"><h3>著作権およびAI学習への利用について</h3><p>本サイトに掲載している映像、画像、作品解説など、Kim Kiwookの創作物の著作権はKim Kiwookに帰属します。共同制作や別途出典を表記した資料の権利は、それぞれの権利者に帰属します。</p><p>関係法令で認められる場合を除き、権利者の事前の書面による許諾なく、作品の全部または一部を複製、編集、加工、転載、配布し、または展示・上映に使用することはできません。映像の一部を切り出して使用することや、静止画を抽出して他のコンテンツに使用することも含まれます。</p><p>人工知能(AI)モデルの学習またはファインチューニングを目的として、作品を収集・保存し、またはデータセットに含めて使用することを許可しません。ウェブスクレイピングやクローリングによる自動収集にも同じ基準が適用されます。</p><p>作品の利用およびライセンスに関するお問い合わせは、<a href="mailto:hikiwook@gmail.com">hikiwook@gmail.com</a> または<a href="#contact">お問い合わせページ</a>までご連絡ください。</p></div><div class="rt-col" lang="en"><h3>Copyright and AI Training Notice</h3><p>Copyright in all works by Kim Kiwook published on this site, including videos, images and descriptions of the works, belongs to Kim Kiwook. Rights in collaborative works or in materials credited to other sources belong to their respective rights holders.</p><p>Except as permitted by applicable law, no work may be reproduced, edited, modified, reposted or distributed, in whole or in part, or used in any exhibition or screening, without the prior written permission of the rights holder. This includes cutting excerpts from the videos or extracting still frames for use in other content.</p><p>Collecting or storing the works, or including them in datasets, for the purpose of training or fine-tuning artificial intelligence (AI) models is not permitted. The same applies to automated collection through web scraping or crawling.</p><p>For permission to use the works or licensing inquiries, please contact <a href="mailto:hikiwook@gmail.com">hikiwook@gmail.com</a> or use the <a href="#contact">Contact page</a>.</p></div></div>
+  </details>
 </footer>
 
 <dialog id="viewer" aria-label="作品を見る">

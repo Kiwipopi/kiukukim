@@ -113,5 +113,6 @@
  ["aria-label=\"닫기\"", "aria-label=\"Close\"", "aria-label=\"閉じる\""],
  ["aria-label=\"홈\"", "aria-label=\"Home\"", "aria-label=\"ホーム\""],
  [">작품<", ">Works<", ">作品<"],
- [">전시<", ">Exhibitions<", ">展示<"]
+ [">전시<", ">Exhibitions<", ">展示<"],
+ ["저작권 및 AI 학습 이용 안내", "Copyright & AI training notice", "著作権・AI学習への利用について"]
 ]

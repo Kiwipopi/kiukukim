@@ -27,6 +27,7 @@ def build(lang: str, s: str) -> str:
         keep.append(m.group(0)); return f"\x00{len(keep) - 1}\x00"
     s = re.sub(r"const STMT = \{.*?\n\};\n", mask, s, flags=re.S)
     s = re.sub(r"<b>스튜디오 김기욱</b>", mask, s)
+    s = re.sub(r'<div class="rt-col" lang="ko">.*?</div>', mask, s, flags=re.S)  # 국문 저작권 안내는 원문 그대로(페이지 언어에 따라 CSS가 숨김)
 
     for row in sorted(TABLE, key=lambda r: -len(r[0])):
         s = s.replace(row[0], row[col])
@@ -51,6 +52,7 @@ def build(lang: str, s: str) -> str:
 
 def leftovers(s: str):
     s = re.sub(r"const STMT = \{.*?\n\};\n", lambda m: "\n" * m.group(0).count("\n"), s, flags=re.S)
+    s = re.sub(r'<div class="rt-col" lang="ko">.*?</div>', "", s, flags=re.S)
     s = re.sub(r"/\*.*?\*/|<!--.*?-->", lambda m: "\n" * m.group(0).count("\n"), s, flags=re.S)
     out = []
     for i, line in enumerate(s.split("\n"), 1):
