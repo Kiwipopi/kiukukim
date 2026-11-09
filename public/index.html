@@ -878,12 +878,12 @@ const mix = t => `rgb(${BG.map((p, i) => Math.round(p + (ACC[i] - p) * t)).join(
 /* ---------- 작품 데이터 (원본 사양 + 미리보기 크기) ---------- */
 const W = {
   blast_01: { t: "Blast 01", s: "blast", w: 720, h: 2160, d: 90, f: 30, pw: 640, ph: 1920 },
-  blast_02: { t: "Blast 02", s: "blast", w: 3840, h: 1280, d: 90, f: 30, pw: 1920, ph: 640 },
-  blast_03: { t: "Blast 03 · Coexistence", s: "blast", w: 2560, h: 852, d: 50, f: 30, pw: 1920, ph: 640 },
-  blast_04: { t: "Blast 04 · Calmness", s: "blast", w: 3840, h: 1280, d: 41.7, f: 30, pw: 1920, ph: 640 },
-  blast_05: { t: "Blast 05 · Reverberation", s: "blast", w: 2560, h: 853, d: 17.5, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
-  blast_06: { t: "Blast 06 · Unity", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
-  blast_07: { t: "Blast 07 · Collapse", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
+  blast_02: { yt: "PCxdazE_ecM", t: "Blast 02", s: "blast", w: 3840, h: 1280, d: 90, f: 30, pw: 1920, ph: 640 },
+  blast_03: { yt: "jqfnSUUYXcM", t: "Blast 03 · Coexistence", s: "blast", w: 2560, h: 852, d: 50, f: 30, pw: 1920, ph: 640 },
+  blast_04: { yt: "Dt-nZ27SY3g", t: "Blast 04 · Calmness", s: "blast", w: 3840, h: 1280, d: 41.7, f: 30, pw: 1920, ph: 640 },
+  blast_05: { yt: "wxtj6e0Ll6Q", t: "Blast 05 · Reverberation", s: "blast", w: 2560, h: 853, d: 17.5, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
+  blast_06: { yt: "JTTmLkt43Gc", t: "Blast 06 · Unity", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
+  blast_07: { yt: "djbm9cR-ylA", t: "Blast 07 · Collapse", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
   coex_wave: { t: "COEX Wave", s: "water", w: 1920, h: 1080, d: 18.6, f: 24, pw: 1552, ph: 756, desc: "코너형 LED를 위한 아나모픽 수조. 화면 모서리를 경계 삼아 파도가 부딪힙니다." },
   cliff_waterfall: { t: "Cliff Waterfall", s: "water", w: 1080, h: 1920, d: 22.6, f: 24, pw: 1080, ph: 1920, ex: "2026.06 강동 더리버몰 · 2026.07 마곡 MICE 르웨스트 미디어파사드", desc: "이끼 낀 절벽을 타고 쏟아지는 에메랄드빛 폭포." },
   up_gravity: { t: "Up Gravity", s: "water", w: 1450, h: 2560, d: 37.5, f: 24, pw: 1088, ph: 1920, desc: "아래에서 위로, 중력을 거슬러 솟구치는 물의 벽." },
@@ -894,10 +894,10 @@ const W = {
   cloud_whale_landscape: { t: "Cloud Whale Landscape", s: "whale", w: 3240, h: 1080, d: 30, f: 24, pw: 1920, ph: 640, desc: "끝없이 펼쳐진 구름바다 위를 유영하는 고래들." },
   humpback_clouds: { t: "Humpback from Clouds", s: "whale", w: 1920, h: 1080, d: 14, f: 29.97, pw: 1920, ph: 724, desc: "역광 속 구름을 뚫고 나오는 혹등고래." },
   cloud_whales: { t: "Cloud Whales", s: "whale", w: 1920, h: 1080, d: 37.5, f: 30, pw: 1920, ph: 640, desc: "푸른 하늘과 뭉게구름 사이를 나란히 헤엄치는 세 마리의 고래." },
-  sol_waterfall: { t: "Sol Waterfall", s: "waterfall", w: 3240, h: 1080, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요.", desc: "격자 구조물 앞, 계단처럼 쌓인 기하 블록 위로 물이 넘쳐흘러 바닥의 수면으로 모인다." },
-  particles_4seasons: { t: "Particles · Four Seasons", s: "particles", w: 3840, h: 896, d: 60, f: 30, pw: 1920, ph: 448, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요.", desc: "입자가 꽃잎처럼 피어올랐다 흩어지며 봄에서 겨울까지 네 계절의 색으로 차례로 물든다." },
+  sol_waterfall: { yt: "14KltWgwN_4", t: "Sol Waterfall", s: "waterfall", w: 3240, h: 1080, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요.", desc: "격자 구조물 앞, 계단처럼 쌓인 기하 블록 위로 물이 넘쳐흘러 바닥의 수면으로 모인다." },
+  particles_4seasons: { yt: "Y2Vnbe_3gns", t: "Particles · Four Seasons", s: "particles", w: 3840, h: 896, d: 60, f: 30, pw: 1920, ph: 448, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요.", desc: "입자가 꽃잎처럼 피어올랐다 흩어지며 봄에서 겨울까지 네 계절의 색으로 차례로 물든다." },
   whale_comp: { t: "Whale Study", s: "whale", w: 1920, h: 1080, d: 14.6, f: 24, pw: 1920, ph: 500, desc: "구름 위 고래의 움직임 스터디." },
-  yuryeo: { t: "Yuryeo 流麗", s: "feature", w: 3840, h: 2160, d: 60, f: 30, pw: 1920, ph: 1080, ex: "2026.07–08 광화문 해치마당 미디어월", desc: "절벽에서 떨어지는 폭포의 움직임으로 자유와 가능성의 감각을 표현한 작품." }
+  yuryeo: { yt: "qcckok6Uw4I", t: "Yuryeo 流麗", s: "feature", w: 3840, h: 2160, d: 60, f: 30, pw: 1920, ph: 1080, ex: "2026.07–08 광화문 해치마당 미디어월", desc: "절벽에서 떨어지는 폭포의 움직임으로 자유와 가능성의 감각을 표현한 작품." }
 };
 /* ---------- 작가 노트 전문 (국문 · 영문) — 크게 보기에서 '전문 읽기'로 펼친다 ---------- */
 const STMT = {

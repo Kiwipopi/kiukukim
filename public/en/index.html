@@ -878,12 +878,12 @@ const mix = t => `rgb(${BG.map((p, i) => Math.round(p + (ACC[i] - p) * t)).join(
 /* ---------- 작품 데이터 (원본 사양 + 미리보기 크기) ---------- */
 const W = {
   blast_01: { t: "Blast 01", s: "blast", w: 720, h: 2160, d: 90, f: 30, pw: 640, ph: 1920 },
-  blast_02: { t: "Blast 02", s: "blast", w: 3840, h: 1280, d: 90, f: 30, pw: 1920, ph: 640 },
-  blast_03: { t: "Blast 03 · Coexistence", s: "blast", w: 2560, h: 852, d: 50, f: 30, pw: 1920, ph: 640 },
-  blast_04: { t: "Blast 04 · Calmness", s: "blast", w: 3840, h: 1280, d: 41.7, f: 30, pw: 1920, ph: 640 },
-  blast_05: { t: "Blast 05 · Reverberation", s: "blast", w: 2560, h: 853, d: 17.5, f: 30, pw: 1920, ph: 640, full: 1, note: "This piece has music. Turn on the sound below the video." },
-  blast_06: { t: "Blast 06 · Unity", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "This piece has music. Turn on the sound below the video." },
-  blast_07: { t: "Blast 07 · Collapse", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "This piece has music. Turn on the sound below the video." },
+  blast_02: { yt: "PCxdazE_ecM", t: "Blast 02", s: "blast", w: 3840, h: 1280, d: 90, f: 30, pw: 1920, ph: 640 },
+  blast_03: { yt: "jqfnSUUYXcM", t: "Blast 03 · Coexistence", s: "blast", w: 2560, h: 852, d: 50, f: 30, pw: 1920, ph: 640 },
+  blast_04: { yt: "Dt-nZ27SY3g", t: "Blast 04 · Calmness", s: "blast", w: 3840, h: 1280, d: 41.7, f: 30, pw: 1920, ph: 640 },
+  blast_05: { yt: "wxtj6e0Ll6Q", t: "Blast 05 · Reverberation", s: "blast", w: 2560, h: 853, d: 17.5, f: 30, pw: 1920, ph: 640, full: 1, note: "This piece has music. Turn on the sound below the video." },
+  blast_06: { yt: "JTTmLkt43Gc", t: "Blast 06 · Unity", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "This piece has music. Turn on the sound below the video." },
+  blast_07: { yt: "djbm9cR-ylA", t: "Blast 07 · Collapse", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "This piece has music. Turn on the sound below the video." },
   coex_wave: { t: "COEX Wave", s: "water", w: 1920, h: 1080, d: 18.6, f: 24, pw: 1552, ph: 756, desc: "An anamorphic water tank for a corner LED. Waves crash against the screen's edge as if it were a wall." },
   cliff_waterfall: { t: "Cliff Waterfall", s: "water", w: 1080, h: 1920, d: 22.6, f: 24, pw: 1080, ph: 1920, ex: "2026.06 The River Mall, Gangdong · 2026.07 Magok MICE LE WEST media facade", desc: "An emerald waterfall pouring down a mossy cliff." },
   up_gravity: { t: "Up Gravity", s: "water", w: 1450, h: 2560, d: 37.5, f: 24, pw: 1088, ph: 1920, desc: "A wall of water surging upward, against gravity." },
@@ -894,10 +894,10 @@ const W = {
   cloud_whale_landscape: { t: "Cloud Whale Landscape", s: "whale", w: 3240, h: 1080, d: 30, f: 24, pw: 1920, ph: 640, desc: "Whales drifting over an endless sea of clouds." },
   humpback_clouds: { t: "Humpback from Clouds", s: "whale", w: 1920, h: 1080, d: 14, f: 29.97, pw: 1920, ph: 724, desc: "A humpback whale breaking through backlit clouds." },
   cloud_whales: { t: "Cloud Whales", s: "whale", w: 1920, h: 1080, d: 37.5, f: 30, pw: 1920, ph: 640, desc: "Three whales swimming side by side between blue sky and billowing clouds." },
-  sol_waterfall: { t: "Sol Waterfall", s: "waterfall", w: 3240, h: 1080, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "This piece has music. Turn on the sound below the video.", desc: "In front of a lattice structure, water spills over geometric blocks stacked like steps and gathers in the pool below." },
-  particles_4seasons: { t: "Particles · Four Seasons", s: "particles", w: 3840, h: 896, d: 60, f: 30, pw: 1920, ph: 448, full: 1, note: "This piece has music. Turn on the sound below the video.", desc: "Particles bloom like petals and scatter, taking on the colors of the four seasons from spring to winter." },
+  sol_waterfall: { yt: "14KltWgwN_4", t: "Sol Waterfall", s: "waterfall", w: 3240, h: 1080, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "This piece has music. Turn on the sound below the video.", desc: "In front of a lattice structure, water spills over geometric blocks stacked like steps and gathers in the pool below." },
+  particles_4seasons: { yt: "Y2Vnbe_3gns", t: "Particles · Four Seasons", s: "particles", w: 3840, h: 896, d: 60, f: 30, pw: 1920, ph: 448, full: 1, note: "This piece has music. Turn on the sound below the video.", desc: "Particles bloom like petals and scatter, taking on the colors of the four seasons from spring to winter." },
   whale_comp: { t: "Whale Study", s: "whale", w: 1920, h: 1080, d: 14.6, f: 24, pw: 1920, ph: 500, desc: "A motion study of whales above the clouds." },
-  yuryeo: { t: "Yuryeo 流麗", s: "feature", w: 3840, h: 2160, d: 60, f: 30, pw: 1920, ph: 1080, ex: "2026.07–08 Gwanghwamun Haechi Madang Media Wall", desc: "A work expressing freedom and possibility through the movement of a waterfall dropping from a cliff." }
+  yuryeo: { yt: "qcckok6Uw4I", t: "Yuryeo 流麗", s: "feature", w: 3840, h: 2160, d: 60, f: 30, pw: 1920, ph: 1080, ex: "2026.07–08 Gwanghwamun Haechi Madang Media Wall", desc: "A work expressing freedom and possibility through the movement of a waterfall dropping from a cliff." }
 };
 /* ---------- 작가 노트 전문 (국문 · 영문) — 크게 보기에서 'Read full text'로 펼친다 ---------- */
 const STMT = {
