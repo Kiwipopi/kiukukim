@@ -61,6 +61,7 @@ main:focus{outline:none}
 .hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;display:flex;align-items:center;justify-content:space-between;height:var(--hh);padding-left:20px;background:var(--bg);border-bottom:var(--line)}
 .logo{display:inline-flex;align-items:stretch;text-decoration:none;color:var(--accent)}
 .logo-mark{display:grid;place-items:center;background:var(--accent);color:var(--on-accent);font-family:var(--sans);font-weight:700;line-height:1}
+.logo-mark svg{width:100%;height:100%;display:block}
 .logo-word{display:flex;flex-direction:column;justify-content:center;border:var(--line);border-left:0;line-height:1.2;background:var(--bg)}
 .logo-word b{font-family:var(--sans);font-weight:700;letter-spacing:.02em}
 .logo-word small{font-family:var(--mono);font-weight:500;letter-spacing:.16em;white-space:nowrap}
@@ -480,7 +481,7 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
   <canvas class="sp-cv sp-l" id="spL"></canvas>
   <canvas class="sp-cv sp-r" id="spR"></canvas>
   <span class="sp-line"></span>
-  <div class="logo biglogo sp-logo"><span class="logo-mark">김</span><span class="logo-word"><b>스튜디오 김기욱</b><small id="spSmall"></small></span></div>
+  <div class="logo biglogo sp-logo"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 1080 1080" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="1080" height="1080" fill="#1F3CF0"/><rect y="530" width="1080" height="550" fill="#1226A8"/><circle cx="676" cy="394" r="136" fill="#fff"/><circle cx="404" cy="666" r="136" fill="#A9B7FF"/></svg></span><span class="logo-word"><b>스튜디오 김기욱</b><small id="spSmall"></small></span></div>
   <pre class="sp-log" id="spLog"></pre>
   <span class="sp-cnt" id="spCnt">000</span>
   <span class="sp-skip">CLICK TO SKIP ▸</span>
@@ -489,7 +490,7 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
 <button class="skip" id="skipBtn" type="button">本文へスキップ</button>
 <header class="hdr">
   <a class="logo" href="#home" aria-label="Studio Kim Kiwook ホーム">
-    <span class="logo-mark" aria-hidden="true">김</span>
+    <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 1080 1080" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="1080" height="1080" fill="#1F3CF0"/><rect y="530" width="1080" height="550" fill="#1226A8"/><circle cx="676" cy="394" r="136" fill="#fff"/><circle cx="404" cy="666" r="136" fill="#A9B7FF"/></svg></span>
     <span class="logo-word"><b>스튜디오 김기욱</b><small>STUDIO KIM KIWOOK</small></span>
   </a>
   <nav class="braces" aria-label="タブ">
@@ -519,7 +520,7 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
   <section class="page" data-page="home" aria-label="ホーム">
     <div class="stage" id="stage">
       <canvas id="pond" aria-hidden="true"></canvas>
-      <h1 class="logo biglogo" aria-label="Studio Kim Kiwook"><span class="logo-mark" aria-hidden="true">김</span><span class="logo-word" aria-hidden="true"><b>스튜디오 김기욱</b><small>STUDIO KIM KIWOOK</small></span></h1>
+      <h1 class="logo biglogo" aria-label="Studio Kim Kiwook"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 1080 1080" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="1080" height="1080" fill="#1F3CF0"/><rect y="530" width="1080" height="550" fill="#1226A8"/><circle cx="676" cy="394" r="136" fill="#fff"/><circle cx="404" cy="666" r="136" fill="#A9B7FF"/></svg></span><span class="logo-word" aria-hidden="true"><b>스튜디오 김기욱</b><small>STUDIO KIM KIWOOK</small></span></h1>
       <button class="drop-hint" id="dropHint" type="button">{ CLICK · DRAG // 波紋を起こす }</button>
       <span class="stage-tri" aria-hidden="true"></span>
     </div>
@@ -808,7 +809,7 @@ class StudioKimKiwook extends MediaArtStudio {
 studio.render({ fit: ["facade", "anamorphic", "vertical"] });
 studio.contact({ email: "hikiwook@gmail.com", instagram: "@kiukukim" });</pre></div>
     <div class="cellbox foot-r">
-      <a class="logo" href="#home" aria-label="Studio Kim Kiwook ホーム"><span class="logo-mark" aria-hidden="true">김</span><span class="logo-word"><b>스튜디오 김기욱</b><small>STUDIO KIM KIWOOK</small></span></a>
+      <a class="logo" href="#home" aria-label="Studio Kim Kiwook ホーム"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 1080 1080" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="1080" height="1080" fill="#1F3CF0"/><rect y="530" width="1080" height="550" fill="#1226A8"/><circle cx="676" cy="394" r="136" fill="#fff"/><circle cx="404" cy="666" r="136" fill="#A9B7FF"/></svg></span><span class="logo-word"><b>스튜디오 김기욱</b><small>STUDIO KIM KIWOOK</small></span></a>
       <p class="fine">{ © 2026 Studio Kim Kiwook // hikiwook@gmail.com // <a href="https://www.instagram.com/kiukukim/" target="_blank" rel="noopener">@kiukukim</a> }</p>
     </div>
   </div>

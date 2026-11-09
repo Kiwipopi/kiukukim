@@ -57,7 +57,7 @@ def leftovers(s: str):
     out = []
     for i, line in enumerate(s.split("\n"), 1):
         code = re.sub(r"(^|\s)//.*$", "", line)
-        code = code.replace("<b>스튜디오 김기욱</b>", "").replace('>김</span>', "")
+        code = code.replace("<b>스튜디오 김기욱</b>", "")
         if HANGUL.search(code):
             out.append((i, line.strip()[:160]))
     return out
