@@ -29,7 +29,7 @@
  ["아나모픽(3D 착시) 사이니지 영상", "Anamorphic (3D illusion) signage video", "アナモルフィック(3D錯視)サイネージ映像"],
  ["물·구름·파티클 시뮬레이션 루프 영상", "Looping simulations of water, clouds and particles", "水・雲・パーティクルのシミュレーションループ映像"],
  ["송출 해상도·비율 맞춤 렌더링 — 가로형, 세로형, 초광폭", "Rendering matched to each screen's resolution and ratio — horizontal, vertical, ultra-wide", "上映解像度・比率に合わせたレンダリング — 横型、縦型、超ワイド"],
- ["세 개의 연작과 한 편의 대표작입니다. 작품을 누르면 크게 볼 수 있고, 위의 탭으로 시리즈별로 나눠 볼 수 있습니다.", "Three series and one featured work. Select a work to view it large, or use the tabs above to browse by series.", "3つのシリーズと1つの代表作です。作品を押すと大きく表示され、上のタブでシリーズごとに見ることができます。"],
+ ["네 개의 연작과 한 편의 대표작입니다. 작품을 누르면 크게 볼 수 있고, 위의 탭으로 시리즈별로 나눠 볼 수 있습니다.", "Four series and one featured work. Select a work to view it large, or use the tabs above to browse by series.", "4つのシリーズと1つの代表作です。作品を押すと大きく表示され、上のタブでシリーズごとに見ることができます。"],
  ["대학이라는 울타리를 나와 사회에 발을 디딘 지 2년이 되었다. 그중 1년은 방황했고, 1년은 정진했다. 그 시간 동안 나는 내 자아와 현실이 부딪히는 순간들을 겪어왔다.", "It has been two years since I left the shelter of university and stepped into society. I spent one of those years wandering and the other pressing forward. Through that time, I have lived through moments when my self and reality collided.", "大学という垣根を出て社会に足を踏み入れてから2年が経った。そのうち1年はさまよい、1年はひたむきに励んだ。その間、私は自我と現実がぶつかり合う瞬間を経験してきた。"],
  ["내게 안전한 울타리였던 대학과 달리, 사회라는 현실은 냉혹했다. 내가 어떤 가치를 지니고 있는지 증명해야 했다. 대학에서 가치를 인정받는 방식과 사회에서 가치를 인정받는 방식은, 적어도 내게는 달랐다. 그 차이를 마주하며 나 또한 조금씩 달라지고 있다.", "Unlike university, which had been a safe shelter for me, the reality of society was harsh. I had to prove what I was worth. The way worth is recognized at university and the way it is recognized in society were, at least for me, different. Facing that difference, I too am slowly changing.", "私にとって安全な垣根だった大学とは違い、社会という現実は冷酷だった。自分がどんな価値を持っているのかを証明しなければならなかった。大学で価値を認められる方法と社会で価値を認められる方法は、少なくとも私にとっては違っていた。その違いと向き合いながら、私もまた少しずつ変わりつつある。"],
  ["작품 속 두 공은 현실과 자아를 뜻한다. 두 공은 서로 맞물리듯 움직이며 끊임없이 영향을 주고받는다. 앞으로 이어질 BLAST 시리즈에서도 이 움직임은 계속될 것이다. 그런데 둘의 움직임은 어딘가 닮아 있다. 어쩌면 그것은 내가 조금씩 사회에 동화되고 있다는 뜻일지도 모른다.", "The two spheres in these works represent reality and the self. They move as if interlocked, constantly influencing each other. This movement will continue throughout the BLAST series to come. Yet their movements somehow resemble each other. Perhaps that means I am gradually being assimilated into society.", "作品の中の二つの球は、現実と自我を意味する。二つの球は互いにかみ合うように動き、絶えず影響を与え合う。これから続くBLASTシリーズでも、この動きは続いていくだろう。けれども、二つの動きはどこか似ている。もしかするとそれは、私が少しずつ社会に同化しつつあるということなのかもしれない。"],
@@ -114,5 +114,8 @@
  ["aria-label=\"홈\"", "aria-label=\"Home\"", "aria-label=\"ホーム\""],
  [">작품<", ">Works<", ">作品<"],
  [">전시<", ">Exhibitions<", ">展示<"],
- ["저작권 및 AI 학습 이용 안내", "Copyright & AI training notice", "著作権・AI学習への利用について"]
+ ["저작권 및 AI 학습 이용 안내", "Copyright & AI training notice", "著作権・AI学習への利用について"],
+ ["쌓아 올린 형태 위로 쏟아지는 물", "Water pouring over stacked forms", "積み上げた形の上に流れ落ちる水"],
+ ["격자 구조물 앞, 계단처럼 쌓인 기하 블록 위로 물이 넘쳐흐릅니다. 높이가 다른 블록마다 떨어진 물이 바닥의 수면으로 모입니다.", "In front of a lattice structure, water spills over geometric blocks stacked like steps. Falling from blocks of different heights, it gathers in the pool below.", "格子状の構造物の前、階段のように積まれた幾何学ブロックの上から水があふれ出します。高さの異なるブロックから落ちた水は、足元の水面へと集まります。"],
+ ["격자 구조물 앞, 계단처럼 쌓인 기하 블록 위로 물이 넘쳐흘러 바닥의 수면으로 모인다.", "In front of a lattice structure, water spills over geometric blocks stacked like steps and gathers in the pool below.", "格子状の構造物の前、階段のように積まれた幾何学ブロックの上から水があふれ出し、足元の水面へと集まる。"]
 ]

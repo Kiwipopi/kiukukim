@@ -551,7 +551,7 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
         <p class="sub">水・雲・クジラをシミュレーションするメディアアートスタジオ</p>
         <p class="desc">Studio Kim Kiwookは、メディアファサードや大型LED、縦型ディスプレイのための映像を制作しています。上映環境の解像度と比率に合わせてレンダリングします。</p>
         <div class="facts">
-          <div><b>19</b><span>作品</span></div>
+          <div><b>20</b><span>作品</span></div>
           <div><b>5</b><span>2026年の展示</span></div>
           <div><b>3840</b><span>最大横ピクセル</span></div>
           <div><b>24/30</b><span>FPS</span></div>
@@ -582,24 +582,26 @@ class StudioKimKiwook extends MediaArtStudio {
   <!-- 02 WORKS -->
   <section class="page" data-page="works" aria-labelledby="h-works" hidden>
     <nav class="subtabs" id="subtabs" aria-label="シリーズ">
-      <a href="#works" data-filter="all">ALL <i>19</i></a>
+      <a href="#works" data-filter="all">ALL <i>20</i></a>
       <a href="#works-blast" data-filter="blast">01 WATER BLAST <i>07</i></a>
       <a href="#works-water" data-filter="water">02 WATER <i>06</i></a>
       <a href="#works-whale" data-filter="whale">03 WHALE <i>05</i></a>
-      <a href="#works-yuryeo" data-filter="yuryeo">04 YURYEO <i>01</i></a>
+      <a href="#works-waterfall" data-filter="waterfall">04 WATERFALL <i>01</i></a>
+      <a href="#works-yuryeo" data-filter="yuryeo">05 YURYEO <i>01</i></a>
     </nav>
     <div class="split">
       <div class="cellbox stxt">
-        <p class="lbl">WORKS · 19 WORKS · 4 SERIES</p>
+        <p class="lbl">WORKS · 20 WORKS · 5 SERIES</p>
         <h2 class="giant" id="h-works" style="--em:4.5">Works</h2>
         <p class="sub">ガラス水槽の水、流れ落ちる水、雲の上のクジラ</p>
-        <p class="desc">3つのシリーズと1つの代表作です。作品を押すと大きく表示され、上のタブでシリーズごとに見ることができます。</p>
+        <p class="desc">4つのシリーズと1つの代表作です。作品を押すと大きく表示され、上のタブでシリーズごとに見ることができます。</p>
       </div>
-      <div class="code"><pre>  // WORKS — 19 works · 4 series
+      <div class="code"><pre>  // WORKS — 20 works · 5 series
   readonly works = [
     ...this.waterBlast,  // 07
     ...this.water,       // 06
     ...this.whale,       // 05
+    ...this.waterfall,   // 01
     this.yuryeo,         // 01
   ];</pre></div>
     </div>
@@ -692,6 +694,26 @@ class StudioKimKiwook extends MediaArtStudio {
   readonly yuryeo = new Work([3840, 2160], { fps: 30 });</pre></div>
       </div>
       <div class="gallery" data-gallery="whale"></div>
+    </div>
+
+    <div class="series" data-series="waterfall" aria-labelledby="h-waterfall">
+      <div class="split">
+        <div class="cellbox stxt">
+          <p class="lbl">SERIES 04 · 01 WORK</p>
+          <h3 class="giant" id="h-waterfall" style="--em:6.3">Waterfall</h3>
+          <p class="sub">積み上げた形の上に流れ落ちる水</p>
+          <p class="desc">格子状の構造物の前、階段のように積まれた幾何学ブロックの上から水があふれ出します。高さの異なるブロックから落ちた水は、足元の水面へと集まります。</p>
+          <ul class="chips"><li>3:1</li><li>3240 × 1080</li><li>30 FPS</li><li>30 SEC</li></ul>
+          <button class="more" type="button" data-play="sol_waterfall"><span class="tri" aria-hidden="true"></span>Play</button>
+        </div>
+        <div class="code"><pre>  // SERIES 04 WATERFALL — 積み上げた形の上に流れ落ちる水
+  readonly waterfall = new Series({
+    works: {
+      sol_waterfall: [3240, 1080],  // 30s · music
+    },
+  });</pre></div>
+      </div>
+      <div class="gallery" data-gallery="waterfall"></div>
     </div>
 
     <div class="series" data-series="yuryeo" aria-labelledby="h-feature">
@@ -843,6 +865,7 @@ const W = {
   cloud_whale_landscape: { t: "Cloud Whale Landscape", s: "whale", w: 3240, h: 1080, d: 30, f: 24, pw: 1920, ph: 640, desc: "果てしなく広がる雲海の上を泳ぐクジラたち。" },
   humpback_clouds: { t: "Humpback from Clouds", s: "whale", w: 1920, h: 1080, d: 14, f: 29.97, pw: 1920, ph: 724, desc: "逆光の中、雲を突き抜けて現れるザトウクジラ。" },
   cloud_whales: { t: "Cloud Whales", s: "whale", w: 1920, h: 1080, d: 37.5, f: 30, pw: 1920, ph: 640, desc: "青空と入道雲の間を並んで泳ぐ3頭のクジラ。" },
+  sol_waterfall: { t: "Sol Waterfall", s: "waterfall", w: 3240, h: 1080, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "格子状の構造物の前、階段のように積まれた幾何学ブロックの上から水があふれ出し、足元の水面へと集まる。" },
   whale_comp: { t: "Whale Study", s: "whale", w: 1920, h: 1080, d: 14.6, f: 24, pw: 1920, ph: 500, desc: "雲の上のクジラの動きのスタディ。" },
   yuryeo: { t: "Yuryeo 流麗", s: "feature", w: 3840, h: 2160, d: 60, f: 30, pw: 1920, ph: 1080, ex: "2026.07–08 光化門ヘチマダン メディアウォール", desc: "崖から落ちる滝の動きで、自由と可能性の感覚を表現した作品。" }
 };
@@ -900,13 +923,17 @@ const LAYOUT = {
   whale: {
     wide: [["whale_spring_winter"], ["cloud_whale_landscape", "humpback_clouds"], ["cloud_whales", "whale_comp"]],
     narrow: [["whale_spring_winter"], ["cloud_whale_landscape"], ["humpback_clouds"], ["cloud_whales"], ["whale_comp"]]
+  },
+  waterfall: {
+    wide: [["sol_waterfall"]],
+    narrow: [["sol_waterfall"]]
   }
 };
 const NOTES = {
   blast: { k: "VERTICAL · PILLAR", r: "1:3", t: "柱型スクリーン", d: "縦1:3の柱型LEDのためのバージョンです。上下2つの水槽が時間差で弾けます。" },
   water: { k: "VERTICAL · 03 WORKS", r: "9:16", t: "縦型スクリーン", d: "縦長のLEDとサイネージに合わせて9:16でレンダリングしました。Cliff Waterfallは2026年、カンドン ザ・リバーモールとマゴク MICE LE WESTで放映されました。" }
 };
-const GROUP = { blast: "SERIES 01 · WATER BLAST", water: "SERIES 02 · WATER", whale: "SERIES 03 · WHALE", feature: "FEATURE · YURYEO", exhibit: "EXHIBITION" };
+const GROUP = { blast: "SERIES 01 · WATER BLAST", water: "SERIES 02 · WATER", whale: "SERIES 03 · WHALE", waterfall: "SERIES 04 · WATERFALL", feature: "FEATURE · YURYEO", exhibit: "EXHIBITION" };
 // 전시 — 현장 영상 (/media/ex)
 const EXH = {
   hearts: { k: "01 · TOKYO, JAPAN", big: "Tokyo", em: 3.7, when: "2026.08.06 – 08.07", title: "Hearts Expo 2026",
@@ -940,7 +967,7 @@ Object.assign(LAYOUT, {
   ex_magok: { wide: [{ tall: ["ex_magok2", "ex_magok3"], info: "magok" }], narrow: [{ info: "magok" }, ["ex_magok2", "ex_magok3"]] },
   ex_gangdong: { wide: [{ tall: ["ex_ikea1", "ex_ikea2"], info: "gangdong" }, ["ex_ikea3"]], narrow: [{ info: "gangdong" }, ["ex_ikea3"], ["ex_ikea1", "ex_ikea2"]] }
 });
-const ORDER = ["blast_02", "blast_03", "blast_04", "blast_01", "blast_05", "blast_06", "blast_07", "coex_wave", "cliff_waterfall", "up_gravity", "wave_district", "pts_wave", "water_wave", "whale_spring_winter", "cloud_whale_landscape", "humpback_clouds", "cloud_whales", "whale_comp", "yuryeo"];
+const ORDER = ["blast_02", "blast_03", "blast_04", "blast_01", "blast_05", "blast_06", "blast_07", "coex_wave", "cliff_waterfall", "up_gravity", "wave_district", "pts_wave", "water_wave", "whale_spring_winter", "cloud_whale_landscape", "humpback_clouds", "cloud_whales", "whale_comp", "sol_waterfall", "yuryeo"];
 const ratio = (w, h) => {
   const r = w / h;
   for (const [v, l] of [[3, "3:1"], [16 / 9, "16:9"], [9 / 16, "9:16"], [1 / 3, "1:3"], [40 / 11, "40:11"]]) if (Math.abs(r - v) / v < 0.03) return l;
@@ -1494,7 +1521,7 @@ function closeMenu() { menu.hidden = true; menuBtn.setAttribute("aria-expanded",
 function parseHash() {
   const h = location.hash.slice(1).toLowerCase();
   if (h === "works") return { page: "works", filter: "all" };
-  const m = h.match(/^works-(blast|water|whale|yuryeo)$/);
+  const m = h.match(/^works-(blast|water|whale|waterfall|yuryeo)$/);
   if (m) return { page: "works", filter: m[1] };
   if (h === "exhibition" || h === "about" || h === "contact") return { page: h, filter: "all" };
   return { page: "home", filter: "all" };
@@ -1511,10 +1538,11 @@ const wantsSeries = sub => curPage === "works" && (curFilter !== "all" || sub);
 const seriesLink = a => !!a.closest(".subtabs") || (!!a.closest(".wend") && !a.classList.contains("up"));
 // WORKS 끝의 이전 · 다음
 const SEQ = [
-  { f: "all", name: "All Works", k: "ALL · 19" },
+  { f: "all", name: "All Works", k: "ALL · 20" },
   { f: "blast", name: "Water Blast", k: "SERIES 01" },
   { f: "water", name: "Water", k: "SERIES 02" },
   { f: "whale", name: "Whale", k: "SERIES 03" },
+  { f: "waterfall", name: "Waterfall", k: "SERIES 04" },
   { f: "yuryeo", name: "Yuryeo", k: "FEATURE" }
 ];
 const wend = $("#worksEnd"), wPrev = $("#wPrev"), wNext = $("#wNext");
