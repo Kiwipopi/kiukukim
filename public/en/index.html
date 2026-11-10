@@ -541,7 +541,7 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
         </ul>
       </div>
       <a class="idx" href="#works-waterfall"><span class="k">SERIES 04</span><b class="idx-t">Waterfall</b><span class="ko">Water pouring over stacked forms</span><span class="c">01 WORK</span><span class="sq" aria-hidden="true"></span></a>
-      <a class="idx" href="#works-particles"><span class="k">SERIES 05</span><b class="idx-t">Particles</b><span class="ko">Particles flowing in the colors of four seasons</span><span class="c">01 WORK</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#works-particles"><span class="k">SERIES 05</span><b class="idx-t">Particles</b><span class="ko">Particles of light that gather and scatter</span><span class="c">02 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#works-yuryeo"><span class="k">FEATURE</span><b class="idx-t">Yuryeo</b><span class="ko">Yuryeo 流麗</span><span class="c">3840 × 2160</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#exhibition"><span class="k">2026</span><b class="idx-t">Exhibition</b><span class="ko">Exhibitions</span><span class="c">05 SHOWS</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#contact"><span class="k">CONTACT</span><b class="idx-t">Contact</b><span class="ko">Commissions · Inquiries</span><span class="c">EMAIL · INSTAGRAM</span><span class="sq" aria-hidden="true"></span></a>
@@ -558,7 +558,7 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
         <p class="sub">A media art studio that simulates water, clouds and whales</p>
         <p class="desc">Studio Kim Kiwook creates video for media facades, large LED screens and vertical displays, rendered to the resolution and aspect ratio of each screen.</p>
         <div class="facts">
-          <div><b>21</b><span>Works</span></div>
+          <div><b>22</b><span>Works</span></div>
           <div><b>5</b><span>Shows in 2026</span></div>
           <div><b>3840</b><span>Max width, px</span></div>
           <div><b>24/30</b><span>FPS</span></div>
@@ -589,28 +589,28 @@ class StudioKimKiwook extends MediaArtStudio {
   <!-- 02 WORKS -->
   <section class="page" data-page="works" aria-labelledby="h-works" hidden>
     <nav class="subtabs" id="subtabs" aria-label="Series">
-      <a href="#works" data-filter="all">ALL <i>21</i></a>
+      <a href="#works" data-filter="all">ALL <i>22</i></a>
       <a href="#works-blast" data-filter="blast">01 WATER BLAST <i>07</i></a>
       <a href="#works-water" data-filter="water">02 WATER <i>06</i></a>
       <a href="#works-whale" data-filter="whale">03 WHALE <i>05</i></a>
       <a href="#works-waterfall" data-filter="waterfall">04 WATERFALL <i>01</i></a>
-      <a href="#works-particles" data-filter="particles">05 PARTICLES <i>01</i></a>
+      <a href="#works-particles" data-filter="particles">05 PARTICLES <i>02</i></a>
       <a href="#works-yuryeo" data-filter="yuryeo">06 YURYEO <i>01</i></a>
     </nav>
     <div class="split">
       <div class="cellbox stxt">
-        <p class="lbl">WORKS · 21 WORKS · 6 SERIES</p>
+        <p class="lbl">WORKS · 22 WORKS · 6 SERIES</p>
         <h2 class="giant" id="h-works" style="--em:4.5">Works</h2>
         <p class="sub">Water in glass tanks, falling water, whales above the clouds</p>
         <p class="desc">Five series and one featured work. Select a work to view it large, or use the tabs above to browse by series.</p>
       </div>
-      <div class="code"><pre>  // WORKS — 21 works · 6 series
+      <div class="code"><pre>  // WORKS — 22 works · 6 series
   readonly works = [
     ...this.waterBlast,  // 07
     ...this.water,       // 06
     ...this.whale,       // 05
     ...this.waterfall,   // 01
-    ...this.particles,   // 01
+    ...this.particles,   // 02
     this.yuryeo,         // 01
   ];</pre></div>
     </div>
@@ -728,17 +728,18 @@ class StudioKimKiwook extends MediaArtStudio {
     <div class="series" data-series="particles" aria-labelledby="h-particles">
       <div class="split rev">
         <div class="cellbox stxt">
-          <p class="lbl">SERIES 05 · 01 WORK</p>
+          <p class="lbl">SERIES 05 · 02 WORKS</p>
           <h3 class="giant" id="h-particles" style="--em:6.3">Particles</h3>
-          <p class="sub">Particles flowing in the colors of four seasons</p>
-          <p class="desc">Particles bloom like petals and scatter, taking on the colors of each season in turn: spring pink, summer aqua, autumn vermilion and winter white. A 60-second piece for ultra-wide screens.</p>
-          <ul class="chips"><li>30:7</li><li>3840 × 896</li><li>30 FPS</li><li>60 SEC</li></ul>
+          <p class="sub">Particles of light that gather and scatter</p>
+          <p class="desc">Particles rise, take shape and scatter again. Four Seasons turns through the colors of each season; Pavilion raises a pavilion of light over a night plaza, then lets it fall apart.</p>
+          <ul class="chips"><li>30:7 · 3:1</li><li>3840 PX</li><li>30 FPS</li><li>30–60 SEC</li></ul>
           <button class="more" type="button" data-play="particles_4seasons"><span class="tri" aria-hidden="true"></span>Play</button>
         </div>
-        <div class="code"><pre>  // SERIES 05 PARTICLES — Particles flowing in the colors of four seasons
+        <div class="code"><pre>  // SERIES 05 PARTICLES — Particles of light that gather and scatter
   readonly particles = new Series({
     works: {
       particles_4seasons: [3840, 896],  // 60s · music
+      particles_pavilion: [3840, 1280], // 30s · music
     },
   });</pre></div>
       </div>
@@ -896,6 +897,7 @@ const W = {
   cloud_whales: { t: "Cloud Whales", s: "whale", w: 1920, h: 1080, d: 37.5, f: 30, pw: 1920, ph: 640, desc: "Three whales swimming side by side between blue sky and billowing clouds." },
   sol_waterfall: { yt: "14KltWgwN_4", t: "Sol Waterfall", s: "waterfall", w: 3240, h: 1080, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "This piece has music. Turn on the sound below the video.", desc: "In front of a lattice structure, water spills over geometric blocks stacked like steps and gathers in the pool below." },
   particles_4seasons: { yt: "Y2Vnbe_3gns", t: "Particles · Four Seasons", s: "particles", w: 3840, h: 896, d: 60, f: 30, pw: 1920, ph: 448, full: 1, note: "This piece has music. Turn on the sound below the video.", desc: "Particles bloom like petals and scatter, taking on the colors of the four seasons from spring to winter." },
+  particles_pavilion: { t: "Particles · Pavilion", s: "particles", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "This piece has music. Turn on the sound below the video.", desc: "Particles of light scattered across a night plaza gather to raise an arched pavilion around a Christmas tree, then scatter again." },
   whale_comp: { t: "Whale Study", s: "whale", w: 1920, h: 1080, d: 14.6, f: 24, pw: 1920, ph: 500, desc: "A motion study of whales above the clouds." },
   yuryeo: { yt: "qcckok6Uw4I", t: "Yuryeo 流麗", s: "feature", w: 3840, h: 2160, d: 60, f: 30, pw: 1920, ph: 1080, ex: "2026.07–08 Gwanghwamun Haechi Madang Media Wall", desc: "A work expressing freedom and possibility through the movement of a waterfall dropping from a cliff." }
 };
@@ -959,8 +961,8 @@ const LAYOUT = {
     narrow: [["sol_waterfall"]]
   },
   particles: {
-    wide: [["particles_4seasons"]],
-    narrow: [["particles_4seasons"]]
+    wide: [["particles_4seasons"], ["particles_pavilion"]],
+    narrow: [["particles_4seasons"], ["particles_pavilion"]]
   }
 };
 const NOTES = {
@@ -1001,7 +1003,7 @@ Object.assign(LAYOUT, {
   ex_magok: { wide: [{ tall: ["ex_magok2", "ex_magok3"], info: "magok" }], narrow: [{ info: "magok" }, ["ex_magok2", "ex_magok3"]] },
   ex_gangdong: { wide: [{ tall: ["ex_ikea1", "ex_ikea2"], info: "gangdong" }, ["ex_ikea3"]], narrow: [{ info: "gangdong" }, ["ex_ikea3"], ["ex_ikea1", "ex_ikea2"]] }
 });
-const ORDER = ["blast_02", "blast_03", "blast_04", "blast_01", "blast_05", "blast_06", "blast_07", "coex_wave", "cliff_waterfall", "up_gravity", "wave_district", "pts_wave", "water_wave", "whale_spring_winter", "cloud_whale_landscape", "humpback_clouds", "cloud_whales", "whale_comp", "sol_waterfall", "particles_4seasons", "yuryeo"];
+const ORDER = ["blast_02", "blast_03", "blast_04", "blast_01", "blast_05", "blast_06", "blast_07", "coex_wave", "cliff_waterfall", "up_gravity", "wave_district", "pts_wave", "water_wave", "whale_spring_winter", "cloud_whale_landscape", "humpback_clouds", "cloud_whales", "whale_comp", "sol_waterfall", "particles_4seasons", "particles_pavilion", "yuryeo"];
 const ratio = (w, h) => {
   const r = w / h;
   for (const [v, l] of [[3, "3:1"], [16 / 9, "16:9"], [9 / 16, "9:16"], [1 / 3, "1:3"], [40 / 11, "40:11"]]) if (Math.abs(r - v) / v < 0.03) return l;
@@ -1578,7 +1580,7 @@ const wantsSeries = sub => curPage === "works" && (curFilter !== "all" || sub);
 const seriesLink = a => !!a.closest(".subtabs") || (!!a.closest(".wend") && !a.classList.contains("up"));
 // WORKS 끝의 이전 · 다음
 const SEQ = [
-  { f: "all", name: "All Works", k: "ALL · 21" },
+  { f: "all", name: "All Works", k: "ALL · 22" },
   { f: "blast", name: "Water Blast", k: "SERIES 01" },
   { f: "water", name: "Water", k: "SERIES 02" },
   { f: "whale", name: "Whale", k: "SERIES 03" },

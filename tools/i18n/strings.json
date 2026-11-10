@@ -118,7 +118,8 @@
  ["쌓아 올린 형태 위로 쏟아지는 물", "Water pouring over stacked forms", "積み上げた形の上に流れ落ちる水"],
  ["격자 구조물 앞, 계단처럼 쌓인 기하 블록 위로 물이 넘쳐흐릅니다. 높이가 다른 블록마다 떨어진 물이 바닥의 수면으로 모입니다.", "In front of a lattice structure, water spills over geometric blocks stacked like steps. Falling from blocks of different heights, it gathers in the pool below.", "格子状の構造物の前、階段のように積まれた幾何学ブロックの上から水があふれ出します。高さの異なるブロックから落ちた水は、足元の水面へと集まります。"],
  ["격자 구조물 앞, 계단처럼 쌓인 기하 블록 위로 물이 넘쳐흘러 바닥의 수면으로 모인다.", "In front of a lattice structure, water spills over geometric blocks stacked like steps and gathers in the pool below.", "格子状の構造物の前、階段のように積まれた幾何学ブロックの上から水があふれ出し、足元の水面へと集まる。"],
- ["사계절의 색으로 흐르는 입자", "Particles flowing in the colors of four seasons", "四季の色で流れるパーティクル"],
- ["입자가 꽃잎처럼 피어올랐다 흩어지며 봄의 분홍, 여름의 물빛, 가을의 주홍, 겨울의 흰빛으로 차례로 물듭니다. 초광폭 화면을 위한 60초 영상입니다.", "Particles bloom like petals and scatter, taking on the colors of each season in turn: spring pink, summer aqua, autumn vermilion and winter white. A 60-second piece for ultra-wide screens.", "花びらのように舞い上がっては散るパーティクルが、春の桜色、夏の水色、秋の朱色、冬の白へと順に色を変えます。超ワイド画面のための60秒の映像です。"],
- ["입자가 꽃잎처럼 피어올랐다 흩어지며 봄에서 겨울까지 네 계절의 색으로 차례로 물든다.", "Particles bloom like petals and scatter, taking on the colors of the four seasons from spring to winter.", "花びらのように舞い上がっては散るパーティクルが、春から冬まで四季の色に順に染まっていく。"]
+ ["입자가 꽃잎처럼 피어올랐다 흩어지며 봄에서 겨울까지 네 계절의 색으로 차례로 물든다.", "Particles bloom like petals and scatter, taking on the colors of the four seasons from spring to winter.", "花びらのように舞い上がっては散るパーティクルが、春から冬まで四季の色に順に染まっていく。"],
+ ["모였다 흩어지는 빛의 입자", "Particles of light that gather and scatter", "集まっては散る光のパーティクル"],
+ ["입자가 피어올라 형태를 짓고 다시 흩어집니다. 네 계절의 색으로 차례로 물드는 Four Seasons, 밤의 광장 위에 빛의 파빌리온을 세웠다 허무는 Pavilion.", "Particles rise, take shape and scatter again. Four Seasons turns through the colors of each season; Pavilion raises a pavilion of light over a night plaza, then lets it fall apart.", "パーティクルが舞い上がって形をつくり、再び散っていきます。四季の色に順に染まるFour Seasonsと、夜の広場に光のパビリオンを建てては崩すPavilion。"],
+ ["밤의 광장에 흩어져 있던 빛의 입자가 모여 크리스마스트리를 둘러싼 아치형 파빌리온을 세웠다가, 다시 흩어진다.", "Particles of light scattered across a night plaza gather to raise an arched pavilion around a Christmas tree, then scatter again.", "夜の広場に散らばっていた光のパーティクルが集まり、クリスマスツリーを囲むアーチ型のパビリオンを建て、再び散っていく。"]
 ]
