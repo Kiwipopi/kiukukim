@@ -526,7 +526,7 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
       <span class="stage-tri" aria-hidden="true"></span>
     </div>
     <div class="index" aria-label="바로가기">
-      <a class="idx" href="#works-blast"><span class="k">SERIES 01</span><b class="idx-t">Water<br>Blast</b><span class="ko">유리 수조 속의 물</span><span class="c">07 WORKS</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#works-blast"><span class="k">SERIES 01</span><b class="idx-t">Water<br>Blast</b><span class="ko">유리 수조 속의 물</span><span class="c">08 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#works-water"><span class="k">SERIES 02</span><b class="idx-t">Water</b><span class="ko">쏟아지고, 솟구치는 물</span><span class="c">06 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#works-whale"><span class="k">SERIES 03</span><b class="idx-t">Whale</b><span class="ko">구름 위를 헤엄치는 고래</span><span class="c">05 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <div class="news" aria-label="소식">
@@ -558,7 +558,7 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
         <p class="sub">물·구름·고래를 시뮬레이션하는 미디어아트 스튜디오</p>
         <p class="desc">스튜디오 김기욱은 미디어 파사드와 대형 LED, 세로형 디스플레이를 위한 영상을 만듭니다. 송출 환경의 해상도와 비율에 맞춰 렌더링합니다.</p>
         <div class="facts">
-          <div><b>22</b><span>작품</span></div>
+          <div><b>23</b><span>작품</span></div>
           <div><b>5</b><span>2026 전시</span></div>
           <div><b>3840</b><span>최대 가로 픽셀</span></div>
           <div><b>24/30</b><span>FPS</span></div>
@@ -589,8 +589,8 @@ class StudioKimKiwook extends MediaArtStudio {
   <!-- 02 WORKS -->
   <section class="page" data-page="works" aria-labelledby="h-works" hidden>
     <nav class="subtabs" id="subtabs" aria-label="시리즈">
-      <a href="#works" data-filter="all">ALL <i>22</i></a>
-      <a href="#works-blast" data-filter="blast">01 WATER BLAST <i>07</i></a>
+      <a href="#works" data-filter="all">ALL <i>23</i></a>
+      <a href="#works-blast" data-filter="blast">01 WATER BLAST <i>08</i></a>
       <a href="#works-water" data-filter="water">02 WATER <i>06</i></a>
       <a href="#works-whale" data-filter="whale">03 WHALE <i>05</i></a>
       <a href="#works-waterfall" data-filter="waterfall">04 WATERFALL <i>01</i></a>
@@ -599,14 +599,14 @@ class StudioKimKiwook extends MediaArtStudio {
     </nav>
     <div class="split">
       <div class="cellbox stxt">
-        <p class="lbl">WORKS · 22 WORKS · 6 SERIES</p>
+        <p class="lbl">WORKS · 23 WORKS · 6 SERIES</p>
         <h2 class="giant" id="h-works" style="--em:4.5">Works</h2>
         <p class="sub">유리 수조의 물, 쏟아지는 물, 구름 위의 고래</p>
         <p class="desc">다섯 개의 연작과 한 편의 대표작입니다. 작품을 누르면 크게 볼 수 있고, 위의 탭으로 시리즈별로 나눠 볼 수 있습니다.</p>
       </div>
-      <div class="code"><pre>  // WORKS — 22 works · 6 series
+      <div class="code"><pre>  // WORKS — 23 works · 6 series
   readonly works = [
-    ...this.waterBlast,  // 07
+    ...this.waterBlast,  // 08
     ...this.water,       // 06
     ...this.whale,       // 05
     ...this.waterfall,   // 01
@@ -630,7 +630,7 @@ class StudioKimKiwook extends MediaArtStudio {
     <div class="series" data-series="blast" aria-labelledby="h-blast">
       <div class="split rev">
         <div class="cellbox stxt">
-          <p class="lbl">SERIES 01 · 07 WORKS</p>
+          <p class="lbl">SERIES 01 · 08 WORKS</p>
           <h3 class="giant" id="h-blast" style="--em:4.3">Water<br>Blast</h3>
           <p class="sub">유리 수조 속의 물</p>
           <div class="desc sdesc">
@@ -643,9 +643,9 @@ class StudioKimKiwook extends MediaArtStudio {
         </div>
         <div class="code"><pre>  // SERIES 01 WATER BLAST — 유리 수조 속의 물
   readonly waterBlast = new Series({
-    works:   ["blast_01", "blast_02", "blast_03", "blast_04", "blast_05", "blast_06", "blast_07"],
-    canvas:  [[720, 2160], [3840, 1280], [2560, 852], [3840, 1280], [2560, 853], [3840, 1280], [3840, 1280]],
-    runtime: [90, 90, 50, 41.7, 17.5, 30, 30],  // sec
+    works:   ["blast_01", "blast_02", "blast_03", "blast_04", "blast_05", "blast_06", "blast_07", "blast_08"],
+    canvas:  [[720, 2160], [3840, 1280], [2560, 852], [3840, 1280], [2560, 853], [3840, 1280], [3840, 1280], [3840, 1280]],
+    runtime: [90, 90, 50, 41.7, 17.5, 30, 30, 45.3],  // sec
     fps: 30,
   });</pre></div>
       </div>
@@ -885,6 +885,7 @@ const W = {
   blast_05: { yt: "wxtj6e0Ll6Q", t: "Blast 05 · Reverberation", s: "blast", w: 2560, h: 853, d: 17.5, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
   blast_06: { yt: "JTTmLkt43Gc", t: "Blast 06 · Unity", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
   blast_07: { yt: "djbm9cR-ylA", t: "Blast 07 · Collapse", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
+  blast_08: { t: "Blast 08", s: "blast", w: 3840, h: 1280, d: 45.3, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요." },
   coex_wave: { t: "COEX Wave", s: "water", w: 1920, h: 1080, d: 18.6, f: 24, pw: 1552, ph: 756, desc: "코너형 LED를 위한 아나모픽 수조. 화면 모서리를 경계 삼아 파도가 부딪힙니다." },
   cliff_waterfall: { t: "Cliff Waterfall", s: "water", w: 1080, h: 1920, d: 22.6, f: 24, pw: 1080, ph: 1920, ex: "2026.06 강동 더리버몰 · 2026.07 마곡 MICE 르웨스트 미디어파사드", desc: "이끼 낀 절벽을 타고 쏟아지는 에메랄드빛 폭포." },
   up_gravity: { t: "Up Gravity", s: "water", w: 1450, h: 2560, d: 37.5, f: 24, pw: 1088, ph: 1920, desc: "아래에서 위로, 중력을 거슬러 솟구치는 물의 벽." },
@@ -938,6 +939,11 @@ const STMT = {
     en: ["In the moment the mirror shatters, I wanted to show what it feels like when my mind falls apart.", "The scattered pieces come back together. The mirror reflects me again, but fine cracks remain where the fragments meet.", "I carry traces like that, too. I return to my daily life after falling apart, but the experience leaves a scar. I wanted to capture those cracks still visible across my reflection, even after the pieces have come back together."],
     ja: ["鏡が粉々に砕け散る瞬間に、私の精神が崩れ落ちる姿を込めた。", "散らばった破片は再びつなぎ合わさる。鏡は再び私を映すが、破片と破片が接したところには細いひびが残っている。", "私にもそんな場所がある。崩れたあと再び日常を続けていても、そのときの痕跡は傷跡のように残る。私は破片をつなぎ直したあとも、鏡の中の自分の姿に重なって見えるそのひびを描きたかった。"],
   },
+  blast_08: {
+    ko: ["해가 돌면서 두 구체를 비추는 빛의 방향이 바뀐다. 검은 구체 위에는 빛이 맺히고, 흰 구체 위로는 그림자가 지나간다. 작품은 음과 양을 두 구체의 색에서 시작해, 빛의 각도에 따라 끊임없이 달라지는 밝음과 어둠의 관계로 보여준다.", "해가 한 바퀴를 돌면 빛은 처음의 방향으로 돌아온다. 그 사이 물결은 밀려왔다가 물러나기를 반복하며 매번 다른 모양으로 부서진다. 같은 자리에서 다시 시작되는 빛과 그때마다 다른 물결을 겹쳐, 되풀이되는 시간 속에서도 매 순간의 모습은 달라진다는 것을 담았다."],
+    en: ["As the sun circles, the direction of the light falling on the two spheres keeps changing. Light gathers on the black sphere, while shadows pass over the white one. Beginning with yin and yang in the colors of the two spheres, the work shows light and dark as a relationship that shifts endlessly with the angle of the light.", "When the sun completes a full circle, the light returns to where it began. Meanwhile the waves rush in and draw back again and again, breaking into a different shape each time. By layering light that begins again from the same place over waves that are never the same, the work holds the idea that even within repeating time, every moment looks different."],
+    ja: ["太陽が巡るにつれて、二つの球体を照らす光の向きが変わっていく。黒い球体には光が宿り、白い球体の上を影が通り過ぎる。作品は陰と陽を二つの球体の色から始め、光の角度によって絶えず変わる明るさと暗さの関係として見せる。", "太陽が一周すると、光は最初の向きに戻ってくる。その間、波は押し寄せては引くことを繰り返し、毎回違う形で砕ける。同じ場所から再び始まる光と、そのたびに異なる波を重ね、繰り返される時間の中でも一瞬一瞬の姿は違うということを込めた。"],
+  },
 };
 for (const k in STMT) W[k].desc = STMT[k][LANG][0];
 // 갤러리 줄 — ["a","b"]: 같은 높이로 폭을 채운다
@@ -945,8 +951,8 @@ for (const k in STMT) W[k].desc = STMT[k][LANG][0];
 //   { tall:[세로…], note }: 세로 작품을 화면 높이에 맞춰 크게, 남는 폭에 설명
 const LAYOUT = {
   blast: {
-    wide: [{ stack: ["blast_02", "blast_03", "blast_04"], tall: "blast_01" }, ["blast_05"], ["blast_06"], ["blast_07"]],
-    narrow: [["blast_02"], ["blast_03"], ["blast_04"], ["blast_05"], ["blast_06"], ["blast_07"], { tall: ["blast_01"], note: "blast" }]
+    wide: [{ stack: ["blast_02", "blast_03", "blast_04"], tall: "blast_01" }, ["blast_05"], ["blast_06"], ["blast_07"], ["blast_08"]],
+    narrow: [["blast_02"], ["blast_03"], ["blast_04"], ["blast_05"], ["blast_06"], ["blast_07"], ["blast_08"], { tall: ["blast_01"], note: "blast" }]
   },
   water: {
     wide: [["coex_wave"], { tall: ["cliff_waterfall", "up_gravity", "wave_district"], note: "water" }, ["pts_wave"], ["water_wave"]],
@@ -1003,7 +1009,7 @@ Object.assign(LAYOUT, {
   ex_magok: { wide: [{ tall: ["ex_magok2", "ex_magok3"], info: "magok" }], narrow: [{ info: "magok" }, ["ex_magok2", "ex_magok3"]] },
   ex_gangdong: { wide: [{ tall: ["ex_ikea1", "ex_ikea2"], info: "gangdong" }, ["ex_ikea3"]], narrow: [{ info: "gangdong" }, ["ex_ikea3"], ["ex_ikea1", "ex_ikea2"]] }
 });
-const ORDER = ["blast_02", "blast_03", "blast_04", "blast_01", "blast_05", "blast_06", "blast_07", "coex_wave", "cliff_waterfall", "up_gravity", "wave_district", "pts_wave", "water_wave", "whale_spring_winter", "cloud_whale_landscape", "humpback_clouds", "cloud_whales", "whale_comp", "sol_waterfall", "particles_4seasons", "particles_pavilion", "yuryeo"];
+const ORDER = ["blast_02", "blast_03", "blast_04", "blast_01", "blast_05", "blast_06", "blast_07", "blast_08", "coex_wave", "cliff_waterfall", "up_gravity", "wave_district", "pts_wave", "water_wave", "whale_spring_winter", "cloud_whale_landscape", "humpback_clouds", "cloud_whales", "whale_comp", "sol_waterfall", "particles_4seasons", "particles_pavilion", "yuryeo"];
 const ratio = (w, h) => {
   const r = w / h;
   for (const [v, l] of [[3, "3:1"], [16 / 9, "16:9"], [9 / 16, "9:16"], [1 / 3, "1:3"], [40 / 11, "40:11"]]) if (Math.abs(r - v) / v < 0.03) return l;
@@ -1580,7 +1586,7 @@ const wantsSeries = sub => curPage === "works" && (curFilter !== "all" || sub);
 const seriesLink = a => !!a.closest(".subtabs") || (!!a.closest(".wend") && !a.classList.contains("up"));
 // WORKS 끝의 이전 · 다음
 const SEQ = [
-  { f: "all", name: "All Works", k: "ALL · 22" },
+  { f: "all", name: "All Works", k: "ALL · 23" },
   { f: "blast", name: "Water Blast", k: "SERIES 01" },
   { f: "water", name: "Water", k: "SERIES 02" },
   { f: "whale", name: "Whale", k: "SERIES 03" },
