@@ -129,5 +129,21 @@
  ["흩어진 철골 부재가 날아와 맞물리며 계단처럼 엇갈린 격자 탑을 세웁니다.", "Scattered steel members fly in and lock together, raising a lattice tower of staggered, stair-like blocks.", "散らばった鉄骨の部材が飛んできて噛み合い、階段のように食い違う格子の塔を建てます。"],
  ["세로 1:3 기둥형 LED를 위한 작품입니다. 빛의 입자가 고래 무리가 되어 위로 헤엄칩니다.", "Made for 1:3 vertical pillar LEDs. Particles of light become a pod of whales swimming upward.", "縦1:3の柱型LEDのための作品です。光の粒子がクジラの群れとなって上へ泳ぎます。"],
  ["세로형 LED와 사이니지에 맞춰 9:16으로 렌더링했습니다. 부재가 맞물려 탑이 서고, 카메라가 구조물 사이를 지나갑니다.", "Rendered at 9:16 for vertical LEDs and signage. Members lock together into a tower as the camera moves through the structure.", "縦型LEDとサイネージに合わせて9:16でレンダリングしました。部材が噛み合って塔が立ち、カメラが構造物の間を抜けていきます。"],
- ["끝없이 펼쳐진 구름바다 아래에서 혹등고래가 솟구쳐 올라 구름을 뚫고, 다시 그 속으로 잠깁니다.", "A humpback whale surges up from beneath an endless sea of clouds, breaks through the surface, then sinks back in.", "果てしなく広がる雲海の下からザトウクジラが跳び上がって雲を突き抜け、再びその中へと沈んでいきます。"]
+ ["끝없이 펼쳐진 구름바다 아래에서 혹등고래가 솟구쳐 올라 구름을 뚫고, 다시 그 속으로 잠깁니다.", "A humpback whale surges up from beneath an endless sea of clouds, breaks through the surface, then sinks back in.", "果てしなく広がる雲海の下からザトウクジラが跳び上がって雲を突き抜け、再びその中へと沈んでいきます。"],
+ ["여의도 앙사나 레지던스 「Eternal Canvas」 — Cliff Waterfall 송출", "Angsana Residence Yeouido “Eternal Canvas” — Cliff Waterfall on screen", "汝矣島アンサナレジデンス「Eternal Canvas」— Cliff Waterfall 放映"],
+ ["여섯 개의 연작입니다. 작품을 누르면 크게 볼 수 있고, 위의 탭으로 시리즈별로 나눠 볼 수 있습니다.", "Six series. Select a work to view it large, or use the tabs above to browse by series.", "6つのシリーズです。作品を押すと大きく表示され、上のタブでシリーズごとに見ることができます。"],
+ ["aria-label=\"전시\"", "aria-label=\"Exhibitions\"", "aria-label=\"展示\""],
+ ["2026년 6~11월, 서울 여의도·광화문·마곡·강동과 도쿄에서 여섯 번의 전시에 참여했습니다. 현장에서 찍은 영상과 함께 정리했고, 위의 탭으로 전시별로 나눠 볼 수 있습니다.", "From June to November 2026, six exhibitions in Seoul (Yeouido, Gwanghwamun, Magok, Gangdong) and Tokyo, documented with footage shot on site. Use the tabs above to browse by exhibition.", "2026年6〜11月、ソウルの汝矣島・光化門・マゴク・カンドン、そして東京で6回の展示に参加しました。現場で撮影した映像とともにまとめ、上のタブで展示ごとに見ることができます。"],
+ ["여의도 · 마곡 · 강동 전시 경력 증명서 보유", "Exhibition certificates issued for Yeouido, Magok and Gangdong", "汝矣島・マゴク・カンドン展示の経歴証明書あり"],
+ ["03 · 해치마당 상영작 · 3840 × 2160 · 60 SEC", "03 · SHOWN AT HAECHI MADANG · 3840 × 2160 · 60 SEC", "03 · ヘチマダン上映作 · 3840 × 2160 · 60 SEC"],
+ ["세로로 긴 LED와 사이니지에 맞춰 9:16으로 렌더링했습니다. Cliff Waterfall은 2026년 강동 더리버몰, 마곡 MICE 르웨스트, 여의도 앙사나 레지던스에서 송출됐습니다.", "Rendered at 9:16 for tall LED screens and signage. Cliff Waterfall was shown in 2026 at The River Mall, Gangdong, Magok MICE LE WEST and Angsana Residence Yeouido.", "縦長のLEDとサイネージに合わせて9:16でレンダリングしました。Cliff Waterfallは2026年、カンドン ザ・リバーモール、マゴク MICE LE WEST、汝矣島アンサナレジデンスで放映されました。"],
+ ["01 · SEOUL, 여의도", "01 · SEOUL, YEOUIDO", "01 · SEOUL, YEOUIDO"],
+ ["03 · SEOUL, 광화문", "03 · SEOUL, GWANGHWAMUN", "03 · SEOUL, GWANGHWAMUN"],
+ ["04 · SEOUL, 마곡", "04 · SEOUL, MAGOK", "04 · SEOUL, MAGOK"],
+ ["05 · SEOUL, 강동", "05 · SEOUL, GANGDONG", "05 · SEOUL, GANGDONG"],
+ ["여의도 앙사나 레지던스 「Eternal Canvas」", "Angsana Residence Yeouido “Eternal Canvas”", "汝矣島アンサナレジデンス「Eternal Canvas」"],
+ ["GRAND OPENING — 3층 로비 대형 세로 미디어월", "GRAND OPENING — large vertical media wall in the 3rd-floor lobby", "GRAND OPENING — 3階ロビーの大型縦型メディアウォール"],
+ ["여의도 앙사나 레지던스 3층 로비 미디어월", "Media wall, 3rd-floor lobby, Angsana Residence Yeouido", "汝矣島アンサナレジデンス 3階ロビー メディアウォール"],
+ ["여의도 앙사나 레지던스", "Angsana Residence Yeouido", "汝矣島アンサナレジデンス"],
+ ["VIDO 공식 영상 (발췌)", "VIDO official video (excerpt)", "VIDO公式映像（抜粋）"]
 ]
