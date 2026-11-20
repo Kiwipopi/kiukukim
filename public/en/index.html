@@ -1049,7 +1049,7 @@ Object.entries(EXV).forEach(([id, [g, cap, pw, ph, img]]) => {
     when: x.when, where: x.where, desc: `${cap} — ${x.title}${x.sub ? " · " + x.sub : ""}` };
 });
 // 편집본은 크게 볼 때 전체 길이를 소리와 함께
-Object.assign(W.ex_angsana2, { hq: "/media/ex/hq/ex_angsana2.mp4", note: "Edited from the official VIDO video to keep only the waterfall scenes. Turn on sound below the video. © 2026 VERS Corp. All rights reserved." });
+Object.assign(W.ex_angsana2, { hq: "/media/ex/hq/ex_angsana2.mp4", note: "Edited from the official VIDO video to keep only the Angsana building and the waterfall scenes. Turn on sound below the video. © 2026 VERS Corp. All rights reserved." });
 const EX_ORDER = Object.keys(EXV);
 Object.assign(LAYOUT, {
   ex_angsana: { wide: [{ tall: ["ex_angsana1"], info: "angsana" }, ["ex_angsana2", "ex_angsana3", "ex_angsana4"]], narrow: [{ info: "angsana" }, { center: "ex_angsana1" }, ["ex_angsana2"], ["ex_angsana3"], ["ex_angsana4"]] },
