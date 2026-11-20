@@ -1036,7 +1036,7 @@ const EXH = {
     works: [["cliff_waterfall", "Cliff Waterfall"]] }
 };
 const EXV = { // id: [전시, 파일, 설명, w, h, 이미지?]
-  ex_angsana1: ["angsana", "設置風景 01", 720, 1280], ex_angsana2: ["angsana", "VIDO公式映像（抜粋）", 1280, 720],
+  ex_angsana1: ["angsana", "設置風景 01", 720, 1280], ex_angsana2: ["angsana", "VIDO公式映像 — 滝の編集版", 1280, 720],
   ex_angsana3: ["angsana", "設置風景 02", 1600, 900, 1], ex_angsana4: ["angsana", "設置風景 03", 1600, 900, 1],
   ex_hearts: ["hearts", "設置風景", 720, 1280], ex_gw1: ["haechi", "設置風景 01", 1280, 720], ex_gw2: ["haechi", "設置風景 02", 1280, 720],
   ex_gw3: ["haechi", "設置風景 03", 720, 1280], ex_gwposter: ["haechi", "公式展示ポスター", 900, 1652, 1],
@@ -1048,6 +1048,8 @@ Object.entries(EXV).forEach(([id, [g, cap, pw, ph, img]]) => {
   W[id] = { t: x.title, s: "exhibit", g, cap, pw, ph, kind: img ? "image" : "video", src: `/media/ex/${id}.${img ? "jpg" : "mp4"}`,
     when: x.when, where: x.where, desc: `${cap} — ${x.title}${x.sub ? " · " + x.sub : ""}` };
 });
+// 편집본은 크게 볼 때 전체 길이를 소리와 함께
+Object.assign(W.ex_angsana2, { hq: "/media/ex/hq/ex_angsana2.mp4", note: "VIDO公式映像から滝の場面だけを残して編集しました。映像の下で音をオンにできます。© 2026 VERS Corp. All rights reserved." });
 const EX_ORDER = Object.keys(EXV);
 Object.assign(LAYOUT, {
   ex_angsana: { wide: [{ tall: ["ex_angsana1"], info: "angsana" }, ["ex_angsana2", "ex_angsana3", "ex_angsana4"]], narrow: [{ info: "angsana" }, { center: "ex_angsana1" }, ["ex_angsana2"], ["ex_angsana3"], ["ex_angsana4"]] },
@@ -1210,7 +1212,7 @@ function show(id) {
     stopYT(); vi.removeAttribute("src");
     vv.poster = ex ? w.src.replace(/\.mp4$/, ".jpg") : `/media/${id}.jpg`;
     // 가벼운 루프(목록에서 이미 받은 것)로 바로 틀고, 고화질은 뒤에서 받아 다 받으면 바꾼다
-    vv.src = ex ? w.src : `/media/m/${id}.mp4`;
+    vv.src = ex ? (w.hq || w.src) : `/media/m/${id}.mp4`;
     if (!ex) loadHD(id, `/media/hq/${id}.mp4`);
     if (motion) vv.play().catch(() => {});
   }
