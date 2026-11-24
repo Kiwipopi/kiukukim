@@ -542,10 +542,10 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
         </ul>
       </div>
       <a class="idx" href="#works-waterfall"><span class="k">SERIES 04</span><b class="idx-t">Waterfall</b><span class="ko">쌓아 올린 형태 위로 쏟아지는 물</span><span class="c">01 WORK</span><span class="sq" aria-hidden="true"></span></a>
-      <a class="idx" href="#works-particles"><span class="k">SERIES 05</span><b class="idx-t">Particles</b><span class="ko">모였다 흩어지는 빛의 입자</span><span class="c">02 WORKS</span><span class="sq" aria-hidden="true"></span></a>
-      <a class="idx" href="#works-wireframe"><span class="k">SERIES 06</span><b class="idx-t">Wire<br>Frame</b><span class="ko">맞물려 세워지는 구조물</span><span class="c">01 WORK</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#works-particles"><span class="k">SERIES 05</span><b class="idx-t">Particles</b><span class="ko">모였다 흩어지는 빛의 입자</span><span class="c">03 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#exhibition-yuryeo"><span class="k">EXHIBITION</span><b class="idx-t">Yuryeo</b><span class="ko">유려 流麗</span><span class="c">3840 × 2160</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#exhibition"><span class="k">2026</span><b class="idx-t">Exhibition</b><span class="ko">전시 이력</span><span class="c">06 SHOWS</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#about"><span class="k">STUDIO</span><b class="idx-t">About</b><span class="ko">스튜디오 소개</span><span class="c">KIUKUKIM</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#contact"><span class="k">CONTACT</span><b class="idx-t">Contact</b><span class="ko">제작 의뢰 · 문의</span><span class="c">EMAIL · INSTAGRAM</span><span class="sq" aria-hidden="true"></span></a>
       <div class="idx-fill" aria-hidden="true"></div>
     </div>
@@ -596,24 +596,22 @@ class StudioKimKiwook extends MediaArtStudio {
       <a href="#works-water" data-filter="water">02 WATER <i>06</i></a>
       <a href="#works-whale" data-filter="whale">03 WHALE <i>12</i></a>
       <a href="#works-waterfall" data-filter="waterfall">04 WATERFALL <i>01</i></a>
-      <a href="#works-particles" data-filter="particles">05 PARTICLES <i>02</i></a>
-      <a href="#works-wireframe" data-filter="wireframe">06 WIRE FRAME <i>01</i></a>
+      <a href="#works-particles" data-filter="particles">05 PARTICLES <i>03</i></a>
     </nav>
     <div class="split">
       <div class="cellbox stxt">
-        <p class="lbl">WORKS · 30 WORKS · 6 SERIES</p>
+        <p class="lbl">WORKS · 30 WORKS · 5 SERIES</p>
         <h2 class="giant" id="h-works" style="--em:4.5">Works</h2>
         <p class="sub">유리 수조의 물, 쏟아지는 물, 구름 위의 고래</p>
         <p class="desc">여섯 개의 연작입니다. 작품을 누르면 크게 볼 수 있고, 위의 탭으로 시리즈별로 나눠 볼 수 있습니다.</p>
       </div>
-      <div class="code"><pre>  // WORKS — 30 works · 6 series
+      <div class="code"><pre>  // WORKS — 30 works · 5 series
   readonly works = [
     ...this.waterBlast,  // 08
     ...this.water,       // 06
     ...this.whale,       // 12
     ...this.waterfall,   // 01
-    ...this.particles,   // 02
-    ...this.wireframe,   // 01
+    ...this.particles,   // 03
   ];</pre></div>
     </div>
     <div class="facade" id="facade" aria-label="0/1 파사드">
@@ -734,11 +732,11 @@ class StudioKimKiwook extends MediaArtStudio {
     <div class="series" data-series="particles" aria-labelledby="h-particles">
       <div class="split rev">
         <div class="cellbox stxt">
-          <p class="lbl">SERIES 05 · 02 WORKS</p>
+          <p class="lbl">SERIES 05 · 03 WORKS</p>
           <h3 class="giant" id="h-particles" style="--em:6.3">Particles</h3>
           <p class="sub">모였다 흩어지는 빛의 입자</p>
-          <p class="desc">입자가 피어올라 형태를 짓고 다시 흩어집니다. 네 계절의 색으로 차례로 물드는 Four Seasons, 밤의 광장 위에 빛의 파빌리온을 세웠다 허무는 Pavilion.</p>
-          <ul class="chips"><li>30:7 · 3:1</li><li>3840 PX</li><li>30 FPS</li><li>30–60 SEC</li></ul>
+          <p class="desc">입자가 피어올라 형태를 짓고 다시 흩어집니다. 네 계절의 색으로 차례로 물드는 Four Seasons, 밤의 광장 위에 빛의 파빌리온을 세웠다 허무는 Pavilion, 흩어진 철골 부재가 맞물려 격자 탑을 세우는 세로형 Wire Frame.</p>
+          <ul class="chips"><li>30:7 · 3:1 · 9:16</li><li>3840 PX</li><li>30 FPS</li><li>30–60 SEC</li></ul>
           <button class="more" type="button" data-play="particles_4seasons"><span class="tri" aria-hidden="true"></span>Play</button>
         </div>
         <div class="code"><pre>  // SERIES 05 PARTICLES — 모였다 흩어지는 빛의 입자
@@ -746,30 +744,11 @@ class StudioKimKiwook extends MediaArtStudio {
     works: {
       particles_4seasons: [3840, 896],  // 60s · music
       particles_pavilion: [3840, 1280], // 30s · music
+      wire_frame_particle: [1080, 1920], // 30s · music
     },
   });</pre></div>
       </div>
       <div class="gallery" data-gallery="particles"></div>
-    </div>
-
-    <div class="series" data-series="wireframe" aria-labelledby="h-wireframe">
-      <div class="split">
-        <div class="cellbox stxt">
-          <p class="lbl">SERIES 06 · 01 WORK</p>
-          <h3 class="giant" id="h-wireframe" style="--em:6.3">Wire Frame</h3>
-          <p class="sub">맞물려 세워지는 구조물</p>
-          <p class="desc">흩어진 철골 부재가 날아와 하나씩 맞물리며, 계단처럼 엇갈린 격자 탑을 세웁니다. 카메라가 구조물 사이를 지나 완성된 탑을 한 바퀴 돌아봅니다.</p>
-          <ul class="chips"><li>9:16</li><li>1080 × 1920</li><li>30 FPS</li><li>30 SEC</li></ul>
-          <button class="more" type="button" data-play="wire_frame_particle"><span class="tri" aria-hidden="true"></span>Play</button>
-        </div>
-        <div class="code"><pre>  // SERIES 06 WIRE FRAME — 맞물려 세워지는 구조물
-  readonly wireframe = new Series({
-    works: {
-      wire_frame_particle: [1080, 1920],  // 30s · music
-    },
-  });</pre></div>
-      </div>
-      <div class="gallery" data-gallery="wireframe"></div>
     </div>
 
     <nav class="wend" id="worksEnd" aria-label="이전·다음">
@@ -940,7 +919,7 @@ const W = {
   sol_waterfall: { yt: "14KltWgwN_4", t: "Sol Waterfall", s: "waterfall", w: 3240, h: 1080, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요.", desc: "격자 구조물 앞, 계단처럼 쌓인 기하 블록 위로 물이 넘쳐흘러 바닥의 수면으로 모인다." },
   particles_4seasons: { yt: "Y2Vnbe_3gns", t: "Particles · Four Seasons", s: "particles", w: 3840, h: 896, d: 60, f: 30, pw: 1920, ph: 448, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요.", desc: "입자가 꽃잎처럼 피어올랐다 흩어지며 봄에서 겨울까지 네 계절의 색으로 차례로 물든다." },
   particle_whale_reunite: { t: "Particle Whale · Reunite", s: "whale", w: 1280, h: 3840, d: 45, f: 30, pw: 640, ph: 1920, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요.", desc: "빛의 입자가 피어올라 고래 무리가 되고, 함께 위로 헤엄치다 다시 흩어집니다." },
-  wire_frame_particle: { t: "Wire Frame", s: "wireframe", w: 1080, h: 1920, d: 30, f: 30, pw: 1080, ph: 1920, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요.", desc: "흩어진 철골 부재가 날아와 맞물리며 계단처럼 엇갈린 격자 탑을 세웁니다." },
+  wire_frame_particle: { t: "Wire Frame", s: "particles", w: 1080, h: 1920, d: 30, f: 30, pw: 1080, ph: 1920, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요.", desc: "흩어진 철골 부재가 날아와 맞물리며 계단처럼 엇갈린 격자 탑을 세웁니다." },
   particles_pavilion: { t: "Particles · Pavilion", s: "particles", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "음악이 함께 있어요. 영상 아래에서 소리를 켜 보세요.", desc: "밤의 광장에 흩어져 있던 빛의 입자가 모여 크리스마스트리를 둘러싼 아치형 파빌리온을 세웠다가, 다시 흩어진다." },
   whale_comp: { yt: "kG0y_Gp8y34", t: "Whale Study", s: "whale", w: 1920, h: 1080, d: 14.6, f: 24, pw: 1920, ph: 500, desc: "구름 위 고래의 움직임 스터디." },
   yuryeo: { yt: "qcckok6Uw4I", t: "Yuryeo 流麗", s: "feature", w: 3840, h: 2160, d: 60, f: 30, pw: 1920, ph: 1080, ex: "2026.07–08 광화문 해치마당 미디어월", desc: "절벽에서 떨어지는 폭포의 움직임으로 자유와 가능성의 감각을 표현한 작품." }
@@ -1010,21 +989,17 @@ const LAYOUT = {
     narrow: [["sol_waterfall"]]
   },
   particles: {
-    wide: [["particles_4seasons"], ["particles_pavilion"]],
-    narrow: [["particles_4seasons"], ["particles_pavilion"]]
-  },
-  wireframe: {
-    wide: [{ tall: ["wire_frame_particle"], note: "wireframe" }],
-    narrow: [{ tall: ["wire_frame_particle"], note: "wireframe" }]
+    wide: [{ stack: ["particles_4seasons", "particles_pavilion"], tall: "wire_frame_particle" }],
+    narrow: [["particles_4seasons"], ["particles_pavilion"], { tall: ["wire_frame_particle"], note: "particles" }]
   }
 };
 const NOTES = {
   blast: { k: "VERTICAL · PILLAR", r: "1:3", t: "기둥형 화면", d: "세로 1:3 기둥형 LED를 위한 버전입니다. 위아래 두 수조가 시차를 두고 터집니다." },
   whale: { k: "VERTICAL · PILLAR", r: "1:3", t: "기둥형 화면", d: "세로 1:3 기둥형 LED를 위한 작품입니다. 빛의 입자가 고래 무리가 되어 위로 헤엄칩니다." },
-  wireframe: { k: "VERTICAL · 01 WORK", r: "9:16", t: "세로형 화면", d: "세로형 LED와 사이니지에 맞춰 9:16으로 렌더링했습니다. 부재가 맞물려 탑이 서고, 카메라가 구조물 사이를 지나갑니다." },
+  particles: { k: "VERTICAL · 01 WORK", r: "9:16", t: "세로형 화면", d: "세로형 LED와 사이니지에 맞춰 9:16으로 렌더링했습니다. 부재가 맞물려 탑이 서고, 카메라가 구조물 사이를 지나갑니다." },
   water: { k: "VERTICAL · 03 WORKS", r: "9:16", t: "세로형 화면", d: "세로로 긴 LED와 사이니지에 맞춰 9:16으로 렌더링했습니다. Cliff Waterfall은 2026년 강동 더리버몰, 마곡 MICE 르웨스트, 여의도 앙사나 레지던스에서 송출됐습니다." }
 };
-const GROUP = { blast: "SERIES 01 · WATER BLAST", water: "SERIES 02 · WATER", whale: "SERIES 03 · WHALE", waterfall: "SERIES 04 · WATERFALL", particles: "SERIES 05 · PARTICLES", wireframe: "SERIES 06 · WIRE FRAME", feature: "FEATURE · YURYEO", exhibit: "EXHIBITION" };
+const GROUP = { blast: "SERIES 01 · WATER BLAST", water: "SERIES 02 · WATER", whale: "SERIES 03 · WHALE", waterfall: "SERIES 04 · WATERFALL", particles: "SERIES 05 · PARTICLES", feature: "FEATURE · YURYEO", exhibit: "EXHIBITION" };
 // 전시 — 현장 영상 (media/ex)
 const EXH = {
   angsana: { k: "01 · SEOUL, 여의도", big: "Yeouido", em: 5.1, when: "2026.11.01 – 11.30", title: "여의도 앙사나 레지던스 「Eternal Canvas」",
@@ -1629,7 +1604,7 @@ function parseHash() {
   const h = location.hash.slice(1).toLowerCase();
   if (h === "works") return { page: "works", filter: "all" };
   if (h === "works-yuryeo") return { page: "exhibition", filter: "yuryeo" };
-  const m = h.match(/^works-(blast|water|whale|waterfall|particles|wireframe)$/);
+  const m = h.match(/^works-(blast|water|whale|waterfall|particles)$/);
   if (m) return { page: "works", filter: m[1] };
   const e = h.match(/^exhibition-(angsana|tokyo|yuryeo|magok|gangdong)$/);
   if (e) return { page: "exhibition", filter: e[1] };
@@ -1656,8 +1631,7 @@ const SEQ = [
   { f: "water", name: "Water", k: "SERIES 02" },
   { f: "whale", name: "Whale", k: "SERIES 03" },
   { f: "waterfall", name: "Waterfall", k: "SERIES 04" },
-  { f: "particles", name: "Particles", k: "SERIES 05" },
-  { f: "wireframe", name: "Wire Frame", k: "SERIES 06" }
+  { f: "particles", name: "Particles", k: "SERIES 05" }
 ];
 const wend = $("#worksEnd"), wPrev = $("#wPrev"), wNext = $("#wNext");
 function setEnd(filter) {

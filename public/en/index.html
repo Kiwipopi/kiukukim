@@ -542,10 +542,10 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
         </ul>
       </div>
       <a class="idx" href="#works-waterfall"><span class="k">SERIES 04</span><b class="idx-t">Waterfall</b><span class="ko">Water pouring over stacked forms</span><span class="c">01 WORK</span><span class="sq" aria-hidden="true"></span></a>
-      <a class="idx" href="#works-particles"><span class="k">SERIES 05</span><b class="idx-t">Particles</b><span class="ko">Particles of light that gather and scatter</span><span class="c">02 WORKS</span><span class="sq" aria-hidden="true"></span></a>
-      <a class="idx" href="#works-wireframe"><span class="k">SERIES 06</span><b class="idx-t">Wire<br>Frame</b><span class="ko">A structure that locks into place</span><span class="c">01 WORK</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#works-particles"><span class="k">SERIES 05</span><b class="idx-t">Particles</b><span class="ko">Particles of light that gather and scatter</span><span class="c">03 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#exhibition-yuryeo"><span class="k">EXHIBITION</span><b class="idx-t">Yuryeo</b><span class="ko">Yuryeo 流麗</span><span class="c">3840 × 2160</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#exhibition"><span class="k">2026</span><b class="idx-t">Exhibition</b><span class="ko">Exhibitions</span><span class="c">06 SHOWS</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#about"><span class="k">STUDIO</span><b class="idx-t">About</b><span class="ko">About the studio</span><span class="c">KIUKUKIM</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#contact"><span class="k">CONTACT</span><b class="idx-t">Contact</b><span class="ko">Commissions · Inquiries</span><span class="c">EMAIL · INSTAGRAM</span><span class="sq" aria-hidden="true"></span></a>
       <div class="idx-fill" aria-hidden="true"></div>
     </div>
@@ -596,24 +596,22 @@ class StudioKimKiwook extends MediaArtStudio {
       <a href="#works-water" data-filter="water">02 WATER <i>06</i></a>
       <a href="#works-whale" data-filter="whale">03 WHALE <i>12</i></a>
       <a href="#works-waterfall" data-filter="waterfall">04 WATERFALL <i>01</i></a>
-      <a href="#works-particles" data-filter="particles">05 PARTICLES <i>02</i></a>
-      <a href="#works-wireframe" data-filter="wireframe">06 WIRE FRAME <i>01</i></a>
+      <a href="#works-particles" data-filter="particles">05 PARTICLES <i>03</i></a>
     </nav>
     <div class="split">
       <div class="cellbox stxt">
-        <p class="lbl">WORKS · 30 WORKS · 6 SERIES</p>
+        <p class="lbl">WORKS · 30 WORKS · 5 SERIES</p>
         <h2 class="giant" id="h-works" style="--em:4.5">Works</h2>
         <p class="sub">Water in glass tanks, falling water, whales above the clouds</p>
         <p class="desc">Six series. Select a work to view it large, or use the tabs above to browse by series.</p>
       </div>
-      <div class="code"><pre>  // WORKS — 30 works · 6 series
+      <div class="code"><pre>  // WORKS — 30 works · 5 series
   readonly works = [
     ...this.waterBlast,  // 08
     ...this.water,       // 06
     ...this.whale,       // 12
     ...this.waterfall,   // 01
-    ...this.particles,   // 02
-    ...this.wireframe,   // 01
+    ...this.particles,   // 03
   ];</pre></div>
     </div>
     <div class="facade" id="facade" aria-label="0/1 facade">
@@ -734,11 +732,11 @@ class StudioKimKiwook extends MediaArtStudio {
     <div class="series" data-series="particles" aria-labelledby="h-particles">
       <div class="split rev">
         <div class="cellbox stxt">
-          <p class="lbl">SERIES 05 · 02 WORKS</p>
+          <p class="lbl">SERIES 05 · 03 WORKS</p>
           <h3 class="giant" id="h-particles" style="--em:6.3">Particles</h3>
           <p class="sub">Particles of light that gather and scatter</p>
-          <p class="desc">Particles rise, take shape and scatter again. Four Seasons turns through the colors of each season; Pavilion raises a pavilion of light over a night plaza, then lets it fall apart.</p>
-          <ul class="chips"><li>30:7 · 3:1</li><li>3840 PX</li><li>30 FPS</li><li>30–60 SEC</li></ul>
+          <p class="desc">Particles rise, take shape and scatter again. Four Seasons turns through the colors of each season; Pavilion raises a pavilion of light over a night plaza, then lets it fall apart; and the vertical Wire Frame locks scattered steel members together into a lattice tower.</p>
+          <ul class="chips"><li>30:7 · 3:1 · 9:16</li><li>3840 PX</li><li>30 FPS</li><li>30–60 SEC</li></ul>
           <button class="more" type="button" data-play="particles_4seasons"><span class="tri" aria-hidden="true"></span>Play</button>
         </div>
         <div class="code"><pre>  // SERIES 05 PARTICLES — Particles of light that gather and scatter
@@ -746,30 +744,11 @@ class StudioKimKiwook extends MediaArtStudio {
     works: {
       particles_4seasons: [3840, 896],  // 60s · music
       particles_pavilion: [3840, 1280], // 30s · music
+      wire_frame_particle: [1080, 1920], // 30s · music
     },
   });</pre></div>
       </div>
       <div class="gallery" data-gallery="particles"></div>
-    </div>
-
-    <div class="series" data-series="wireframe" aria-labelledby="h-wireframe">
-      <div class="split">
-        <div class="cellbox stxt">
-          <p class="lbl">SERIES 06 · 01 WORK</p>
-          <h3 class="giant" id="h-wireframe" style="--em:6.3">Wire Frame</h3>
-          <p class="sub">A structure that locks into place</p>
-          <p class="desc">Scattered steel members fly in and lock together one by one, raising a lattice tower of staggered, stair-like blocks. The camera passes through the structure, then circles the finished tower.</p>
-          <ul class="chips"><li>9:16</li><li>1080 × 1920</li><li>30 FPS</li><li>30 SEC</li></ul>
-          <button class="more" type="button" data-play="wire_frame_particle"><span class="tri" aria-hidden="true"></span>Play</button>
-        </div>
-        <div class="code"><pre>  // SERIES 06 WIRE FRAME — A structure that locks into place
-  readonly wireframe = new Series({
-    works: {
-      wire_frame_particle: [1080, 1920],  // 30s · music
-    },
-  });</pre></div>
-      </div>
-      <div class="gallery" data-gallery="wireframe"></div>
     </div>
 
     <nav class="wend" id="worksEnd" aria-label="Previous · Next">
@@ -940,7 +919,7 @@ const W = {
   sol_waterfall: { yt: "14KltWgwN_4", t: "Sol Waterfall", s: "waterfall", w: 3240, h: 1080, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "This piece has music. Turn on the sound below the video.", desc: "In front of a lattice structure, water spills over geometric blocks stacked like steps and gathers in the pool below." },
   particles_4seasons: { yt: "Y2Vnbe_3gns", t: "Particles · Four Seasons", s: "particles", w: 3840, h: 896, d: 60, f: 30, pw: 1920, ph: 448, full: 1, note: "This piece has music. Turn on the sound below the video.", desc: "Particles bloom like petals and scatter, taking on the colors of the four seasons from spring to winter." },
   particle_whale_reunite: { t: "Particle Whale · Reunite", s: "whale", w: 1280, h: 3840, d: 45, f: 30, pw: 640, ph: 1920, full: 1, note: "This piece has music. Turn on the sound below the video.", desc: "Particles of light rise into a pod of whales that swim upward together, then scatter again." },
-  wire_frame_particle: { t: "Wire Frame", s: "wireframe", w: 1080, h: 1920, d: 30, f: 30, pw: 1080, ph: 1920, full: 1, note: "This piece has music. Turn on the sound below the video.", desc: "Scattered steel members fly in and lock together, raising a lattice tower of staggered, stair-like blocks." },
+  wire_frame_particle: { t: "Wire Frame", s: "particles", w: 1080, h: 1920, d: 30, f: 30, pw: 1080, ph: 1920, full: 1, note: "This piece has music. Turn on the sound below the video.", desc: "Scattered steel members fly in and lock together, raising a lattice tower of staggered, stair-like blocks." },
   particles_pavilion: { t: "Particles · Pavilion", s: "particles", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "This piece has music. Turn on the sound below the video.", desc: "Particles of light scattered across a night plaza gather to raise an arched pavilion around a Christmas tree, then scatter again." },
   whale_comp: { yt: "kG0y_Gp8y34", t: "Whale Study", s: "whale", w: 1920, h: 1080, d: 14.6, f: 24, pw: 1920, ph: 500, desc: "A motion study of whales above the clouds." },
   yuryeo: { yt: "qcckok6Uw4I", t: "Yuryeo 流麗", s: "feature", w: 3840, h: 2160, d: 60, f: 30, pw: 1920, ph: 1080, ex: "2026.07–08 Gwanghwamun Haechi Madang Media Wall", desc: "A work expressing freedom and possibility through the movement of a waterfall dropping from a cliff." }
@@ -1010,21 +989,17 @@ const LAYOUT = {
     narrow: [["sol_waterfall"]]
   },
   particles: {
-    wide: [["particles_4seasons"], ["particles_pavilion"]],
-    narrow: [["particles_4seasons"], ["particles_pavilion"]]
-  },
-  wireframe: {
-    wide: [{ tall: ["wire_frame_particle"], note: "wireframe" }],
-    narrow: [{ tall: ["wire_frame_particle"], note: "wireframe" }]
+    wide: [{ stack: ["particles_4seasons", "particles_pavilion"], tall: "wire_frame_particle" }],
+    narrow: [["particles_4seasons"], ["particles_pavilion"], { tall: ["wire_frame_particle"], note: "particles" }]
   }
 };
 const NOTES = {
   blast: { k: "VERTICAL · PILLAR", r: "1:3", t: "Pillar screen", d: "A version for a 1:3 vertical pillar LED. The upper and lower tanks burst one after the other." },
   whale: { k: "VERTICAL · PILLAR", r: "1:3", t: "Pillar screen", d: "Made for 1:3 vertical pillar LEDs. Particles of light become a pod of whales swimming upward." },
-  wireframe: { k: "VERTICAL · 01 WORK", r: "9:16", t: "Vertical screens", d: "Rendered at 9:16 for vertical LEDs and signage. Members lock together into a tower as the camera moves through the structure." },
+  particles: { k: "VERTICAL · 01 WORK", r: "9:16", t: "Vertical screens", d: "Rendered at 9:16 for vertical LEDs and signage. Members lock together into a tower as the camera moves through the structure." },
   water: { k: "VERTICAL · 03 WORKS", r: "9:16", t: "Vertical screens", d: "Rendered at 9:16 for tall LED screens and signage. Cliff Waterfall was shown in 2026 at The River Mall, Gangdong, Magok MICE LE WEST and Angsana Residence Yeouido." }
 };
-const GROUP = { blast: "SERIES 01 · WATER BLAST", water: "SERIES 02 · WATER", whale: "SERIES 03 · WHALE", waterfall: "SERIES 04 · WATERFALL", particles: "SERIES 05 · PARTICLES", wireframe: "SERIES 06 · WIRE FRAME", feature: "FEATURE · YURYEO", exhibit: "EXHIBITION" };
+const GROUP = { blast: "SERIES 01 · WATER BLAST", water: "SERIES 02 · WATER", whale: "SERIES 03 · WHALE", waterfall: "SERIES 04 · WATERFALL", particles: "SERIES 05 · PARTICLES", feature: "FEATURE · YURYEO", exhibit: "EXHIBITION" };
 // 전시 — 현장 영상 (/media/ex)
 const EXH = {
   angsana: { k: "01 · SEOUL, YEOUIDO", big: "Yeouido", em: 5.1, when: "2026.11.01 – 11.30", title: "Angsana Residence Yeouido “Eternal Canvas”",
@@ -1629,7 +1604,7 @@ function parseHash() {
   const h = location.hash.slice(1).toLowerCase();
   if (h === "works") return { page: "works", filter: "all" };
   if (h === "works-yuryeo") return { page: "exhibition", filter: "yuryeo" };
-  const m = h.match(/^works-(blast|water|whale|waterfall|particles|wireframe)$/);
+  const m = h.match(/^works-(blast|water|whale|waterfall|particles)$/);
   if (m) return { page: "works", filter: m[1] };
   const e = h.match(/^exhibition-(angsana|tokyo|yuryeo|magok|gangdong)$/);
   if (e) return { page: "exhibition", filter: e[1] };
@@ -1656,8 +1631,7 @@ const SEQ = [
   { f: "water", name: "Water", k: "SERIES 02" },
   { f: "whale", name: "Whale", k: "SERIES 03" },
   { f: "waterfall", name: "Waterfall", k: "SERIES 04" },
-  { f: "particles", name: "Particles", k: "SERIES 05" },
-  { f: "wireframe", name: "Wire Frame", k: "SERIES 06" }
+  { f: "particles", name: "Particles", k: "SERIES 05" }
 ];
 const wend = $("#worksEnd"), wPrev = $("#wPrev"), wNext = $("#wNext");
 function setEnd(filter) {
