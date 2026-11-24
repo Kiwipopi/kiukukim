@@ -1035,7 +1035,8 @@ const EXH = {
     link: "https://hearts-inc.com/expo2026/" },
   haechi: { k: "03 · SEOUL, 광화문", big: "Gwanghwamun", em: 8.8, when: "2026.07.01 – 08.31", title: "해치마당 미디어월",
     sub: "2026 두 번째 전시 「여름, 잠시 다른 세계」", where: "광화문역 9번 출구 진입로 해치마당 미디어월", host: "주최 서울특별시 디자인정책관 도시경관담당관",
-    works: [["yuryeo", "Yuryeo 流麗"]], link: "https://news.seoul.go.kr/culture/archives/533444" },
+    works: [["yuryeo", "Yuryeo 流麗"]], link: "https://news.seoul.go.kr/culture/archives/533444",
+    pub: "게재 — 서울시 「미디어아트 서울」 전시 매거진 2026년 7월호 84–85쪽" },
   magok: { k: "04 · SEOUL, 마곡", big: "Magok", em: 3.8, when: "2026.07 「감각의 표류」 · 2026.08 「여름의 결」", title: "마곡 MICE 르웨스트 미디어파사드",
     sub: "7월 Ocean Whale · Cliff Waterfall / 8월 Lasting Particles", where: "마곡 MICE 르웨스트 C동·D동 · 일몰 후–22시, 매시 정각 20분 송출", host: "주관 VIDO · 전시 경력 증명서",
     works: [["cliff_waterfall", "Cliff Waterfall"]] },
@@ -1048,6 +1049,7 @@ const EXV = { // id: [전시, 파일, 설명, w, h, 이미지?]
   ex_angsana3: ["angsana", "설치 전경 02", 1600, 900, 1], ex_angsana4: ["angsana", "설치 전경 03", 1600, 900, 1],
   ex_hearts: ["hearts", "설치 전경", 720, 1280], ex_gw1: ["haechi", "설치 전경 01", 1280, 720], ex_gw2: ["haechi", "설치 전경 02", 1280, 720],
   ex_gw3: ["haechi", "설치 전경 03", 720, 1280], ex_gwposter: ["haechi", "공식 전시 포스터", 900, 1652, 1],
+  ex_gwmag: ["haechi", "「미디어아트 서울」 매거진 7월호 84–85쪽", 2052, 1497, 1],
   ex_magok2: ["magok", "설치 전경 01", 720, 1280], ex_magok3: ["magok", "설치 전경 02", 720, 1280],
   ex_ikea1: ["gangdong", "설치 전경 01", 720, 1280], ex_ikea2: ["gangdong", "설치 전경 02", 720, 1280], ex_ikea3: ["gangdong", "설치 전경 03 — 더리버몰 외벽", 1280, 720]
 };
@@ -1062,7 +1064,7 @@ const EX_ORDER = Object.keys(EXV);
 Object.assign(LAYOUT, {
   ex_angsana: { wide: [{ tall: ["ex_angsana1"], info: "angsana" }, ["ex_angsana2", "ex_angsana3", "ex_angsana4"]], narrow: [{ info: "angsana" }, { center: "ex_angsana1" }, ["ex_angsana2"], ["ex_angsana3"], ["ex_angsana4"]] },
   ex_hearts: { wide: [{ tall: ["ex_hearts"], info: "hearts" }], narrow: [{ info: "hearts" }, { center: "ex_hearts" }] },
-  ex_haechi: { wide: [{ tall: ["ex_gw3", "ex_gwposter"], info: "haechi" }, ["ex_gw1", "ex_gw2"]], narrow: [{ info: "haechi" }, ["ex_gw1"], ["ex_gw2"], ["ex_gw3", "ex_gwposter"]] },
+  ex_haechi: { wide: [{ tall: ["ex_gw3", "ex_gwposter"], info: "haechi" }, ["ex_gw1", "ex_gw2", "ex_gwmag"]], narrow: [{ info: "haechi" }, ["ex_gw1"], ["ex_gw2"], ["ex_gw3", "ex_gwposter"], ["ex_gwmag"]] },
   ex_magok: { wide: [{ tall: ["ex_magok2", "ex_magok3"], info: "magok" }], narrow: [{ info: "magok" }, ["ex_magok2", "ex_magok3"]] },
   ex_gangdong: { wide: [{ tall: ["ex_ikea1", "ex_ikea2"], info: "gangdong" }, ["ex_ikea3"]], narrow: [{ info: "gangdong" }, ["ex_ikea3"], ["ex_ikea1", "ex_ikea2"]] }
 });
@@ -1112,7 +1114,7 @@ function tile(id) {
 function infoCell(key, full) {
   const x = EXH[key];
   const works = (x.works || []).map(([id, t]) => `<button type="button" data-open="${id}">${esc(t)}</button>`).join(" · ");
-  return div("exinfo" + (full ? " full" : ""), `<span class="k">${esc(x.k)}</span><p class="cd">// ${esc(x.when)}</p><h3>${esc(x.title)}</h3>${x.sub ? `<p class="xs">${esc(x.sub)}</p>` : ""}<p class="xp">${esc(x.where)}<br>${esc(x.host)}</p>${works ? `<p class="xw">WORK — ${works}</p>` : ""}${x.link ? `<a class="xl" href="${x.link}" target="_blank" rel="noopener">전시 소개 ↗</a>` : ""}<b class="big" style="--em:${x.em}">${esc(x.big)}</b>`);
+  return div("exinfo" + (full ? " full" : ""), `<span class="k">${esc(x.k)}</span><p class="cd">// ${esc(x.when)}</p><h3>${esc(x.title)}</h3>${x.sub ? `<p class="xs">${esc(x.sub)}</p>` : ""}<p class="xp">${esc(x.where)}<br>${esc(x.host)}</p>${x.pub ? `<p class="xp">${esc(x.pub)}</p>` : ""}${works ? `<p class="xw">WORK — ${works}</p>` : ""}${x.link ? `<a class="xl" href="${x.link}" target="_blank" rel="noopener">전시 소개 ↗</a>` : ""}<b class="big" style="--em:${x.em}">${esc(x.big)}</b>`);
 }
 function buildGalleries() {
   const mode = mqN.matches ? "narrow" : "wide";

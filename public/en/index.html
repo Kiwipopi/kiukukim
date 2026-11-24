@@ -1035,7 +1035,8 @@ const EXH = {
     link: "https://hearts-inc.com/expo2026/" },
   haechi: { k: "03 · SEOUL, GWANGHWAMUN", big: "Gwanghwamun", em: 8.8, when: "2026.07.01 – 08.31", title: "Haechi Madang Media Wall",
     sub: "Second exhibition of 2026, “Summer, Another World for a While”", where: "Haechi Madang Media Wall, Exit 9 passage, Gwanghwamun Station", host: "Organized by Seoul Metropolitan Government, Urban Landscape Division",
-    works: [["yuryeo", "Yuryeo 流麗"]], link: "https://news.seoul.go.kr/culture/archives/533444" },
+    works: [["yuryeo", "Yuryeo 流麗"]], link: "https://news.seoul.go.kr/culture/archives/533444",
+    pub: "Featured in Seoul’s Media Art Seoul exhibition magazine, July 2026 issue, pp. 84–85" },
   magok: { k: "04 · SEOUL, MAGOK", big: "Magok", em: 3.8, when: "2026.07 “Drift of the Senses” · 2026.08 “Texture of Summer”", title: "Magok MICE LE WEST media facade",
     sub: "July: Ocean Whale · Cliff Waterfall / August: Lasting Particles", where: "Magok MICE LE WEST, Buildings C & D · sunset–10 pm, 20 minutes on the hour", host: "Organized by VIDO · exhibition certificate",
     works: [["cliff_waterfall", "Cliff Waterfall"]] },
@@ -1048,6 +1049,7 @@ const EXV = { // id: [전시, 파일, 설명, w, h, 이미지?]
   ex_angsana3: ["angsana", "Installation view 02", 1600, 900, 1], ex_angsana4: ["angsana", "Installation view 03", 1600, 900, 1],
   ex_hearts: ["hearts", "Installation view", 720, 1280], ex_gw1: ["haechi", "Installation view 01", 1280, 720], ex_gw2: ["haechi", "Installation view 02", 1280, 720],
   ex_gw3: ["haechi", "Installation view 03", 720, 1280], ex_gwposter: ["haechi", "Official exhibition poster", 900, 1652, 1],
+  ex_gwmag: ["haechi", "Media Art Seoul magazine, July issue, pp. 84–85", 2052, 1497, 1],
   ex_magok2: ["magok", "Installation view 01", 720, 1280], ex_magok3: ["magok", "Installation view 02", 720, 1280],
   ex_ikea1: ["gangdong", "Installation view 01", 720, 1280], ex_ikea2: ["gangdong", "Installation view 02", 720, 1280], ex_ikea3: ["gangdong", "Installation view 03 — The River Mall facade", 1280, 720]
 };
@@ -1062,7 +1064,7 @@ const EX_ORDER = Object.keys(EXV);
 Object.assign(LAYOUT, {
   ex_angsana: { wide: [{ tall: ["ex_angsana1"], info: "angsana" }, ["ex_angsana2", "ex_angsana3", "ex_angsana4"]], narrow: [{ info: "angsana" }, { center: "ex_angsana1" }, ["ex_angsana2"], ["ex_angsana3"], ["ex_angsana4"]] },
   ex_hearts: { wide: [{ tall: ["ex_hearts"], info: "hearts" }], narrow: [{ info: "hearts" }, { center: "ex_hearts" }] },
-  ex_haechi: { wide: [{ tall: ["ex_gw3", "ex_gwposter"], info: "haechi" }, ["ex_gw1", "ex_gw2"]], narrow: [{ info: "haechi" }, ["ex_gw1"], ["ex_gw2"], ["ex_gw3", "ex_gwposter"]] },
+  ex_haechi: { wide: [{ tall: ["ex_gw3", "ex_gwposter"], info: "haechi" }, ["ex_gw1", "ex_gw2", "ex_gwmag"]], narrow: [{ info: "haechi" }, ["ex_gw1"], ["ex_gw2"], ["ex_gw3", "ex_gwposter"], ["ex_gwmag"]] },
   ex_magok: { wide: [{ tall: ["ex_magok2", "ex_magok3"], info: "magok" }], narrow: [{ info: "magok" }, ["ex_magok2", "ex_magok3"]] },
   ex_gangdong: { wide: [{ tall: ["ex_ikea1", "ex_ikea2"], info: "gangdong" }, ["ex_ikea3"]], narrow: [{ info: "gangdong" }, ["ex_ikea3"], ["ex_ikea1", "ex_ikea2"]] }
 });
@@ -1112,7 +1114,7 @@ function tile(id) {
 function infoCell(key, full) {
   const x = EXH[key];
   const works = (x.works || []).map(([id, t]) => `<button type="button" data-open="${id}">${esc(t)}</button>`).join(" · ");
-  return div("exinfo" + (full ? " full" : ""), `<span class="k">${esc(x.k)}</span><p class="cd">// ${esc(x.when)}</p><h3>${esc(x.title)}</h3>${x.sub ? `<p class="xs">${esc(x.sub)}</p>` : ""}<p class="xp">${esc(x.where)}<br>${esc(x.host)}</p>${works ? `<p class="xw">WORK — ${works}</p>` : ""}${x.link ? `<a class="xl" href="${x.link}" target="_blank" rel="noopener">About the exhibition ↗</a>` : ""}<b class="big" style="--em:${x.em}">${esc(x.big)}</b>`);
+  return div("exinfo" + (full ? " full" : ""), `<span class="k">${esc(x.k)}</span><p class="cd">// ${esc(x.when)}</p><h3>${esc(x.title)}</h3>${x.sub ? `<p class="xs">${esc(x.sub)}</p>` : ""}<p class="xp">${esc(x.where)}<br>${esc(x.host)}</p>${x.pub ? `<p class="xp">${esc(x.pub)}</p>` : ""}${works ? `<p class="xw">WORK — ${works}</p>` : ""}${x.link ? `<a class="xl" href="${x.link}" target="_blank" rel="noopener">About the exhibition ↗</a>` : ""}<b class="big" style="--em:${x.em}">${esc(x.big)}</b>`);
 }
 function buildGalleries() {
   const mode = mqN.matches ? "narrow" : "wide";
