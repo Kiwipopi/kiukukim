@@ -214,7 +214,7 @@ main{display:flex;flex-direction:column;gap:1px;background:var(--accent);min-wid
 .idx .c{position:absolute;left:16px;bottom:14px;font:500 11px/1 var(--mono);letter-spacing:.06em;color:var(--muted)}
 .idx-t{font:600 clamp(24px,2.6vw,42px)/.95 var(--display);font-stretch:112%;text-transform:uppercase;letter-spacing:-.005em;text-wrap:balance}
 .idx .ko{font:500 13px/1.4 var(--sans);color:var(--ink)}
-.idx-fill{display:none;background:var(--bg)} /* 2열(휴대폰) 마지막 줄의 빈자리 */
+.idx.wide{grid-column:span 3;aspect-ratio:3/1}
 .idx .sq{position:absolute;right:0;bottom:0;width:34px;height:34px}
 .idx:hover,.idx:focus-visible{background:var(--accent);color:var(--on-accent);outline:0}
 .idx:hover .k,.idx:hover .c,.idx:hover .ko,.idx:focus-visible .k,.idx:focus-visible .c,.idx:focus-visible .ko{color:var(--on-accent)}
@@ -438,7 +438,7 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
   .split.rev > .stxt{order:0}
   .index{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:dense}
   .news{grid-column:1/-1;grid-row:auto}
-  .idx-fill{display:block}
+  .idx.wide{grid-column:1/-1;aspect-ratio:2/1}
   .make{grid-template-columns:repeat(2,minmax(0,1fr))}
   .band{aspect-ratio:2/1}
   .cards{grid-template-columns:minmax(0,1fr)}
@@ -527,8 +527,8 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
     </div>
     <div class="index" aria-label="ショートカット">
       <a class="idx" href="#works-blast"><span class="k">SERIES 01</span><b class="idx-t">Water<br>Blast</b><span class="ko">ガラス水槽の中の水</span><span class="c">09 WORKS</span><span class="sq" aria-hidden="true"></span></a>
-      <a class="idx" href="#works-water"><span class="k">SERIES 02</span><b class="idx-t">Water</b><span class="ko">流れ落ち、湧き上がる水</span><span class="c">06 WORKS</span><span class="sq" aria-hidden="true"></span></a>
-      <a class="idx" href="#works-whale"><span class="k">SERIES 03</span><b class="idx-t">Whale</b><span class="ko">雲の上を泳ぐクジラ</span><span class="c">12 WORKS</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#works-whale"><span class="k">SERIES 02</span><b class="idx-t">Whale</b><span class="ko">雲の上を泳ぐクジラ</span><span class="c">13 WORKS</span><span class="sq" aria-hidden="true"></span></a>
+      <a class="idx" href="#works-rnd"><span class="k">SERIES 03</span><b class="idx-t">R&amp;D</b><span class="ko">水とパーティクルの実験</span><span class="c">11 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <div class="news" aria-label="お知らせ">
         <p class="news-h">NEWS</p>
         <ul>
@@ -541,13 +541,10 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
           <li><time datetime="2026-06-01">2026.06.01</time><span>カンドン ザ・リバーモール メディアアート展 — Cliff Waterfall 出展</span></li>
         </ul>
       </div>
-      <a class="idx" href="#works-waterfall"><span class="k">SERIES 04</span><b class="idx-t">Waterfall</b><span class="ko">積み上げた形の上に流れ落ちる水</span><span class="c">01 WORK</span><span class="sq" aria-hidden="true"></span></a>
-      <a class="idx" href="#works-particles"><span class="k">SERIES 05</span><b class="idx-t">Particles</b><span class="ko">集まっては散る光のパーティクル</span><span class="c">03 WORKS</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#exhibition-yuryeo"><span class="k">EXHIBITION</span><b class="idx-t">Yuryeo</b><span class="ko">流麗 Yuryeo</span><span class="c">3840 × 2160</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#exhibition"><span class="k">2026</span><b class="idx-t">Exhibition</b><span class="ko">展示歴</span><span class="c">06 SHOWS</span><span class="sq" aria-hidden="true"></span></a>
       <a class="idx" href="#about"><span class="k">STUDIO</span><b class="idx-t">About</b><span class="ko">スタジオ紹介</span><span class="c">KIUKUKIM</span><span class="sq" aria-hidden="true"></span></a>
-      <a class="idx" href="#contact"><span class="k">CONTACT</span><b class="idx-t">Contact</b><span class="ko">制作依頼・お問い合わせ</span><span class="c">EMAIL · INSTAGRAM</span><span class="sq" aria-hidden="true"></span></a>
-      <div class="idx-fill" aria-hidden="true"></div>
+      <a class="idx wide" href="#contact"><span class="k">CONTACT</span><b class="idx-t">Contact</b><span class="ko">制作依頼・お問い合わせ</span><span class="c">EMAIL · INSTAGRAM</span><span class="sq" aria-hidden="true"></span></a>
     </div>
   </section>
 
@@ -560,7 +557,7 @@ html[lang="ko"] .rt-col[lang="ja"],html[lang="en"] .rt-col[lang="ko"],html[lang=
         <p class="sub">水・雲・クジラをシミュレーションするメディアアートスタジオ</p>
         <p class="desc">Studio Kim Kiwookは、メディアファサードや大型LED、縦型ディスプレイのための映像を制作しています。上映環境の解像度と比率に合わせてレンダリングします。</p>
         <div class="facts">
-          <div><b>31</b><span>作品</span></div>
+          <div><b>33</b><span>作品</span></div>
           <div><b>5</b><span>2026年の展示</span></div>
           <div><b>3840</b><span>最大横ピクセル</span></div>
           <div><b>24/30</b><span>FPS</span></div>
@@ -591,27 +588,23 @@ class StudioKimKiwook extends MediaArtStudio {
   <!-- 02 WORKS -->
   <section class="page" data-page="works" aria-labelledby="h-works" hidden>
     <nav class="subtabs" id="subtabs" aria-label="シリーズ">
-      <a href="#works" data-filter="all">ALL <i>31</i></a>
+      <a href="#works" data-filter="all">ALL <i>33</i></a>
       <a href="#works-blast" data-filter="blast">01 WATER BLAST <i>09</i></a>
-      <a href="#works-water" data-filter="water">02 WATER <i>06</i></a>
-      <a href="#works-whale" data-filter="whale">03 WHALE <i>12</i></a>
-      <a href="#works-waterfall" data-filter="waterfall">04 WATERFALL <i>01</i></a>
-      <a href="#works-particles" data-filter="particles">05 PARTICLES <i>03</i></a>
+      <a href="#works-whale" data-filter="whale">02 WHALE <i>13</i></a>
+      <a href="#works-rnd" data-filter="rnd">03 R&amp;D <i>11</i></a>
     </nav>
     <div class="split">
       <div class="cellbox stxt">
-        <p class="lbl">WORKS · 31 WORKS · 5 SERIES</p>
+        <p class="lbl">WORKS · 33 WORKS · 3 SERIES</p>
         <h2 class="giant" id="h-works" style="--em:4.5">Works</h2>
-        <p class="sub">ガラス水槽の水、流れ落ちる水、雲の上のクジラ</p>
-        <p class="desc">6つのシリーズです。作品を押すと大きく表示され、上のタブでシリーズごとに見ることができます。</p>
+        <p class="sub">ガラス水槽の水、雲の上のクジラ、そして実験</p>
+        <p class="desc">3つのシリーズです。作品を押すと大きく表示され、上のタブでシリーズごとに見ることができます。</p>
       </div>
-      <div class="code"><pre>  // WORKS — 31 works · 5 series
+      <div class="code"><pre>  // WORKS — 33 works · 3 series
   readonly works = [
     ...this.waterBlast,  // 09
-    ...this.water,       // 06
-    ...this.whale,       // 12
-    ...this.waterfall,   // 01
-    ...this.particles,   // 03
+    ...this.whale,       // 13
+    ...this.rnd,         // 11
   ];</pre></div>
     </div>
     <div class="facade" id="facade" aria-label="0/1 ファサード">
@@ -652,43 +645,17 @@ class StudioKimKiwook extends MediaArtStudio {
       <div class="gallery" data-gallery="blast"></div>
     </div>
 
-    <div class="series" data-series="water" aria-labelledby="h-water">
-      <div class="split">
-        <div class="cellbox stxt">
-          <p class="lbl">SERIES 02 · 06 WORKS</p>
-          <h3 class="giant" id="h-water" style="--em:4.3">Water</h3>
-          <p class="sub">流れ落ち、湧き上がる水</p>
-          <p class="desc">角で折れ曲がるアナモルフィック水槽、崖を流れ落ちる滝、重力に逆らって昇る波。上映媒体の形そのものを作品の構造にしました。</p>
-          <ul class="chips"><li>16:9</li><li>9:16</li><li>24 FPS</li><li>18–150 SEC</li></ul>
-          <button class="more" type="button" data-play="coex_wave"><span class="tri" aria-hidden="true"></span>Play</button>
-        </div>
-        <div class="code"><pre>  // SERIES 02 WATER — 流れ落ち、湧き上がる水
-  readonly water = new Series({
-    works: {
-      coex_wave:          [1920, 1080],  // 18.6s
-      cliff_waterfall:    [1080, 1920],  // 22.6s
-      up_gravity:         [1450, 2560],  // 37.5s
-      wave_from_district: [1440, 2560],  // 30s
-      pts_wave:           [1920, 1080],  // 150s
-      water_wave:         [1920, 1080],  // 150s
-    },
-    fps: 24,
-  });</pre></div>
-      </div>
-      <div class="gallery" data-gallery="water"></div>
-    </div>
-
     <div class="series" data-series="whale" aria-labelledby="h-whale">
       <div class="split rev">
         <div class="cellbox stxt">
-          <p class="lbl">SERIES 03 · 12 WORKS</p>
+          <p class="lbl">SERIES 02 · 13 WORKS</p>
           <h3 class="giant" id="h-whale" style="--em:4.3">Whale</h3>
           <p class="sub">雲の上を泳ぐクジラ</p>
           <p class="desc">ザトウクジラとシャチが空を海に見立てて泳ぎます。春の花の山から冬の雪原まで、季節を横切るワイド画面の連作と、光の粒子から生まれたクジラの群れが縦長の画面を泳ぎ上がるReuniteです。</p>
           <ul class="chips"><li>27:4</li><li>40:11</li><li>3:1</li><li>16:9</li><li>1:3</li><li>14–90 SEC</li></ul>
           <button class="more" type="button" data-play="whale_spring_winter"><span class="tri" aria-hidden="true"></span>Play</button>
         </div>
-        <div class="code"><pre>  // SERIES 03 WHALE — 雲の上を泳ぐクジラ
+        <div class="code"><pre>  // SERIES 02 WHALE — 雲の上を泳ぐクジラ
   readonly whale = new Series({
     works: {
       whale_spring_winter:   [2000, 550],   // 90s
@@ -700,6 +667,7 @@ class StudioKimKiwook extends MediaArtStudio {
       jeju_whale:            [3840, 1280],  // 45s · 백록담
       armsterdam_whale:      [3840, 1280],  // 45s · Amsterdam
       led_art_grass_whale_ocean: [3840, 1280], // 45s
+      led_art_glass_whale:   [3840, 1280],  // 75s · music
       cloud_whales:          [1920, 1080],  // 37.5s
       whale_study:           [1920, 1080],  // 14.6s
       particle_whale_reunite: [1280, 3840], // 45s · music
@@ -709,46 +677,34 @@ class StudioKimKiwook extends MediaArtStudio {
       <div class="gallery" data-gallery="whale"></div>
     </div>
 
-    <div class="series" data-series="waterfall" aria-labelledby="h-waterfall">
+    <div class="series" data-series="rnd" aria-labelledby="h-rnd">
       <div class="split">
         <div class="cellbox stxt">
-          <p class="lbl">SERIES 04 · 01 WORK</p>
-          <h3 class="giant" id="h-waterfall" style="--em:6.3">Waterfall</h3>
-          <p class="sub">積み上げた形の上に流れ落ちる水</p>
-          <p class="desc">格子状の構造物の前、階段のように積まれた幾何学ブロックの上から水があふれ出します。高さの異なるブロックから落ちた水は、足元の水面へと集まります。</p>
-          <ul class="chips"><li>3:1</li><li>3240 × 1080</li><li>30 FPS</li><li>30 SEC</li></ul>
-          <button class="more" type="button" data-play="sol_waterfall"><span class="tri" aria-hidden="true"></span>Play</button>
+          <p class="lbl">SERIES 03 · 11 WORKS</p>
+          <h3 class="giant" id="h-rnd" style="--em:4.3">R&amp;D</h3>
+          <p class="sub">水とパーティクルの実験</p>
+          <p class="desc">シミュレーションと画面の形を試した作品群です。6Kでレンダリングした海のしぶき、角を折り曲げたアナモルフィック水槽、崖を伝い落ちる滝、重力に逆らって立ち上がる波、階段状のブロックからあふれる水、集まっては散っていく光のパーティクル。</p>
+          <ul class="chips"><li>3:1</li><li>16:9</li><li>9:16</li><li>30:7</li><li>18–150 SEC</li></ul>
+          <button class="more" type="button" data-play="ocean_02"><span class="tri" aria-hidden="true"></span>Play</button>
         </div>
-        <div class="code"><pre>  // SERIES 04 WATERFALL — 積み上げた形の上に流れ落ちる水
-  readonly waterfall = new Series({
+        <div class="code"><pre>  // SERIES 03 R&amp;D — 水とパーティクルの実験
+  readonly rnd = new Series({
     works: {
-      sol_waterfall: [3240, 1080],  // 30s · music
+      ocean_02:            [6144, 2048],  // 90s
+      coex_wave:           [1920, 1080],  // 18.6s
+      cliff_waterfall:     [1080, 1920],  // 22.6s
+      up_gravity:          [1450, 2560],  // 37.5s
+      wave_from_district:  [1440, 2560],  // 30s
+      pts_wave:            [1920, 1080],  // 150s
+      water_wave:          [1920, 1080],  // 150s
+      sol_waterfall:       [3240, 1080],  // 30s · music
+      particles_4seasons:  [3840, 896],   // 60s · music
+      particles_pavilion:  [3840, 1280],  // 30s · music
+      wire_frame_particle: [1080, 1920],  // 30s · music
     },
   });</pre></div>
       </div>
-      <div class="gallery" data-gallery="waterfall"></div>
-    </div>
-
-    <div class="series" data-series="particles" aria-labelledby="h-particles">
-      <div class="split rev">
-        <div class="cellbox stxt">
-          <p class="lbl">SERIES 05 · 03 WORKS</p>
-          <h3 class="giant" id="h-particles" style="--em:6.3">Particles</h3>
-          <p class="sub">集まっては散る光のパーティクル</p>
-          <p class="desc">パーティクルが舞い上がって形をつくり、再び散っていきます。四季の色に順に染まるFour Seasons、夜の広場に光のパビリオンを建てては崩すPavilion、散らばった鉄骨の部材が噛み合って格子の塔を建てる縦型のWire Frame。</p>
-          <ul class="chips"><li>30:7 · 3:1 · 9:16</li><li>3840 PX</li><li>30 FPS</li><li>30–60 SEC</li></ul>
-          <button class="more" type="button" data-play="particles_4seasons"><span class="tri" aria-hidden="true"></span>Play</button>
-        </div>
-        <div class="code"><pre>  // SERIES 05 PARTICLES — 集まっては散る光のパーティクル
-  readonly particles = new Series({
-    works: {
-      particles_4seasons: [3840, 896],  // 60s · music
-      particles_pavilion: [3840, 1280], // 30s · music
-      wire_frame_particle: [1080, 1920], // 30s · music
-    },
-  });</pre></div>
-      </div>
-      <div class="gallery" data-gallery="particles"></div>
+      <div class="gallery" data-gallery="rnd"></div>
     </div>
 
     <nav class="wend" id="worksEnd" aria-label="前へ・次へ">
@@ -901,27 +857,29 @@ const W = {
   blast_07: { yt: "djbm9cR-ylA", t: "Blast 07 · Collapse", s: "blast", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。" },
   blast_08: { yt: "pic8l_jbNKc", t: "Blast 08", s: "blast", w: 3840, h: 1280, d: 45.3, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。" },
   blast_09: { t: "Blast 09 · 均衡点", s: "blast", w: 3840, h: 1280, d: 50.4, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。" },
-  coex_wave: { yt: "7ggX3fUjp8o", t: "COEX Wave", s: "water", w: 1920, h: 1080, d: 18.6, f: 24, pw: 1552, ph: 756, desc: "コーナー型LEDのためのアナモルフィック水槽。画面の角を境界に波がぶつかります。" },
-  cliff_waterfall: { t: "Cliff Waterfall", s: "water", w: 1080, h: 1920, d: 22.6, f: 24, pw: 1080, ph: 1920, ex: "2026.06 カンドン ザ・リバーモール · 2026.07 マゴク MICE LE WEST メディアファサード · 2026.11 汝矣島アンサナレジデンス", desc: "苔むした崖を流れ落ちるエメラルド色の滝。" },
-  up_gravity: { t: "Up Gravity", s: "water", w: 1450, h: 2560, d: 37.5, f: 24, pw: 1088, ph: 1920, desc: "下から上へ、重力に逆らって湧き上がる水の壁。" },
-  wave_district: { t: "Wave from District", s: "water", w: 1440, h: 2560, d: 30, f: 24, pw: 1080, ph: 1920, desc: "縦型画面いっぱいに押し寄せる白い波。" },
-  pts_wave: { yt: "veaRIhl8fKo", t: "PTS Wave", s: "water", w: 1920, h: 1080, d: 150, f: 24, pw: 1920, ph: 264, desc: "超ワイドの帯状画面を球体が横切り、色を帯びた波紋を起こします。" },
-  water_wave: { yt: "cNdPvFnHpys", t: "Water Wave", s: "water", w: 1920, h: 1080, d: 150, f: 24, pw: 1920, ph: 264, desc: "PTS Waveのモノクロ版。クロームの球体と水しぶきの質感に焦点を当てました。" },
+  ocean_02: { t: "Ocean 02", s: "rnd", w: 6144, h: 2048, d: 90, f: 30, pw: 1920, ph: 640, full: 1, desc: "6144 × 2048でレンダリングした海。暗い水面に白いしぶきが広がっては静まっていく、90秒のシミュレーションです。" },
+  coex_wave: { yt: "7ggX3fUjp8o", t: "COEX Wave", s: "rnd", w: 1920, h: 1080, d: 18.6, f: 24, pw: 1552, ph: 756, desc: "コーナー型LEDのためのアナモルフィック水槽。画面の角を境界に波がぶつかります。" },
+  cliff_waterfall: { t: "Cliff Waterfall", s: "rnd", w: 1080, h: 1920, d: 22.6, f: 24, pw: 1080, ph: 1920, ex: "2026.06 カンドン ザ・リバーモール · 2026.07 マゴク MICE LE WEST メディアファサード · 2026.11 汝矣島アンサナレジデンス", desc: "苔むした崖を流れ落ちるエメラルド色の滝。" },
+  up_gravity: { t: "Up Gravity", s: "rnd", w: 1450, h: 2560, d: 37.5, f: 24, pw: 1088, ph: 1920, desc: "下から上へ、重力に逆らって湧き上がる水の壁。" },
+  wave_district: { t: "Wave from District", s: "rnd", w: 1440, h: 2560, d: 30, f: 24, pw: 1080, ph: 1920, desc: "縦型画面いっぱいに押し寄せる白い波。" },
+  pts_wave: { yt: "veaRIhl8fKo", t: "PTS Wave", s: "rnd", w: 1920, h: 1080, d: 150, f: 24, pw: 1920, ph: 264, desc: "超ワイドの帯状画面を球体が横切り、色を帯びた波紋を起こします。" },
+  water_wave: { yt: "cNdPvFnHpys", t: "Water Wave", s: "rnd", w: 1920, h: 1080, d: 150, f: 24, pw: 1920, ph: 264, desc: "PTS Waveのモノクロ版。クロームの球体と水しぶきの質感に焦点を当てました。" },
   whale_spring_winter: { yt: "vK98OZ3JITs", t: "Whale’s Dream 鯨の夢", s: "whale", w: 2000, h: 550, d: 90, f: 30, pw: 1920, ph: 528, desc: "私にとってクジラは孤独な存在だ。作品の中のクジラは四季の風景を泳ぎ、空を飛び、その時間を私の代わりに旅する。ゆっくりに見えても、クジラは自分だけの速さで進み続けている。" },
   cloud_whale_landscape: { yt: "CJWz5_etzSE", t: "Cloud Whale Landscape", s: "whale", w: 3240, h: 1080, d: 30, f: 24, pw: 1920, ph: 640, desc: "果てしなく広がる雲海の上を泳ぐクジラたち。" },
   humpback_clouds: { yt: "yXUB6IQ6kgo", t: "Humpback from Clouds", s: "whale", w: 1920, h: 1080, d: 14, f: 29.97, pw: 1920, ph: 724, desc: "逆光の中、雲を突き抜けて現れるザトウクジラ。" },
   jeju_whale: { t: "Jeju Whale · 白鹿潭", s: "whale", w: 3840, h: 1280, d: 45, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "済州・漢拏山の白鹿潭の火口の上を、ザトウクジラがゆっくりと泳いでいきます。" },
+  led_art_glass_whale: { t: "Glass Whale", s: "whale", w: 3840, h: 1280, d: 75, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "雲の間に開けた青空を、ガラスのように透き通ったザトウクジラが泳いでいきます。" },
   armsterdam_whale: { t: "Amsterdam Whale", s: "whale", w: 3840, h: 1280, d: 45, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "アムステルダムの運河と赤い屋根の上を、ザトウクジラがゆっくりと横切って泳いでいきます。" },
   led_art_grass_whale_ocean: { t: "Grass Whale · Ocean", s: "whale", w: 3840, h: 1280, d: 45, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "緑の草原の上をザトウクジラが泳ぎ、草原の真ん中に立つ画面の向こうに海が広がります。" },
   gimpo_whale_airplane: { t: "Whale & Airplane", s: "whale", w: 4050, h: 600, d: 60, f: 30, pw: 2560, ph: 380, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "飛行機が通り過ぎた空の道をたどって、ザトウクジラが雲の上をゆっくりと横切ります。超横長の帯型画面のための作品です。" },
   cloud_whale_up: { t: "Cloud Whale Up", s: "whale", w: 2160, h: 720, d: 48, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "果てしなく広がる雲海の下からザトウクジラが跳び上がって雲を突き抜け、再びその中へと沈んでいきます。" },
   warm_cloud_whale: { t: "Warm Cloud Whale", s: "whale", w: 2160, h: 720, d: 60, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "もくもくと湧き上がる雲の空を、一頭のザトウクジラがゆっくりと横切ります。" },
   cloud_whales: { yt: "dXD7N3qCjzI", t: "Cloud Whales", s: "whale", w: 1920, h: 1080, d: 37.5, f: 30, pw: 1920, ph: 640, desc: "青空と入道雲の間を並んで泳ぐ3頭のクジラ。" },
-  sol_waterfall: { yt: "14KltWgwN_4", t: "Sol Waterfall", s: "waterfall", w: 3240, h: 1080, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "格子状の構造物の前、階段のように積まれた幾何学ブロックの上から水があふれ出し、足元の水面へと集まる。" },
-  particles_4seasons: { yt: "Y2Vnbe_3gns", t: "Particles · Four Seasons", s: "particles", w: 3840, h: 896, d: 60, f: 30, pw: 1920, ph: 448, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "花びらのように舞い上がっては散るパーティクルが、春から冬まで四季の色に順に染まっていく。" },
+  sol_waterfall: { yt: "14KltWgwN_4", t: "Sol Waterfall", s: "rnd", w: 3240, h: 1080, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "格子状の構造物の前、階段のように積まれた幾何学ブロックの上から水があふれ出し、足元の水面へと集まる。" },
+  particles_4seasons: { yt: "Y2Vnbe_3gns", t: "Particles · Four Seasons", s: "rnd", w: 3840, h: 896, d: 60, f: 30, pw: 1920, ph: 448, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "花びらのように舞い上がっては散るパーティクルが、春から冬まで四季の色に順に染まっていく。" },
   particle_whale_reunite: { t: "Particle Whale · Reunite", s: "whale", w: 1280, h: 3840, d: 45, f: 30, pw: 640, ph: 1920, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "光の粒子が舞い上がってクジラの群れとなり、ともに上へ泳いでから再び散っていきます。" },
-  wire_frame_particle: { t: "Wire Frame", s: "particles", w: 1080, h: 1920, d: 30, f: 30, pw: 1080, ph: 1920, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "散らばった鉄骨の部材が飛んできて噛み合い、階段のように食い違う格子の塔を建てます。" },
-  particles_pavilion: { t: "Particles · Pavilion", s: "particles", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "夜の広場に散らばっていた光のパーティクルが集まり、クリスマスツリーを囲むアーチ型のパビリオンを建て、再び散っていく。" },
+  wire_frame_particle: { t: "Wire Frame", s: "rnd", w: 1080, h: 1920, d: 30, f: 30, pw: 1080, ph: 1920, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "散らばった鉄骨の部材が飛んできて噛み合い、階段のように食い違う格子の塔を建てます。" },
+  particles_pavilion: { t: "Particles · Pavilion", s: "rnd", w: 3840, h: 1280, d: 30, f: 30, pw: 1920, ph: 640, full: 1, note: "音楽付きの作品です。映像の下で音をオンにしてください。", desc: "夜の広場に散らばっていた光のパーティクルが集まり、クリスマスツリーを囲むアーチ型のパビリオンを建て、再び散っていく。" },
   whale_comp: { yt: "kG0y_Gp8y34", t: "Whale Study", s: "whale", w: 1920, h: 1080, d: 14.6, f: 24, pw: 1920, ph: 500, desc: "雲の上のクジラの動きのスタディ。" },
   yuryeo: { yt: "qcckok6Uw4I", t: "Yuryeo 流麗", s: "feature", w: 3840, h: 2160, d: 60, f: 30, pw: 1920, ph: 1080, ex: "2026.07–08 光化門ヘチマダン メディアウォール", desc: "崖から落ちる滝の動きで、自由と可能性の感覚を表現した作品。" }
 };
@@ -982,21 +940,13 @@ const LAYOUT = {
     wide: [{ stack: ["blast_02", "blast_03", "blast_04"], tall: "blast_01" }, ["blast_05"], ["blast_06"], ["blast_07"], ["blast_08"], ["blast_09"]],
     narrow: [["blast_02"], ["blast_03"], ["blast_04"], ["blast_05"], ["blast_06"], ["blast_07"], ["blast_08"], ["blast_09"], { tall: ["blast_01"], note: "blast" }]
   },
-  water: {
-    wide: [["coex_wave"], { tall: ["cliff_waterfall", "up_gravity", "wave_district"], note: "water" }, ["pts_wave"], ["water_wave"]],
-    narrow: [["coex_wave"], ["cliff_waterfall", "up_gravity"], { tall: ["wave_district"], note: "water" }, ["pts_wave"], ["water_wave"]]
-  },
   whale: {
-    wide: [["gimpo_whale_airplane"], ["jeju_whale"], ["armsterdam_whale", "led_art_grass_whale_ocean"], { stack: ["whale_spring_winter", "warm_cloud_whale", "cloud_whale_up"], tall: "particle_whale_reunite" }, ["cloud_whale_landscape", "humpback_clouds"], ["cloud_whales", "whale_comp"]],
-    narrow: [["gimpo_whale_airplane"], ["jeju_whale"], ["armsterdam_whale"], ["led_art_grass_whale_ocean"], ["whale_spring_winter"], ["cloud_whale_landscape"], ["humpback_clouds"], ["warm_cloud_whale"], ["cloud_whale_up"], ["cloud_whales"], ["whale_comp"], { tall: ["particle_whale_reunite"], note: "whale" }]
+    wide: [["gimpo_whale_airplane"], ["jeju_whale", "led_art_glass_whale"], ["armsterdam_whale", "led_art_grass_whale_ocean"], { stack: ["whale_spring_winter", "warm_cloud_whale", "cloud_whale_up"], tall: "particle_whale_reunite" }, ["cloud_whale_landscape", "humpback_clouds"], ["cloud_whales", "whale_comp"]],
+    narrow: [["gimpo_whale_airplane"], ["jeju_whale"], ["led_art_glass_whale"], ["armsterdam_whale"], ["led_art_grass_whale_ocean"], ["whale_spring_winter"], ["cloud_whale_landscape"], ["humpback_clouds"], ["warm_cloud_whale"], ["cloud_whale_up"], ["cloud_whales"], ["whale_comp"], { tall: ["particle_whale_reunite"], note: "whale" }]
   },
-  waterfall: {
-    wide: [["sol_waterfall"]],
-    narrow: [["sol_waterfall"]]
-  },
-  particles: {
-    wide: [{ stack: ["particles_4seasons", "particles_pavilion"], tall: "wire_frame_particle" }],
-    narrow: [["particles_4seasons"], ["particles_pavilion"], { tall: ["wire_frame_particle"], note: "particles" }]
+  rnd: {
+    wide: [["ocean_02"], ["coex_wave"], { tall: ["cliff_waterfall", "up_gravity", "wave_district"], note: "water" }, ["pts_wave"], ["water_wave"], ["sol_waterfall"], { stack: ["particles_4seasons", "particles_pavilion"], tall: "wire_frame_particle" }],
+    narrow: [["ocean_02"], ["coex_wave"], ["cliff_waterfall", "up_gravity"], { tall: ["wave_district"], note: "water" }, ["pts_wave"], ["water_wave"], ["sol_waterfall"], ["particles_4seasons"], ["particles_pavilion"], { tall: ["wire_frame_particle"], note: "particles" }]
   }
 };
 const NOTES = {
@@ -1005,7 +955,7 @@ const NOTES = {
   particles: { k: "VERTICAL · 01 WORK", r: "9:16", t: "縦型スクリーン", d: "縦型LEDとサイネージに合わせて9:16でレンダリングしました。部材が噛み合って塔が立ち、カメラが構造物の間を抜けていきます。" },
   water: { k: "VERTICAL · 03 WORKS", r: "9:16", t: "縦型スクリーン", d: "縦長のLEDとサイネージに合わせて9:16でレンダリングしました。Cliff Waterfallは2026年、カンドン ザ・リバーモール、マゴク MICE LE WEST、汝矣島アンサナレジデンスで放映されました。" }
 };
-const GROUP = { blast: "SERIES 01 · WATER BLAST", water: "SERIES 02 · WATER", whale: "SERIES 03 · WHALE", waterfall: "SERIES 04 · WATERFALL", particles: "SERIES 05 · PARTICLES", feature: "FEATURE · YURYEO", exhibit: "EXHIBITION" };
+const GROUP = { blast: "SERIES 01 · WATER BLAST", whale: "SERIES 02 · WHALE", rnd: "SERIES 03 · R&D", feature: "FEATURE · YURYEO", exhibit: "EXHIBITION" };
 // 전시 — 현장 영상 (/media/ex)
 const EXH = {
   angsana: { k: "01 · SEOUL, YEOUIDO", big: "Yeouido", em: 5.1, when: "2026.11.01 – 11.30", title: "汝矣島アンサナレジデンス「Eternal Canvas」",
@@ -1049,7 +999,7 @@ Object.assign(LAYOUT, {
   ex_magok: { wide: [{ tall: ["ex_magok2", "ex_magok3"], info: "magok" }], narrow: [{ info: "magok" }, ["ex_magok2", "ex_magok3"]] },
   ex_gangdong: { wide: [{ tall: ["ex_ikea1", "ex_ikea2"], info: "gangdong" }, ["ex_ikea3"]], narrow: [{ info: "gangdong" }, ["ex_ikea3"], ["ex_ikea1", "ex_ikea2"]] }
 });
-const ORDER = ["blast_02", "blast_03", "blast_04", "blast_01", "blast_05", "blast_06", "blast_07", "blast_08", "blast_09", "coex_wave", "cliff_waterfall", "up_gravity", "wave_district", "pts_wave", "water_wave", "gimpo_whale_airplane", "jeju_whale", "armsterdam_whale", "led_art_grass_whale_ocean", "whale_spring_winter", "cloud_whale_landscape", "humpback_clouds", "warm_cloud_whale", "cloud_whale_up", "cloud_whales", "whale_comp", "particle_whale_reunite", "sol_waterfall", "particles_4seasons", "particles_pavilion", "wire_frame_particle", "yuryeo"];
+const ORDER = ["blast_02", "blast_03", "blast_04", "blast_01", "blast_05", "blast_06", "blast_07", "blast_08", "blast_09", "gimpo_whale_airplane", "jeju_whale", "led_art_glass_whale", "armsterdam_whale", "led_art_grass_whale_ocean", "whale_spring_winter", "cloud_whale_landscape", "humpback_clouds", "warm_cloud_whale", "cloud_whale_up", "cloud_whales", "whale_comp", "particle_whale_reunite", "ocean_02", "coex_wave", "cliff_waterfall", "up_gravity", "wave_district", "pts_wave", "water_wave", "sol_waterfall", "particles_4seasons", "particles_pavilion", "wire_frame_particle", "yuryeo"];
 const ratio = (w, h) => {
   const r = w / h;
   for (const [v, l] of [[3, "3:1"], [16 / 9, "16:9"], [9 / 16, "9:16"], [1 / 3, "1:3"], [40 / 11, "40:11"]]) if (Math.abs(r - v) / v < 0.03) return l;
@@ -1610,8 +1560,9 @@ function parseHash() {
   const h = location.hash.slice(1).toLowerCase();
   if (h === "works") return { page: "works", filter: "all" };
   if (h === "works-yuryeo") return { page: "exhibition", filter: "yuryeo" };
-  const m = h.match(/^works-(blast|water|whale|waterfall|particles)$/);
+  const m = h.match(/^works-(blast|whale|rnd)$/);
   if (m) return { page: "works", filter: m[1] };
+  if (/^works-(water|waterfall|particles|wireframe)$/.test(h)) return { page: "works", filter: "rnd" };  // 예전 시리즈 주소
   const e = h.match(/^exhibition-(angsana|tokyo|yuryeo|magok|gangdong)$/);
   if (e) return { page: "exhibition", filter: e[1] };
   if (h === "exhibition" || h === "about" || h === "contact") return { page: h, filter: "all" };
@@ -1632,12 +1583,10 @@ const wantsSeries = sub => (curPage === "works" || curPage === "exhibition") && 
 const seriesLink = a => !!a.closest(".subtabs") || (!!a.closest(".wend") && !a.classList.contains("up"));
 // WORKS 끝의 이전 · 다음
 const SEQ = [
-  { f: "all", name: "All Works", k: "ALL · 31" },
+  { f: "all", name: "All Works", k: "ALL · 33" },
   { f: "blast", name: "Water Blast", k: "SERIES 01" },
-  { f: "water", name: "Water", k: "SERIES 02" },
-  { f: "whale", name: "Whale", k: "SERIES 03" },
-  { f: "waterfall", name: "Waterfall", k: "SERIES 04" },
-  { f: "particles", name: "Particles", k: "SERIES 05" }
+  { f: "whale", name: "Whale", k: "SERIES 02" },
+  { f: "rnd", name: "R&D", k: "SERIES 03" }
 ];
 const wend = $("#worksEnd"), wPrev = $("#wPrev"), wNext = $("#wNext");
 function setEnd(filter) {
